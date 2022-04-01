@@ -5,7 +5,10 @@ select * from placeinfo;
 select * from result;
 drop table userdata cascade constraint;
 select count(*) from userdata;
+
 delete from USERDATA where age = '20대';
+
+delete from USERDATA where age = '10대';
 
 create table userdata(
    nickname varchar2(100) primary key,
@@ -17,6 +20,7 @@ create table userdata(
 );
 
 --한글 테스트
+--한글 테스트2 
 
 create table placeinfo(
 	placeid varchar2(100) primary key,
