@@ -6,6 +6,7 @@ public class Test1 {
 		System.out.println("Hello Git");
 		System.out.println("두번째 커밋");
 		System.out.println("승재커밋");
+		System.out.println("배고파");
 	}
 
 }
