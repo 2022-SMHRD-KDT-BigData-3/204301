@@ -5,7 +5,7 @@ select * from placeinfo;
 select * from result;
 drop table userdata cascade constraint;
 select count(*) from userdata;
-delete from USERDATA where age = '20´ë';
+delete from USERDATA where age = '20ï¿½ï¿½';
 
 create table userdata(
    nickname varchar2(100) primary key,
@@ -13,10 +13,11 @@ create table userdata(
    city varchar2(20),
    prevletter varchar2(50),
    nextletter varchar2(50),
-   constraint age_ck check(age in ('10´ë','20´ë','30´ë','40´ë','50´ë','60´ëÀÌ»ó')) 
+   constraint age_ck check(age in ('10ï¿½ï¿½','20ï¿½ï¿½','30ï¿½ï¿½','40ï¿½ï¿½','50ï¿½ï¿½','60ï¿½ï¿½ï¿½Ì»ï¿½')) 
 );
 
-'Å×½ºÆ®ÇÑ±Û' 
+'ï¿½×½ï¿½Æ®ï¿½Ñ±ï¿½'
+-- ê¸€ì ìˆ˜ì •
 
 create table placeinfo(
 	placeid varchar2(100) primary key,
