@@ -25,9 +25,9 @@ public class userDAO {
 			
 			conn = DriverManager.getConnection(db_url, db_id, db_pw);
 		 	if(conn != null) {
-		 		System.out.println("DB연결성공");
+		 		System.out.println("DB 연결성공");
 			}else {
-				System.out.println("DB연결실패");
+				System.out.println("DB 연결실패");
 		 		}
 			}catch (Exception e) {
 					e.printStackTrace();			
@@ -35,21 +35,24 @@ public class userDAO {
 			
 		}
 	
-		// DB종료메소드
+		// DB
 		public void db_close() {
 				try {
 					if(rs != null) rs.close();
 					if(psmt != null) psmt.close();
 					if(conn != null) conn.close();
+					
+					System.out.println("DB CLOSE");
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
 		}
 		
 		public int user(userDTO dto) {
-			int colcnt = countCol() + 1;
+			int colcnt = countCol();
 			
 			String nick = "user_" + colcnt; 
+			System.out.println(nick);
 			
 			try {
 		
@@ -99,8 +102,12 @@ public class userDAO {
 					 
 				psmt = conn.prepareStatement(sql);
 				
-				cnt = psmt.executeUpdate();
-			
+				rs = psmt.executeQuery();
+				
+				if(rs.next()) {
+					cnt = rs.getInt(1);
+				}
+				
 				}catch (Exception e) {
 					e.printStackTrace();	
 				}return cnt;

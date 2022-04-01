@@ -8,8 +8,7 @@ public class userDTO {
 	public String preletter;
 	public String nextletter;
 	
-	public userDTO(String nickname, String age, String city, String preletter) {
-		this.nickname = nickname;
+	public userDTO(String age, String city, String preletter) {
 		this.age = age;
 		this.city = city;
 		this.preletter = preletter;

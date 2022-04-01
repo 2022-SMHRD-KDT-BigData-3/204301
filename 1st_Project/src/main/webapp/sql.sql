@@ -1,18 +1,20 @@
-create table userdata(
-	nickname varchar2(100) primary key,
-	age varchar2(10) not null,
-	city varchar2(10),
-	prevletter varchar2(50),
-	nextletter varchar2(50),
-	constraint age_ck check(age in ('10ëŒ€','20ëŒ€','30ëŒ€','40ëŒ€','50ëŒ€','60ëŒ€ì´ìƒ')) 
-);
-
 select * from tabs;
 select * from userdata;
 select * from QUIZINFO;
 select * from placeinfo;
 select * from result;
-drop table placeinfo;
+drop table userdata cascade constraint;
+select count(*) from userdata;
+delete from USERDATA where age = '20´ë';
+
+create table userdata(
+   nickname varchar2(100) primary key,
+   age varchar2(10) not null,
+   city varchar2(20),
+   prevletter varchar2(50),
+   nextletter varchar2(50),
+   constraint age_ck check(age in ('10´ë','20´ë','30´ë','40´ë','50´ë','60´ëÀÌ»ó')) 
+);
 
 create table placeinfo(
 	placeid varchar2(100) primary key,
