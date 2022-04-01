@@ -16,6 +16,8 @@ create table userdata(
    constraint age_ck check(age in ('10대','20대','30대','40대','50대','60대이상')) 
 );
 
+'테스트한글' 
+
 create table placeinfo(
 	placeid varchar2(100) primary key,
 	quiz varchar2(100),
