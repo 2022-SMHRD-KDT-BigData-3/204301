@@ -5,7 +5,7 @@ select * from placeinfo;
 select * from result;
 drop table userdata cascade constraint;
 select count(*) from userdata;
-delete from USERDATA where age = '20��';
+delete from USERDATA where age = '10대';
 
 create table userdata(
    nickname varchar2(100) primary key,
@@ -13,11 +13,8 @@ create table userdata(
    city varchar2(20),
    prevletter varchar2(50),
    nextletter varchar2(50),
-   constraint age_ck check(age in ('10��','20��','30��','40��','50��','60���̻�')) 
+   constraint age_ck check(age in ('10대','20대','30대','40대','50대','60대이상')) 
 );
-
-'�׽�Ʈ�ѱ�'
--- 글자 수정
 
 create table placeinfo(
 	placeid varchar2(100) primary key,
