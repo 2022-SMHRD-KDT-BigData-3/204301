@@ -1,3 +1,4 @@
+<%@page import="Model.userDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,6 +10,11 @@
 <link rel="stylesheet" href="css/common.css"/>
 </head>
 <body>
+	<% 
+		userDTO info = (userDTO)session.getAttribute("info");
+		
+	
+	%>
 	
 	<form action = "SurveyCon">
 		나이대 <select name = "age">

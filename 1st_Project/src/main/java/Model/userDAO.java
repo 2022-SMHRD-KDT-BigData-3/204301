@@ -13,6 +13,7 @@ public class userDAO {
 		ResultSet rs = null;
 		
 		int cnt = 0;
+		userDTO info = null;
 		
 		public void db_conn() {
 			try {
@@ -48,30 +49,35 @@ public class userDAO {
 				}
 		}
 		
-		public int user(userDTO dto) {
+		public userDTO user(userDTO dto) {
 			int colcnt = countCol();
 			
 			String nick = "user_" + colcnt; 
 			System.out.println(nick);
 			
 			try {
-		
-			String sql = "insert into userdata(nickname, age, city, prevletter) values(?,?,?,?)";
-				 
-			psmt = conn.prepareStatement(sql);
-		
-			psmt.setString(1, nick);
-			psmt.setString(2, dto.getAge());
-			psmt.setString(3, dto.getCity());
-			psmt.setString(4, dto.getPreletter());
+				String sql = "insert into userdata(nickname, age, city, prevletter) values(?,?,?,?)";
+					 
+				psmt = conn.prepareStatement(sql);
 			
-			cnt = psmt.executeUpdate();
+				psmt.setString(1, nick);
+				psmt.setString(2, dto.getAge());
+				psmt.setString(3, dto.getCity());
+				psmt.setString(4, dto.getPreletter());
+				
+				cnt = psmt.executeUpdate();
 		
 			}catch (Exception e) {
 				e.printStackTrace();	
 			}finally { 
 				db_close();
-			}return cnt;
+			}
+			
+			if(cnt > 0) {
+				info = new userDTO(nick, dto.getAge(), dto.getCity(), dto.getPreletter());
+			}
+			
+			return info;
 		}
 		
 		public int updateUser(userDTO dto) {

@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Model.userDAO;
 import Model.userDTO;
@@ -25,10 +26,14 @@ public class SurveyCon extends HttpServlet {
 		userDTO dto = new userDTO(age, city, prevletter);
 		userDAO dao = new userDAO();
 		
-		int cnt = dao.user(dto);
+		userDTO info = dao.user(dto);
 		
-		if(cnt > 0 ) {
+		if(info != null ) {
 			System.out.println("insert success");
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("info", info);
+			
 		} else {
 			System.out.println("insert fail");
 		}

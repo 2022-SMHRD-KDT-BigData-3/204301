@@ -8,6 +8,13 @@ public class userDTO {
 	public String preletter;
 	public String nextletter;
 	
+	public userDTO(String nick, String age, String city, String preletter) {
+		this.nickname = nick;
+		this.city = city;
+		this.age = age;
+		this.preletter = preletter;
+	}
+	
 	public userDTO(String age, String city, String preletter) {
 		this.age = age;
 		this.city = city;
@@ -15,7 +22,6 @@ public class userDTO {
 	}
 
 	public userDTO(String nextletter) {
-		super();
 		this.nextletter = nextletter;
 	}
 
