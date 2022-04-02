@@ -30,13 +30,14 @@ create table userdata(
 --	constraint quiz_fk foreign key(quiz) references quizinfo(quiz)
 --);
 
-create table placeinfo(
+create table placeinfo( --사적지정보 DB 
 	placeid varchar2(100) primary key,
 	explanation varchar2(1000),
-	latitude number(10,6),
-	longitude number(10,6),
-	path varchar2(100)
+	latitude number(10,6), --위도
+	longitude number(10,6), --경도
+	path varchar2(100) -- 사진경로 
 );
+
 insert into placeinfo values ('1' ,'이 병원은 5·18민주화운동 당시에는 광주적십자병원으로, 부상당한 시민과 시민군을 헌신적으로 치료하고 돌본 곳이다.', 35.144719, 126.914881, 'null');
 delete from placeinfo;
 insert into quizinfo values('no.1', '', 'puzzle', 'null', '1');
