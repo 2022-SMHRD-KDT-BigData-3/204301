@@ -23,11 +23,13 @@ public class placeinfoCon extends HttpServlet {
 		
 		placeDAO dao = new placeDAO();
 		
-		list = dao.placeinfo();
+		list = dao.placeinfo(); // DB 에서 가져온 데이터값 
 		
 		if(list != null) {
+			// 제대로 데이터를 가져온 상황 게임창(.jsp)에서 데이터를 사용할 수 있게 해야한다. 
 			
 		} else {
+			// 데이터를 못받아옴 실패함 
 			
 		}
 	}
