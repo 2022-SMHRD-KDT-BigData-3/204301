@@ -38,7 +38,7 @@ create table placeinfo( --사적지정보 DB
 	path varchar2(100) -- 사진경로 
 );
 
-insert into placeinfo values ('1' ,'이 병원은 5·18민주화운동 당시에는 광주적십자병원으로, 부상당한 시민과 시민군을 헌신적으로 치료하고 돌본 곳이다.', 35.144719, 126.914881, 'null');
+insert into placeinfo values ('광주적십자병원' ,'이 병원은 5·18민주화운동 당시에는 광주적십자병원으로, 부상당한 시민과 시민군을 헌신적으로 치료하고 돌본 곳이다.', 35.144719, 126.914881, 'null');
 delete from placeinfo;
 insert into quizinfo values('no.1', '', 'puzzle', 'null', '1');
 --create table quizinfo(
