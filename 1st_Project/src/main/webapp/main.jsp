@@ -12,7 +12,6 @@
 <body>
 	<% 
 		userDTO info = (userDTO)session.getAttribute("info");
-		
 	
 	%>
 	

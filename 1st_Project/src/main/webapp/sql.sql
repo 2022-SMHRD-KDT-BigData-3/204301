@@ -3,7 +3,7 @@ select * from userdata;
 select * from QUIZINFO;
 select * from placeinfo;
 select * from result;
-drop table userdata cascade constraint;
+drop table quizinfo cascade constraint;
 select count(*) from userdata;
 
 delete from USERDATA where age = '20대';
@@ -20,22 +20,40 @@ create table userdata(
 );
 
 
+--create table placeinfo(
+--	placeid varchar2(100) primary key,
+--	quiz varchar2(100),
+--	explanation varchar2(1000),
+--	latitude number(10,6),
+--	longitude number(10,6),
+--	path varchar2(100),
+--	constraint quiz_fk foreign key(quiz) references quizinfo(quiz)
+--);
+
 create table placeinfo(
 	placeid varchar2(100) primary key,
-	quiz varchar2(100),
 	explanation varchar2(1000),
 	latitude number(10,6),
 	longitude number(10,6),
-	path varchar2(100),
-	constraint quiz_fk foreign key(quiz) references quizinfo(quiz)
+	path varchar2(100)
 );
+insert into placeinfo values ('1' ,'이 병원은 5·18민주화운동 당시에는 광주적십자병원으로, 부상당한 시민과 시민군을 헌신적으로 치료하고 돌본 곳이다.', 35.144719, 126.914881, 'null');
 
+insert into quizinfo values('no.1', '', 'puzzle', 'null', '1');
+--create table quizinfo(
+--	quiz varchar2(100) primary key,
+--	quiz_ex varchar2(1000) not null,
+--	quiz_type varchar2(10),
+--	answer varchar2(100)
+--);
 
 create table quizinfo(
 	quiz varchar2(100) primary key,
 	quiz_ex varchar2(1000) not null,
 	quiz_type varchar2(10),
-	answer varchar2(100)
+	answer varchar2(100),
+	placeid varchar2(100),
+	constraint placeid_fk foreign key(placeid) references placeinfo(placeid)
 );
 
 create table result(
