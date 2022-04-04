@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Model.placeDAO;
 import Model.placeDTO;
@@ -27,9 +28,14 @@ public class placeinfoCon extends HttpServlet {
 		
 		if(list != null) {
 			// 제대로 데이터를 가져온 상황 게임창(.jsp)에서 데이터를 사용할 수 있게 해야한다. 
+			System.out.println("Success Select PlaceInfo..");
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("placeinfo", list);
 			
 		} else {
 			// 데이터를 못받아옴 실패함 
+			System.out.println("Fail Select PlaceInfo..");
 			
 		}
 	}
