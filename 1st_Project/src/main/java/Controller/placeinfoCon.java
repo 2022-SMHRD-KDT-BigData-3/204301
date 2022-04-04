@@ -32,6 +32,10 @@ public class placeinfoCon extends HttpServlet {
 		if(list != null) {
 			// 제대로 데이터를 가져온 상황 게임창(.jsp)에서 데이터를 사용할 수 있게 해야한다. 
 			System.out.println("데이터 받기 성공!");
+
+			System.out.println("Success Select PlaceInfo..");
+			System.out.println(list.size());
+			
 			HttpSession session = request.getSession();
 			session.setAttribute("placeinfo", list);
 			
@@ -40,9 +44,13 @@ public class placeinfoCon extends HttpServlet {
 		} else {
 			// 데이터를 못받아옴 실패함
 			System.out.println("데이터를 못받았습니다. 다시 시도해주세요");
+
+			// 데이터를 못받아옴 실패함 
+			System.out.println("Fail Select PlaceInfo..");
 			
 			response.sendRedirect("./main.jsp");
 		}
+		
 	}
 
 	

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class placeDAO {
@@ -38,7 +39,17 @@ public class placeDAO {
 
 	// DB
 	public void db_close() {
-}
+		try {
+			if(rs != null) rs.close();
+			if(psmt != null) psmt.close();
+			if(conn != null) conn.close();
+			
+			System.out.println("DB CLOSE");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public ArrayList<placeDTO> placeinfo() {
 		ArrayList<placeDTO> list = new ArrayList<placeDTO>();
 		db_conn();
@@ -51,7 +62,8 @@ public class placeDAO {
 			
 			rs = psmt.executeQuery();
 			
-			if(rs.next()) {
+			
+			while(rs.next()) {
 				String placeid = rs.getString(1);
 				String quiz = rs.getString(2);
 				String explanation = rs.getString(3);
