@@ -11,8 +11,21 @@
 <title>Insert title here</title>
  <style type="text/css">
     html,body { width:100%; height:100%; margin:0; padding:0; }
-    #mapid { width:100%; height:100%; }
+    #mapid { width:100%; height:100%; z-index: 5;}
     table{ display: none;}
+    #close{
+    		width: 80px;
+            text-align:center;
+    		background-color: white;
+    		text-decoration-line : none;
+            border: 4px solid black;
+            border-radius: 10px;
+            position: fixed;
+            right: 100px;
+            bottom: 100px;
+            z-index: 100;
+            color:black;
+        }
   </style>
 
 </head>
@@ -130,6 +143,8 @@
     /*var marker3 = L.marker([35.176149, 126.905916]).addTo(map);
     marker3.bindPopup("test3").openPopup();*/
     
+    
+    
     map.touchZoom.disable();
     map.doubleClickZoom.disable();
     //map.scrollWheelZoom.disable();
@@ -137,5 +152,6 @@
     map.keyboard.disable();
     //map.removeControl(map.zoomControl);
   </script>
+  <a href="" id="close"> 게임 종료 </a>
 </body>
 </html>
