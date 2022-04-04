@@ -41,7 +41,8 @@ public class SurveyCon extends HttpServlet {
 			System.out.println("insert fail");
 		}
 		
-		response.sendRedirect("./main.jsp");
+		//response.sendRedirect("./main.jsp");
+		response.sendRedirect("./map.jsp");
 	}
 
 }
