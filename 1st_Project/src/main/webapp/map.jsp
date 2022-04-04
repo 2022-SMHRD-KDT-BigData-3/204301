@@ -18,6 +18,7 @@
 <div id="mapid"></div>
 
 <script type="text/javascript">
+
     var lat = 35.1595454;
     var lng = 126.8526012;
     var zoom = 14;
@@ -34,12 +35,14 @@
     	attribution:'<a href="http://content.stamen.com/dotspotting_toner_cartography_available_for_download">Stamen Toner</a>,<a href = "http://www.openstreetmap.org/">OpenStreetMap</a>,<a href = "http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
     }).addTo(map); */
     
-    var marker = L.marker([35.148215, 126.919829]).addTo(map);
+    var marker = L.marker([35.144647, 126.914644]).addTo(map);
     marker.on('mouseover',onOver);
     marker.on('click',onClick);
     
     function onOver(e){
-    	marker.bindPopup("Hello world! I am a popup.").openPopup();
+    	marker
+    	.bindPopup("<h1>구 광주적십자병원</h1><p>이 병원은 5·18민주화운동 당시에는 광주적십자병원으로, 부상당한 시민과 시민군을 헌신적으로 치료하고 돌본 곳이다.</p>")
+    	.openPopup();
     }
     
     function onClick(e){
@@ -52,9 +55,19 @@
     
     L.imageOverlay(imageUrl, imageBounds).addTo(map); */
     
-    var marker2 = L.marker([35.144719, 126.914881]).addTo(map);
-    marker2.bindPopup("test2").openPopup();
-    
+    /* var marker2 = L.marker([35.144719, 126.914881]).addTo(map);
+    marker2.on('mouseover',onOver2);
+    marker2.on('click',onClick2);
+    function onOver2(e){
+    	marker2
+    	.bindPopup("<h1>test2</h1>")
+    	.openPopup();
+    }
+    function onClick2(e){
+    	console.log("클릭");
+    	location.href = './survey.jsp';
+    }  */
+   
     var marker3 = L.marker([35.176149, 126.905916]).addTo(map);
     marker3.bindPopup("test3").openPopup();
     
