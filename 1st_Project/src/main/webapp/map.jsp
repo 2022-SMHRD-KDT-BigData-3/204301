@@ -83,7 +83,7 @@
 	}
 	
 	function onClick(e) {
-		console.log("클릭");
+		console.log("클릭테스트");
 		location.href = '';
 	}
     
