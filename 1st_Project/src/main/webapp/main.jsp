@@ -16,9 +16,9 @@
 	
 	<div id = "wrapper">
 		<div class="lb-text">
-            <p class = "text"> 안녕하세요. </p>
-            <p class = "text"> 2431 입니다. </p>
-            <p class = "text"> TEST 입니다. </p>
+            <p class = "text"> 게임 이름 </p>
+            <p class = "text"> 게임 설명 </p>
+            <p class = "text"> 2431 </p>
         </div>
         <button type = "button" class = "btn" onClick="location.href='survey.jsp'"> 게임시작 </button>	
 
