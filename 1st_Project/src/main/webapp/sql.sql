@@ -75,7 +75,6 @@ insert into placeinfo values ('고 홍남순 변호사 가옥' ,'null','5․18�
 
 
 update placeinfo set path = './518images/518 민주광장.jpg';
-update placeinfo set path = './518images/구 시외버스공용터미널 일대.jpg';
 
 delete from USERDATA;
 delete from placeinfo;
