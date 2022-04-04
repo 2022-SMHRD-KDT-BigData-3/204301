@@ -22,6 +22,9 @@ public class SurveyCon extends HttpServlet {
 		String city = request.getParameter("city");
 		String prevletter = request.getParameter("prevletter");
 		
+		System.out.println(age);
+		System.out.println(city);
+		System.out.println(prevletter);
 		
 		userDTO dto = new userDTO(age, city, prevletter);
 		userDAO dao = new userDAO();
@@ -38,7 +41,8 @@ public class SurveyCon extends HttpServlet {
 			System.out.println("insert fail");
 		}
 		
-		response.sendRedirect("./main.jsp");
+		//response.sendRedirect("./main.jsp");
+		response.sendRedirect("./map.jsp");
 	}
 
 }

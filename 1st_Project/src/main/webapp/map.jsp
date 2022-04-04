@@ -24,8 +24,8 @@
     var map = L.map('mapid', {
         center: [lat, lng],
         zoom: zoom,
-        minZoom:13,
-        maxZoom:17
+        minZoom:12,
+        maxZoom:16
     });
     
     L.tileLayer('http://xdworld.vworld.kr:8080/2d/Base/201710/{z}/{x}/{y}.png').addTo(map);
@@ -35,7 +35,28 @@
     }).addTo(map); */
     
     var marker = L.marker([35.148215, 126.919829]).addTo(map);
-    marker.bindPopup("Hello world! I am a popup.").openPopup();
+    marker.on('mouseover',onOver);
+    marker.on('click',onClick);
+    
+    function onOver(e){
+    	marker.bindPopup("Hello world! I am a popup.").openPopup();
+    }
+    
+    function onClick(e){
+    	console.log("클릭");
+    	location.href = './survey.jsp';
+    }
+    
+    /* var imageUrl = './images/img14.jpg',
+    	imageBounds =[[35.144719, 126.914881],[35.148919, 126.919881]];
+    
+    L.imageOverlay(imageUrl, imageBounds).addTo(map); */
+    
+    var marker2 = L.marker([35.144719, 126.914881]).addTo(map);
+    marker2.bindPopup("test2").openPopup();
+    
+    var marker3 = L.marker([35.176149, 126.905916]).addTo(map);
+    marker3.bindPopup("test3").openPopup();
     
     map.touchZoom.disable();
     map.doubleClickZoom.disable();

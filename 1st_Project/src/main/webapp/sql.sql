@@ -75,7 +75,9 @@ insert into placeinfo values ('고 홍남순 변호사 가옥' ,'5․18당시 �
 
 
 delete from placeinfo;
+
 insert into quizinfo values('no.1', '', 'puzzle', 'null', '1');
+
 --create table quizinfo(
 --	quiz varchar2(100) primary key,
 --	quiz_ex varchar2(1000) not null,
