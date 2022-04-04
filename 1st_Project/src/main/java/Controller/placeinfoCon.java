@@ -8,9 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Model.placeDAO;
 import Model.placeDTO;
+
+
 
 
 @WebServlet("/placeinfoCon")
@@ -25,13 +28,22 @@ public class placeinfoCon extends HttpServlet {
 		
 		list = dao.placeinfo(); // DB 에서 가져온 데이터값 
 		
+		
 		if(list != null) {
 			// 제대로 데이터를 가져온 상황 게임창(.jsp)에서 데이터를 사용할 수 있게 해야한다. 
+			System.out.println("데이터 받기 성공!");
+			HttpSession session = request.getSession();
+			session.setAttribute("placeinfo", list);
+			
+			response.sendRedirect("./map.jsp");
 			
 		} else {
-			// 데이터를 못받아옴 실패함 
+			// 데이터를 못받아옴 실패함
+			System.out.println("데이터를 못받았습니다. 다시 시도해주세요");
 			
+			response.sendRedirect("./main.jsp");
 		}
 	}
 
+	
 }
