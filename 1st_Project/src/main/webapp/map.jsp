@@ -24,8 +24,8 @@
     var map = L.map('mapid', {
         center: [lat, lng],
         zoom: zoom,
-        minZoom:13,
-        maxZoom:17
+        minZoom:12,
+        maxZoom:16
     });
     
     L.tileLayer('http://xdworld.vworld.kr:8080/2d/Base/201710/{z}/{x}/{y}.png').addTo(map);
@@ -36,6 +36,12 @@
     
     var marker = L.marker([35.148215, 126.919829]).addTo(map);
     marker.bindPopup("Hello world! I am a popup.").openPopup();
+    
+    var marker2 = L.marker([35.144719, 126.914881]).addTo(map);
+    marker2.bindPopup("test2").openPopup();
+    
+    var marker3 = L.marker([35.176149, 126.905916]).addTo(map);
+    marker3.bindPopup("test3").openPopup();
     
     map.touchZoom.disable();
     map.doubleClickZoom.disable();
