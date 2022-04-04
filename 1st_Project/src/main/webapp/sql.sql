@@ -39,8 +39,7 @@ create table placeinfo( --사적지정보 DB
 	longitude number(10,6), --경도
 	path varchar2(100) -- 사진경로 
 );
-<<<<<<< HEAD
-십
+
 insert into placeinfo values ('구 광주적자병원','이 병원은 5·18민주화운동 당시에는 광주적십자병원으로, 부상당한 시민과 시민군을 헌신적으로 치료하고 돌본 곳이다.', 35.144647, 126.914644, 'null');
 insert into placeinfo values ('전남대학교 정문','이곳은 한국 민주주의 역사에 찬연히 빛나는 5·18민주화운동이 시작된 곳이다.', 35.172785, 126.905227, 'null');
 insert into placeinfo values ('광주역 광장' ,'이곳은 5·18민주화운동 당시 광주시민과 계엄군 사이에 치열한 공방전이 벌어졌던 곳이다.', 35.165009, 126.908978, 'null');
@@ -73,7 +72,6 @@ insert into placeinfo values ('505보안부대 옛터' ,'이곳은 전남지역 
 insert into placeinfo values ('들불야학 옛터' ,'이곳은 ‘광천동성당’의 교리실이었으며, 1978년 들불야학이 설립되어 학교에 가지 못한 노동자들이 저녁에 공부하였던 곳이다.', 35.166244, 126.881020, 'null');
 insert into placeinfo values ('전일빌딩' ,'5․18당시 계엄군의 헬기발포 총탄흔적 발견 등의 역사적인 장소이다.', 35.148278, 126.918845, 'null');
 insert into placeinfo values ('고 홍남순 변호사 가옥' ,'5․18당시 민주주의를 쟁취하기 위해 토론과 회의를 진행했던 장소이며 구속자 석방 논의, 관련문건 작성 등을 했던 역사적인 공간이다.', 35.150957, 126.919617, 'null');
-=======
 
 insert into placeinfo values ('구 광주적십자병원','null','이 병원은 5·18민주화운동 당시에는 광주적십자병원으로, 부상당한 시민과 시민군을 헌신적으로 치료하고 돌본 곳이다.', 35.144647, 126.914644, 'null');
 insert into placeinfo values ('전남대학교 정문','null','이곳은 한국 민주주의 역사에 찬연히 빛나는 5·18민주화운동이 시작된 곳이다.', 35.172785, 126.905227, 'null');
@@ -108,13 +106,8 @@ insert into placeinfo values ('505보안부대 옛터' ,'null','이곳은 전남
 insert into placeinfo values ('들불야학 옛터' ,'null','이곳은 ‘광천동성당’의 교리실이었으며, 1978년 들불야학이 설립되어 학교에 가지 못한 노동자들이 저녁에 공부하였던 곳이다.', 35.166244, 126.881020, 'null');
 insert into placeinfo values ('전일빌딩' ,'null','5․18당시 계엄군의 헬기발포 총탄흔적 발견 등의 역사적인 장소이다.', 35.148278, 126.918845, 'null');
 insert into placeinfo values ('고 홍남순 변호사 가옥' ,'null','5․18당시 민주주의를 쟁취하기 위해 토론과 회의를 진행했던 장소이며 구속자 석방 논의, 관련문건 작성 등을 했던 역사적인 공간이다.', 35.150957, 126.919617, 'null');
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/2431.git
-
-<<<<<<< HEAD
-=======
 
 delete from USERDATA;
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/2431.git
 delete from placeinfo;
 
 insert into quizinfo values('no.1', '', 'puzzle', 'null', '1');
