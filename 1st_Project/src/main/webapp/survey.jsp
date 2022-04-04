@@ -12,7 +12,7 @@
 <body>
 	<div class="wrap">
         <div class="survey">
-        	<form action = "SurveyCon">
+        	<form action = "SurveyCon" method = "post">
         		<h2> 사전조사 </h2>
 	            <div class="ages">
 	                <h4> 나이 </h4>

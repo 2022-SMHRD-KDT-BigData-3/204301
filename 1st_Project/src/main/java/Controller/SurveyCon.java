@@ -42,7 +42,7 @@ public class SurveyCon extends HttpServlet {
 		}
 		
 		//response.sendRedirect("./main.jsp");
-		response.sendRedirect("./map.jsp");
+		response.sendRedirect("./placeinfoCon");
 	}
 
 }
