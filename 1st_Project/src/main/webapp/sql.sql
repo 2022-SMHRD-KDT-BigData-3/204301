@@ -53,7 +53,9 @@ insert into placeinfo values ('광목간 양민 학살지' ,'이곳은 5·18민�
 insert into placeinfo values ('농성광장 격전지' ,'이곳은 5·18민주화운동 당시, 5월 22일 광주시내에서 쫓겨온 계엄군이 통제선을 설치하고 농성광장의 시민군 방어선과 대치하면서 인근 주택가에 무차별 총격을 가해 무고한 시민이 희생당한 곳이다.', 35.152993, 126.885549, 'null');
 
 delete from placeinfo;
+
 insert into quizinfo values('no.1', '', 'puzzle', 'null', '1');
+
 --create table quizinfo(
 --	quiz varchar2(100) primary key,
 --	quiz_ex varchar2(1000) not null,
