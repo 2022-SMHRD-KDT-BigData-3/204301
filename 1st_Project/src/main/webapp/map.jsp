@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import = "java.util.ArrayList" %>
+<%@ page import="Model.placeDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +16,10 @@
 
 </head>
 <body>
-
+	<% 
+		ArrayList<placeDTO> placeinfo = (ArrayList<placeDTO>)session.getAttribute("placeinfo");
+	%>
+	
 <div id="mapid"></div>
 
 <script type="text/javascript">
