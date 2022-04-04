@@ -79,11 +79,11 @@
 
 	
 	function onOver(placeid, explanation, path) {
-		marker.bindPopup("<h1>" + placeid + "</h1><p>" + explanation +"</p> <img src='"+ path +"'/>").openPopup();
+		marker.bindPopup("<h1>" + placeid + "</h1><p>" + explanation +"</p> <img src='"+ path +"'/><br><a href='' style='text-decoration:none; font-size:20px;'>진행하러가기</a></br>").openPopup();
 	}
 	
 	function onClick(e) {
-		console.log("클릭");
+		console.log("클릭테스트");
 		location.href = '';
 	}
     
