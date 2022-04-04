@@ -35,7 +35,22 @@
     }).addTo(map); */
     
     var marker = L.marker([35.148215, 126.919829]).addTo(map);
-    marker.bindPopup("Hello world! I am a popup.").openPopup();
+    marker.on('mouseover',onOver);
+    marker.on('click',onClick);
+    
+    function onOver(e){
+    	marker.bindPopup("Hello world! I am a popup.").openPopup();
+    }
+    
+    function onClick(e){
+    	console.log("클릭");
+    	location.href = './survey.jsp';
+    }
+    
+    /* var imageUrl = './images/img14.jpg',
+    	imageBounds =[[35.144719, 126.914881],[35.148919, 126.919881]];
+    
+    L.imageOverlay(imageUrl, imageBounds).addTo(map); */
     
     map.touchZoom.disable();
     map.doubleClickZoom.disable();
