@@ -79,7 +79,7 @@
 	function onOver(placeid, explanation, path) {
 		marker
 				.bindPopup(
-						"<h1>" + placeid + "</h1><p>" + explanation +"</p> <img src="+ path +"/>")
+						"<h1>" + placeid + "</h1><p>" + explanation +"</p> <img src='"+ path +"''/>")
 				.openPopup();
 	}
 	
