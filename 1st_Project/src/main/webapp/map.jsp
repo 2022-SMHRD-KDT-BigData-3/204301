@@ -57,6 +57,14 @@
     
     L.imageOverlay(imageUrl, imageBounds).addTo(map); */
     
+    var markers = <%=(ArrayList<placeDTO>)session.getAttribute("placeinfo") %>;
+    
+    console.log(markers);
+    /*for(var i = 0; i < placeinfo.size(); i++){
+    	markers[i] = L.marker([placeinfo.get(i).getLatitude(), placeinfo.get(i).getLongitude())]).addTo(map);
+    	markers[i].bindPopup(placeinfo.get(i).getPlaceid).openPopup();
+    } */
+    
     var marker2 = L.marker([35.144719, 126.914881]).addTo(map);
     marker2.bindPopup("test2").openPopup();
     
