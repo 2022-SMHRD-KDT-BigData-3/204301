@@ -64,34 +64,15 @@
 		attribution:'<a href="http://content.stamen.com/dotspotting_toner_cartography_available_for_download">Stamen Toner</a>,<a href = "http://www.openstreetmap.org/">OpenStreetMap</a>,<a href = "http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 	}).addTo(map); */
 
-	/*
-	var marker = L.marker([ 35.144647, 126.914644 ]).addTo(map);
-	marker.on('mouseover', onOver);
-	marker.on('click', onClick);*/
-	/*
-	function onOver(e) {
-		marker
-				.bindPopup(
-						"<h1>구 광주적십자병원</h1><p>이 병원은 5·18민주화운동 당시에는 광주적십자병원으로, 부상당한 시민과 시민군을 헌신적으로 치료하고 돌본 곳이다.</p> <img src='./518images/구 적십자병원.jpg'/>")
-				.openPopup();
-	}*/
 	
 	function onOver(placeid, explanation, path) {
-		marker
-				.bindPopup(
-						"<h1>" + placeid + "</h1><p>" + explanation +"</p> <img src="+ path +"/>")
-				.openPopup();
+		marker.bindPopup("<h1>" + placeid + "</h1><p>" + explanation +"</p> <img src="+ path +"/>").openPopup();
 	}
 	
 	function onClick(e) {
 		console.log("클릭");
 		location.href = '';
 	}
-
-	/* var imageUrl = './images/img14.jpg',
-		imageBounds =[[35.144719, 126.914881],[35.148919, 126.919881]];
-	
-	L.imageOverlay(imageUrl, imageBounds).addTo(map); */
     
 	var rows = document.getElementById("table_body").getElementsByTagName("tr");
     console.log(rows.length);	// tbody tr 개수 = 32
@@ -110,25 +91,12 @@
       var cell_6 = cells[5].firstChild.data;		// 사진 경로
       
       var marker = L.marker([ cell_4, cell_5 ]).addTo(map);
-	  marker.on('mouseover', onOver(cell_1, cell_3, cell_6));
+	  marker.on('mousedown', onOver(cell_1, cell_3, cell_6));
 	  //marker.on('click', onClick);
     }
-
-    /* var marker2 = L.marker([35.144719, 126.914881]).addTo(map);
-    marker2.on('mouseover',onOver2);
-    marker2.on('click',onClick2);
-    function onOver2(e){
-    	marker2
-    	.bindPopup("<h1>test2</h1>")
-    	.openPopup();
-    }
-    function onClick2(e){
-    	console.log("클릭");
-    	location.href = './survey.jsp';
-    }  */
-
-    /*var marker3 = L.marker([35.176149, 126.905916]).addTo(map);
-    marker3.bindPopup("test3").openPopup();*/
+    
+    document.querySelector("#table_body").click();
+    
     
     map.touchZoom.disable();
     map.doubleClickZoom.disable();
