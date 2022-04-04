@@ -15,7 +15,8 @@
 	%>
 	
 	<div id = "wrapper">
-		<button type = "button" onClick="location.href='survey.jsp'"> 게임시작 </button>			
+		<button type = "button" onClick="location.href='survey.jsp'"> 게임시작 </button>		
+			
 	</div>
 		
 </body>
