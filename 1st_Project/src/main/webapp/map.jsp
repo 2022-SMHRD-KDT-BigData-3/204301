@@ -60,7 +60,6 @@
     
     L.imageOverlay(imageUrl, imageBounds).addTo(map); */
     
-<<<<<<< HEAD
     var markers = <%=(ArrayList<placeDTO>)session.getAttribute("placeinfo") %>;
     
     console.log(markers);
@@ -72,7 +71,7 @@
     var marker2 = L.marker([35.144719, 126.914881]).addTo(map);
     marker2.bindPopup("test2").openPopup();
     
-=======
+
     /* var marker2 = L.marker([35.144719, 126.914881]).addTo(map);
     marker2.on('mouseover',onOver2);
     marker2.on('click',onClick2);
@@ -86,7 +85,6 @@
     	location.href = './survey.jsp';
     }  */
    
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/2431.git
     var marker3 = L.marker([35.176149, 126.905916]).addTo(map);
     marker3.bindPopup("test3").openPopup();
     
