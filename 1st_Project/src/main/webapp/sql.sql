@@ -39,7 +39,6 @@ create table placeinfo( --사적지정보 DB
 	longitude number(10,6), --경도
 	path varchar2(100) -- 사진경로 
 );
-
 insert into placeinfo values ('구 광주적십자병원','null','이 병원은 5·18민주화운동 당시에는 광주적십자병원으로, 부상당한 시민과 시민군을 헌신적으로 치료하고 돌본 곳이다.', 35.144647, 126.914644, 'null');
 insert into placeinfo values ('전남대학교 정문','null','이곳은 한국 민주주의 역사에 찬연히 빛나는 5·18민주화운동이 시작된 곳이다.', 35.172785, 126.905227, 'null');
 insert into placeinfo values ('광주역 광장' ,'null','이곳은 5·18민주화운동 당시 광주시민과 계엄군 사이에 치열한 공방전이 벌어졌던 곳이다.', 35.165009, 126.908978, 'null');
