@@ -33,11 +33,15 @@ public class placeinfoCon extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("placeinfo", list);
 			
+			response.sendRedirect("./map.jsp");
+			
 		} else {
 			// 데이터를 못받아옴 실패함 
 			System.out.println("Fail Select PlaceInfo..");
 			
+			response.sendRedirect("./main.jsp");
 		}
+		
 	}
 
 }
