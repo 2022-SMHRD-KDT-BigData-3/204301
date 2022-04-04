@@ -73,8 +73,8 @@ insert into placeinfo values ('들불야학 옛터' ,'null','이곳은 ‘광천
 insert into placeinfo values ('전일빌딩' ,'null','5․18당시 계엄군의 헬기발포 총탄흔적 발견 등의 역사적인 장소이다.', 35.148278, 126.918845, './518images/전일빌딩.jpg');
 insert into placeinfo values ('고 홍남순 변호사 가옥' ,'null','5․18당시 민주주의를 쟁취하기 위해 토론과 회의를 진행했던 장소이며 구속자 석방 논의, 관련문건 작성 등을 했던 역사적인 공간이다.', 35.150957, 126.919617, './518images/고 홍남순 변호사 가옥.jpg');
 
-
 update placeinfo set path = './518images/518 민주광장.jpg';
+update placeinfo set path = './518images/구 시외버스공용터미널 일대.jpg';
 
 delete from USERDATA;
 delete from placeinfo;
