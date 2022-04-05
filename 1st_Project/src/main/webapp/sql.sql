@@ -126,7 +126,7 @@ insert into quizinfo values ('','','','null','남동성당');
 insert into quizinfo values ('','','','null','505보안부대 옛터');
 insert into quizinfo values ('','','','null','들불야학 옛터');
 insert into quizinfo values ('','','','null','전일빌딩');
-insert into quizinfo values ('','','','','고 홍남순 변호사 가옥');
+insert into quizinfo values ('','','','null','고 홍남순 변호사 가옥');
 
 
 create table result(
