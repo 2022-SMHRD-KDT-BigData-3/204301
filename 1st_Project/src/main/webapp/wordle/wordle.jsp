@@ -1,5 +1,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="Model.wordDTO"%>
+<%@page import="Model.wordDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,11 +11,29 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<style>
+	table{ display: none;}
+</style>
 </head>
 <body>
 	<% 
-		ArrayList<wordDTO> word = (ArrayList<wordDTO>)session.getAttribute("word");
+		//ArrayList<wordDTO> word = (ArrayList<wordDTO>)session.getAttribute("word");
+		wordDAO dao = new wordDAO();
+		ArrayList<wordDTO> word = dao.wordquiz();
 	%>
+
+	<table>
+		<tr>
+			<th> word </th>
+		</tr>
+		<tbody id = "table_body">
+		<% for (int i = 0; i < word.size(); i++) { %>
+			<tr>
+				<td><%=word.get(i).getWord()%></td>
+			<% } %>
+			</tr>
+		</tbody>
+	</table>
 
 <h1> Wordle Clone </h1>
     
@@ -63,14 +82,22 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script type="text/javascript">
 
+var rows = document.getElementById("table_body").getElementsByTagName("tr");
+console.log(rows.length);	// tbody tr 개수 = 50
+
+let word1 = "<%=word.get(1).getWord()%>";
+word2 = [word1];
+console.log(word2);
+	
 const NUMBER_OF_GUESSES = 6;
 let guessesRemaining = NUMBER_OF_GUESSES;
 let currentGuess = [];
 let nextLetter = 0;
-let WORDS = ['ㄱㅏㄴㄷㅏ','ㅅㅏㄴㄷㅏ'];
+let WORDS = word2;
 let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
 //let rightGuessString= ['ㄱㅏㄴㄷㅏ','ㅅㅜㅁㄷㅏ'];
 
+//console.log(word);
 console.log(rightGuessString);
 
 function initBoard() {
@@ -80,7 +107,7 @@ function initBoard() {
         let row = document.createElement("div")
         row.className = "letter-row"
         
-        for (let j = 0; j < 5; j++) {
+        for (let j = 0; j < rightGuessString.length; j++) {
             let box = document.createElement("div")
             box.className = "letter-box"
             row.appendChild(box)
@@ -126,7 +153,7 @@ function checkGuess () {
         guessString += val
     }
 
-    if (guessString.length != 5) {
+    if (guessString.length != rightGuessString.length) {
         toastr.error("Not enough letters!")
         return
     }
@@ -137,7 +164,7 @@ function checkGuess () {
     }
 
     
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < rightGuessString.length; i++) {
         let letterColor = ''
         let box = row.children[i]
         let letter = currentGuess[i]
@@ -188,7 +215,7 @@ function checkGuess () {
 }
 
 function insertLetter (pressedKey) {
-    if (nextLetter === 5) {
+    if (nextLetter === rightGuessString.length) {
         return
     }
     pressedKey = pressedKey.toLowerCase()
