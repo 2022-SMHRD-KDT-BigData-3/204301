@@ -72,16 +72,16 @@ header .header-menu .nav-item{
 	    <div class="inner">
 	      <ul class="header-menu">
 	        <li class="nav-item"> 
-	          <a href="./main.html"> HOME </a>
+	          <a href="./main.jsp"> HOME </a>
 	        </li>
 	        <li class="nav-item">
-	          <a href="./survey.html"> GAME </a>
+	          <a href="./survey.jsp"> GAME </a>
 	        </li>
 	        <li class="nav-item">
-	          <a href="./statistics.html"> STATISTICS </a>
+	          <a href="./statistics.jsp"> STATISTICS </a>
 	        </li>
 	        <li class="nav-item">
-	          <a href="./historic.html"> HISTORIC SITE </a>
+	          <a href="./historic.jsp"> HISTORIC SITE </a>
 	        </li>
 	      </ul>
     	</div>

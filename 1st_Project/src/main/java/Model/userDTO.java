@@ -21,7 +21,8 @@ public class userDTO {
 		this.preletter = preletter;
 	}
 
-	public userDTO(String nextletter) {
+	public userDTO(String nickname, String nextletter) {
+		this.nickname = nickname;
 		this.nextletter = nextletter;
 	}
 

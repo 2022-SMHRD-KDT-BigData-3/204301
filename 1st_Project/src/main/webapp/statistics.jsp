@@ -1,4 +1,3 @@
-<%@page import="Model.userDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,26 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <style>
 * {
   margin: 0;
   padding: 0;
-}
-
-.bg-img{
-  background-image: url("./img/bgimg3.png");
-  height: 900px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-body {
-  color: #333;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: 'Nanum Gothic', sans-serif;
-  overflow: hidden;
 }
 
 /* COMMON */
@@ -83,13 +67,8 @@ header .header-menu .nav-item{
   display: inline-block;
 }
 </style>
-
 </head>
 <body>
-	<% 
-		userDTO info = (userDTO)session.getAttribute("info");
-	%>
-
 	<header class="header">
 		<div class="inner">
 			<ul class="header-menu">
@@ -108,7 +87,7 @@ header .header-menu .nav-item{
 			</ul>
 		</div>
 	</header>
-
-	<div class="bg-img"></div>
+	
+	
 </body>
 </html>

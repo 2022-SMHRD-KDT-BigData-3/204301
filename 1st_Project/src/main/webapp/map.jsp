@@ -123,6 +123,6 @@
     map.keyboard.disable();
     //map.removeControl(map.zoomControl);
   </script>
-  <a href="" id="close"> 게임 종료 </a>
+  <a href="./survey.jsp" id="close"> 게임 종료 </a>
 </body>
 </html>
