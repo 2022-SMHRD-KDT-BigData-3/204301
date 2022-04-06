@@ -63,7 +63,7 @@ main {
   background-size: cover;
 }
 
-.list_wrap .item1 .image { background-image: url("../518images/구\ 적십자병원.jpg"); }
+/* .list_wrap .item1 .image { background-image: url("../518images/구\ 적십자병원.jpg"); }
 .list_wrap .item2 .image { background-image: url("../518images/518\ 구묘지.jpg"); }
 .list_wrap .item3 .image { background-image: url("../518images/518\ 민주광장.jpg"); }
 .list_wrap .item4 .image { background-image: url("../518images/518최초발포지.jpg"); }
@@ -75,7 +75,7 @@ main {
 .list_wrap .item10 .image { background-image: url("../518images/광주공원광장-시민군\ 편성지.jpg"); }
 .list_wrap .item11 .image { background-image: url("../518images/광주교도소.jpg"); }
 .list_wrap .item12 .image { background-image: url("../518images/광주기독병원.jpg"); }
- 
+  */
 .list_wrap .item .cont {
   padding: 12px;
 }

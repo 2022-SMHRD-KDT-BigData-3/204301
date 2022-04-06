@@ -96,108 +96,25 @@ header .header-menu .nav-item{
       <input type="radio" name="slide-radios" class = "slide-radio" id = "slide-radio5">
       <input type="radio" name="slide-radios" class = "slide-radio" id = "slide-radio6">
 
-      <ul class = "slide" id = "slide1">
-        <li class = "item item1">
-          <div class="image"> 사진 </div>
-          <div class="cont">
-            <Strong> 구 광주적십자병원 </Strong>
-            <p> 이 병원은 5·18민주화운동 당시에는 광주적십자병원으로, 부상당한 시민과 시민군을 헌신적으로 치료하고 돌본 곳이다. </p>
-          </div>
-        </li>
-        <li class = "item item2">
-          <div class="image"> 사진 </div>
-          <div class="cont">
-            <Strong> 사적지 이름 </Strong>
-            <p> 사적지 설명 </p>
-          </div>
-        </li>
-        <li class = "item item3">
-          <div class="image"> 사진 </div>
-          <div class="cont">
-            <Strong> 사적지 이름 </Strong>
-            <p> 사적지 설명 </p>
-          </div>
-        </li>
-        <li class = "item item4">
-          <div class="image"> 사진 </div>
-          <div class="cont">
-            <Strong> 사적지 이름 </Strong>
-            <p> 사적지 설명 </p>
-          </div>
-        </li>
-        <li class = "item item5">
-          <div class="image"> 사진 </div>
-          <div class="cont">
-            <Strong> 사적지 이름 </Strong>
-            <p> 사적지 설명 </p>
-          </div>
-        </li>
-        <li class = "item item6">
-          <div class="image"> 사진 </div>
-          <div class="cont">
-            <Strong> 사적지 이름 </Strong>
-            <p> 사적지 설명 </p>
-          </div>
-        </li>
-      </ul>
-
-      <ul class = "slide" id = "slide2">
-        <li class = "item item7">
-          <div class="image"> 사진 </div>
-          <div class="cont">
-            <Strong> 사적지 이름 </Strong>
-            <p> 사적지 설명 </p>
-          </div>
-        </li>
-        <li class = "item item8">
-          <div class="image"> 사진 </div>
-          <div class="cont">
-            <Strong> 사적지 이름 </Strong>
-            <p> 사적지 설명 </p>
-          </div>
-        </li>
-        <li class = "item item9">
-          <div class="image"> 사진 </div>
-          <div class="cont">
-            <Strong> 사적지 이름 </Strong>
-            <p> 사적지 설명 </p>
-          </div>
-        </li>
-        <li class = "item item10">
-          <div class="image"> 사진 </div>
-          <div class="cont">
-            <Strong> 사적지 이름 </Strong>
-            <p> 사적지 설명 </p>
-          </div>
-        </li>
-        <li class = "item item11">
-          <div class="image"> 사진 </div>
-          <div class="cont">
-            <Strong> 사적지 이름 </Strong>
-            <p> 사적지 설명 </p>
-          </div>
-        </li>
-        <li class = "item item12">
-          <div class="image"> 사진 </div>
-          <div class="cont">
-            <Strong> 사적지 이름 </Strong>
-            <p> 사적지 설명 </p>
-          </div>
-        </li>
-      </ul>
-	
-	  <ul class = "slide" id = "slide3">
-	  	<% for(int i = 0; i < 6; i++){ %>
-	  		<% System.out.println(placeinfo.get(i).getPath()); %>
-	  		<li class = <%= "item item" + (13+i) %>>
-	  			<div class="image" style = <%="background-image:url(" + placeinfo.get(i).getPath() +");" %> > 사진 </div>
-	  			<div class="cont">
-	  				<Strong> <%= placeinfo.get(i).getPlaceid() %></Strong>
-	  				<p> <%= placeinfo.get(i).getExplanation() %> </p>
-	  			</div>
-	  		</li>
+	  <% for(int j = 0; j < 6; j++) { %>
+		  <ul class = "slide" id = <%= "slide"+(j+1) %>>
+		  <% 
+		  	int num = (j*6)+6;
+		  	if(j == 5){
+		  		num = 32;
+		  	}
+		  %>
+		  	<% for(int i = (j*6); i < num; i++) { %>
+		  		<li class = <%= "item item" + (13+i) %>>
+		  			<div class="image" style = <%="background-image:url(" + placeinfo.get(i).getPath() +");" %> > 사진 </div>
+		  			<div class="cont">
+		  				<Strong> <%= placeinfo.get(i).getPlaceid() %></Strong>
+		  				<p> <%= placeinfo.get(i).getExplanation() %> </p>
+		  			</div>
+		  		</li>
+		   <% } %>
+		   </ul>
 	  	<% } %>
-	  </ul>
       <div class="bullets">
         <label for="slide-radio1">&nbsp;</label>
         <label for="slide-radio2">&nbsp;</label>
