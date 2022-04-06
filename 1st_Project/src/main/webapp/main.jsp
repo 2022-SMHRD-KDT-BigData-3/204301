@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <title>Insert title here</title>
 <style>
 .bg-img{
@@ -13,7 +14,19 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+=======
 
+<!-- <style>
+	body{
+		height : 100%;
+		width : 100%;
+   		background-image: url("./img/bg-masthead.jpg");
+   		background-repeat: no -repaet;
+   		background-size : cover;
+   		}
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/2431.git
+
+<<<<<<< HEAD
 body {
   color: #333;
   font-size: 16px;
@@ -70,6 +83,11 @@ header .header-menu .nav-item{
 }
 </style>
 
+=======
+</style> -->
+<link rel="stylesheet" href="css/common.css"/>
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/2431.git
 </head>
 <body>
 	<% 
@@ -95,7 +113,12 @@ header .header-menu .nav-item{
 		</div>
 	</header>
 
+<<<<<<< HEAD
 	<div class="bg-img"></div>
+=======
+    <!--     <img src="./imgs/img3.jpg" alt="" id="bg_img">		 -->	
+	</div>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/2431.git
 
 </body>
 </html>
