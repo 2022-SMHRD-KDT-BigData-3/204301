@@ -1,17 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-}
-
 /* COMMON */
 .inner {
   width: 1100px;
@@ -87,7 +82,5 @@ header .header-menu .nav-item{
 			</ul>
 		</div>
 	</header>
-	
-	
 </body>
 </html>
