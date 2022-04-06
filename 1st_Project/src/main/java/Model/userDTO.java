@@ -7,6 +7,7 @@ public class userDTO {
 	public String city;
 	public String preletter;
 	public String nextletter;
+	public String review;
 	
 	public userDTO(String nick, String age, String city, String preletter) {
 		this.nickname = nick;
@@ -21,9 +22,23 @@ public class userDTO {
 		this.preletter = preletter;
 	}
 
-	public userDTO(String nickname, String nextletter) {
+	public userDTO(String nickname, String nextletter, int review) {
 		this.nickname = nickname;
 		this.nextletter = nextletter;
+		
+		if(review == 100) {
+			this.review = "매우 도움이 됐다.";
+		} else if(review == 75) {
+			this.review = "어느정도 도움이 됐다.";
+		} else if(review == 50) {
+			this.review = "보통이다.";
+		} else if(review == 25) {
+			this.review = "별로 도움이 안됐다.";
+		} else {
+			this.review = "전혀 도움이 안됐다.";
+		}
+		
+		
 	}
 
 	public String getNickname() {
@@ -65,7 +80,13 @@ public class userDTO {
 	public void setNextletter(String nextletter) {
 		this.nextletter = nextletter;
 	}
-	
-	
+
+	public String getReview() {
+		return review;
+	}
+
+	public void setReview(String review) {
+		this.review = review;
+	}
 	
 }

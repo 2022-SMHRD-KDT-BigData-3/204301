@@ -106,12 +106,12 @@ select::-ms-expand {
 		    </div>
 		    <input type = "text" name = "user_id" value = <%= info.getNickname() %> style = "display: none;" >
 	    	<div>
-	      		<h4> 뭐라하지 </h4>
-	        	<label><input type="radio" name="archive" value="100"> 매우 도움이 됐다. </label> <br>
-	        	<label><input type="radio" name="archive" value="75"> 어느정도 도움이 됐다. </label> <br>
-	        	<label><input type="radio" name="archive" value="50"> 보통이다. </label> <br>
-	        	<label><input type="radio" name="archive" value="25"> 별로 도움이 안됐다. </label> <br>
-	        	<label><input type="radio" name="archive" value="0"> 전혀 도움이 안됐다. </label> <br>
+	      		<h4> 게임 후기 </h4>
+	        	<label><input type="radio" name="review" value=100> 매우 도움이 됐다. </label> <br>
+	        	<label><input type="radio" name="review" value=75> 어느정도 도움이 됐다. </label> <br>
+	        	<label><input type="radio" name="review" value=50> 보통이다. </label> <br>
+	        	<label><input type="radio" name="review" value=25> 별로 도움이 안됐다. </label> <br>
+	        	<label><input type="radio" name="review" value=0> 전혀 도움이 안됐다. </label> <br>
 	        </div>
 		    <div class="letter">
 		        <h4> 게임 후 5.18하면 떠오르는 단어 혹은 문장 </h4>
