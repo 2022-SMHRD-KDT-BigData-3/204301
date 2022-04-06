@@ -1,6 +1,6 @@
 select * from tabs;
 select * from userdata;
-select * from QUIZINFO;
+
 select * from placeinfo;
 select * from result;
 drop table quizinfo cascade constraint;
@@ -43,7 +43,7 @@ create table placeinfo( --사적지정보 DB
 
 
 insert into placeinfo values ('구 광주적십자병원','null','이 병원은 5·18민주화운동 당시에는 광주적십자병원으로, 부상당한 시민과 시민군을 헌신적으로 치료하고 돌본 곳이다.', 35.144647, 126.914644, './518images/구적십자병원.jpg');
-insert into placeinfo values ('전남대학교 정문','null','이곳은 한국 민주주의 역사에 찬연히 빛나는 5·18민주화운동이 시작된 곳이다.', 35.172785, 126.905227, './518images/전남대학교.jpg');
+insert into placeinfo values ('전남대학교 정문','Q1','이곳은 한국 민주주의 역사에 찬연히 빛나는 5·18민주화운동이 시작된 곳이다.', 35.172785, 126.905227, './518images/전남대학교.jpg');
 insert into placeinfo values ('광주역 광장' ,'null','이곳은 5·18민주화운동 당시 광주시민과 계엄군 사이에 치열한 공방전이 벌어졌던 곳이다.', 35.165009, 126.908978, './518images/광주역광장.jpg');
 insert into placeinfo values ('구 시외버스 공용터미널 일대' ,'null','여기는 5·18민주화운동 당시 시외버스 공용터미널이 있던 곳으로, 전남 일원을 잇는 교통 중심지였다. 5월 19일 오후 이곳에서 계엄군의 과잉진압을 규탄하는 대규모 시위가 있었다.', 35.155125, 126.913111, './518images/구시외버스공용터미널일대.jpg');
 insert into placeinfo values ('금남로(구 카톨릭센터)' ,'null','이곳 금남로는 광주시민들이 계엄군에 맞서 5·18민주화운동 기간 중 연일 격렬하게 저항했던 항쟁의 거리다.', 35.149522, 126.916765, './518images/금남로(구가톨릭센터).jpg');
@@ -75,6 +75,7 @@ insert into placeinfo values ('들불야학 옛터' ,'null','이곳은 ‘광천
 insert into placeinfo values ('전일빌딩' ,'null','5․18당시 계엄군의 헬기발포 총탄흔적 발견 등의 역사적인 장소이다.', 35.148278, 126.918845, './518images/전일빌딩.jpg');
 insert into placeinfo values ('고 홍남순 변호사 가옥' ,'null','5․18당시 민주주의를 쟁취하기 위해 토론과 회의를 진행했던 장소이며 구속자 석방 논의, 관련문건 작성 등을 했던 역사적인 공간이다.', 35.150957, 126.919617, './518images/고홍남순변호사가옥.jpg');
 
+update placeinfo set quiz = 'Q1' where placeid='전남대학교 정문';
 create table placeex (
 	ex varchar2(1000)
 );
@@ -156,8 +157,12 @@ create table quizinfo(
 	quiz varchar2(100) primary key,
 	quiz_ex varchar2(1000) not null,
 	quiz_type varchar2(10),
-	answer varchar2(100)
+	answer varchar2(100),
+	placeid varchar2(100),
+	constraint placeid_fk foreign key(placeid) references placeinfo(placeid)
 );
+select * from QUIZINFO;
+insert into quizinfo values ('Q1','단어넣기','wordle','ㅊㅜㅇㄷㅗㄹ','전남대학교 정문');
 
 insert into quizinfo values ('','','','null','구 광주적자병원');
 insert into quizinfo values ('','','','null','전남대학교 정문');
