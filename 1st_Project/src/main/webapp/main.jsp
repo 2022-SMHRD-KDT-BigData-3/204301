@@ -5,28 +5,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<<<<<<< HEAD
 <title>Insert title here</title>
 <style>
 .bg-img{
-  background-image: url("./img/img3.png");
+  background-image: url("./img/bgimg3.png");
   height: 850px;
   background-repeat: no-repeat;
   background-size: cover;
 }
-=======
 
-<!-- <style>
-	body{
-		height : 100%;
-		width : 100%;
-   		background-image: url("./img/bg-masthead.jpg");
-   		background-repeat: no -repaet;
-   		background-size : cover;
-   		}
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/2431.git
-
-<<<<<<< HEAD
 body {
   color: #333;
   font-size: 16px;
@@ -69,11 +56,21 @@ header > .inner {
   height: 80px;
 }
 
+header > .inner .logo {
+	background-image: url("./img/logo.png");
+    border: 0;
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: inherit;
+    padding: 0 1.5em;
+}
+
 header .header-menu {
   bottom: 0;
   right: 0;
   z-index: 1;
   text-align: center;
+  background-color: red;
 }
 
 header .header-menu .nav-item{
@@ -83,11 +80,6 @@ header .header-menu .nav-item{
 }
 </style>
 
-=======
-</style> -->
-<link rel="stylesheet" href="css/common.css"/>
-
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/2431.git
 </head>
 <body>
 	<% 
@@ -113,12 +105,6 @@ header .header-menu .nav-item{
 		</div>
 	</header>
 
-<<<<<<< HEAD
 	<div class="bg-img"></div>
-=======
-    <!--     <img src="./imgs/img3.jpg" alt="" id="bg_img">		 -->	
-	</div>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/2431.git
-
 </body>
 </html>
