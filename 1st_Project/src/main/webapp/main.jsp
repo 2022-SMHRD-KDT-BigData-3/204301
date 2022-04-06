@@ -5,9 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 
-<style>
+<!-- <style>
 	body{
 		height : 100%;
 		width : 100%;
@@ -16,7 +15,7 @@
    		background-size : cover;
    		}
 
-</style>
+</style> -->
 <link rel="stylesheet" href="css/common.css"/>
 
 </head>
@@ -33,7 +32,7 @@
         </div>
         <button type = "button" class = "btn" onClick="location.href='survey.jsp'"> 게임시작 </button>	
 
-        <img src="./imgs/img3.jpg" alt="" id="bg_img">			
+    <!--     <img src="./imgs/img3.jpg" alt="" id="bg_img">		 -->	
 	</div>
 
 </body>

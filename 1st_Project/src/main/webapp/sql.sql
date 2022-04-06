@@ -73,6 +73,68 @@ insert into placeinfo values ('들불야학 옛터' ,'null','이곳은 ‘광천
 insert into placeinfo values ('전일빌딩' ,'null','5․18당시 계엄군의 헬기발포 총탄흔적 발견 등의 역사적인 장소이다.', 35.148278, 126.918845, './518images/전일빌딩.jpg');
 insert into placeinfo values ('고 홍남순 변호사 가옥' ,'null','5․18당시 민주주의를 쟁취하기 위해 토론과 회의를 진행했던 장소이며 구속자 석방 논의, 관련문건 작성 등을 했던 역사적인 공간이다.', 35.150957, 126.919617, './518images/고 홍남순 변호사 가옥.jpg');
 
+create table placeex (
+	ex varchar2(1000)
+);
+select * from placeex;
+
+create table wordquiz(
+	word varchar2(50)
+);
+drop table wordquiz;
+select * from wordquiz;
+insert into wordquiz values ('ㅎ ㅏ ㄱ ㅅ ㅐ ㅇ');
+insert into wordquiz values ('ㅊ ㅜ ㅇ ㄷ ㅗ ㄹ');
+insert into wordquiz values ('ㅇ ㅗ ㅏ ㅇ ㄹ ㅐ');
+insert into wordquiz values ('ㅇ ㅣ ㄷ ㅗ ㅇ ㄹ ㅗ');
+insert into wordquiz values ('ㅇ ㅛ ㅊ ㅜ ㅇ ㅈ ㅣ');
+insert into wordquiz values ('ㅊ ㅜ ㄹ ㄱ ㅜ');
+insert into wordquiz values ('ㅈ ㅣ ㅂ ㅎ ㅏ ㅂ');
+insert into wordquiz values ('ㅈ ㅓ ㄴ ㅍ ㅏ');
+insert into wordquiz values ('ㅎ ㅐ ㅇ ㅈ ㅣ ㄴ');
+insert into wordquiz values ('ㅎ ㅏ ㅇ ㅈ ㅓ ㄴ');
+insert into wordquiz values ('ㅎ ㅏ ㄱ ㅅ ㅏ ㄹ');
+insert into wordquiz values ('ㅎ ㅐ ㅇ ㅈ ㅓ ㅇ');
+insert into wordquiz values ('ㅂ ㅜ ㄴ ㅅ ㅜ ㄷ ㅐ');
+insert into wordquiz values ('ㅎ ㅗ ㅐ ㅅ ㅂ ㅜ ㄹ');
+insert into wordquiz values ('ㅅ ㅣ ㄱ ㅖ ㅌ ㅏ ㅂ');
+insert into wordquiz values ('ㄱ ㅗ ㅏ ㅇ ㅈ ㅏ ㅇ');
+insert into wordquiz values ('ㄴ ㅜ ㄴ ㅁ ㅜ ㄹ');
+insert into wordquiz values ('ㅊ ㅜ ㅁ ㅗ');
+insert into wordquiz values ('ㄱ ㅕㄹ ㅇ ㅡ ㅣ');
+insert into wordquiz values ('ㅊ ㅓ ㅇ ㄴ ㅕ ㄴ');
+insert into wordquiz values ('ㅇ ㅗ ㅐ ㄱ ㅗ ㄱ');
+insert into wordquiz values ('ㄱ ㅓ ㅈ ㅣ ㅅ');
+insert into wordquiz values ('ㅇ ㅓ ㄴ ㄹ ㅗ ㄴ');
+insert into wordquiz values ('ㅎ ㅓ ㄴ ㅎ ㅕ ㄹ');
+insert into wordquiz values ('ㅎ ㅡ ㅣ ㅅ ㅐ ㅇ');
+insert into wordquiz values ('ㅎ ㅓ ㄴ ㅅ ㅣ ㄴ');
+insert into wordquiz values ('ㅁ ㅜ ㅈ ㅏ ㅂ ㅣ');
+insert into wordquiz values ('ㅍ ㅗ ㄱ ㄹ ㅕ ㄱ');
+insert into wordquiz values ('ㅅ ㅣ ㅁ ㅣ ㄴ ㄱ ㅜ ㄴ');
+insert into wordquiz values ('ㅁ ㅣ ㄴ ㅣ ㅂ ㅓ ㅅ ㅡ');
+insert into wordquiz values ('ㅇ ㅕ ㄱ ㅗ ㅅ ㅐ ㅇ');
+insert into wordquiz values ('ㅇ ㅓ ㄹ ㅣ ㄴ ㅇ ㅣ');
+insert into wordquiz values ('ㅇ ㅗ ㅇ ㅣ ㄴ ㅅ ㅏ ㄱ ㅕ ㄱ');
+insert into wordquiz values ('ㅈ ㅜ ㅇ ㅈ ㅐ');
+insert into wordquiz values ('ㅎ ㅕ ㅂ ㅅ ㅏ ㅇ');
+insert into wordquiz values ('ㅈ ㅜ ㄱ ㅇ ㅡ ㅁ ㅇ ㅡ ㅣ ㅎ ㅐ ㅇ ㅈ ㅣ ㄴ');
+insert into wordquiz values ('ㅇ ㅜ ㄴ ㅈ ㅓ ㄴ ㄱ ㅣ ㅅ ㅏ');
+insert into wordquiz values ('ㄴ ㅏ ㄴ ㅜ ㅁ');
+insert into wordquiz values ('ㅅ ㅣ ㅈ ㅏ ㅇ');
+insert into wordquiz values ('ㅈ ㅜ ㅁ ㅓ ㄱ ㅂ ㅏ ㅂ');
+insert into wordquiz values ('ㅈ ㅏ ㅇ ㄱ ㅏ ㅂ ㅊ ㅏ');
+insert into wordquiz values ('ㄱ ㅛ ㄷ ㅗ ㅅ ㅗ');
+insert into wordquiz values ('ㅇ ㅏ ㄴ ㅅ ㅣ ㄱ ㅊ ㅓ');
+insert into wordquiz values ('ㄱ ㅣ ㄴ ㅕ ㅁ ㅅ ㅓ ㅇ ㄷ ㅏ ㅇ');
+insert into wordquiz values ('ㄷ ㅡ ㄹ ㅂ ㅜ ㄹ');
+insert into wordquiz values ('ㅎ ㅔ ㄹ ㄱ ㅣ');
+insert into wordquiz values ('ㅂ ㅏ ㄹ ㅍ ㅗ');
+insert into wordquiz values ('ㅊ ㅗ ㅇ ㅌ ㅏ ㄴ');
+insert into wordquiz values ('ㅎ ㅡ ㄴ ㅈ ㅓ ㄱ');
+insert into wordquiz values ('ㅁ ㅜ ㄱ ㅣ ㅈ ㅣ ㅇ ㅇ ㅕ ㄱ');
+
+
 update placeinfo set path = './518images/518 민주광장.jpg';
 update placeinfo set path = './518images/구 시외버스공용터미널 일대.jpg';
 
@@ -141,4 +203,6 @@ create table result(
 	constraint result_quiz_fk foreign key(quiz) references quizinfo(quiz),
 	constraint quiz_set_ck check(quiz_set in('true','false'))
 );
+
+
 

@@ -55,7 +55,7 @@
 	            	<input type="text" name="prevletter" id="" placeholder="5.18하면 떠오르는 단어 혹은 문장"> 
 	            </div>
 	            <div class="submit">
-	                <input type="submit" value="submit">
+	                <input type="submit" value="제출">
 	            </div>
         	</form>
         </div>
