@@ -95,10 +95,39 @@ create table quizinfo(
 	answer varchar2(100)
 );
 
-insert into quizinfo values ('','','','null');
-insert into quizinfo values ('','','','null');
-insert into quizinfo values ('','','','null');
-insert into quizinfo values ('','','','null');
+insert into quizinfo values ('','','','null','구 광주적자병원');
+insert into quizinfo values ('','','','null','전남대학교 정문');
+insert into quizinfo values ('','','','null','광주역 광장');
+insert into quizinfo values ('','','','null','구 시외버스 공용터미널 일대');
+insert into quizinfo values ('','','','null','금남로(구 카톨릭센터)');
+insert into quizinfo values ('','','','null','구 전남도청');
+insert into quizinfo values ('','','','null','518 민주 광장');
+insert into quizinfo values ('','','','null','상무관');
+insert into quizinfo values ('','','','null','조선대학교');
+insert into quizinfo values ('','','','null','배고픈 다리 일대');
+insert into quizinfo values ('','','','null','주남마을 인근 양민학살지');
+insert into quizinfo values ('','','','null','광목간 양민 학살지');
+insert into quizinfo values ('','','','null','농성광장 격전지');
+insert into quizinfo values ('','','','null','광주YMCA');
+insert into quizinfo values ('','','','null','광주YWCA 옛 터');
+insert into quizinfo values ('','','','null','광주MBC 옛터');
+insert into quizinfo values ('','','','null','녹두서점 옛터');
+insert into quizinfo values ('','','','null','전남대학교 병원');
+insert into quizinfo values ('','','','null','광주기독병원');
+insert into quizinfo values ('','','','null','상무대 옛터');
+insert into quizinfo values ('','','','null','무등경기장 정문');
+insert into quizinfo values ('','','','null','양동시장');
+insert into quizinfo values ('','','','null','광주공원광장-시민군 편성지');
+insert into quizinfo values ('','','','null','5·18 최초발포지');
+insert into quizinfo values ('','','','null','광주교도소');
+insert into quizinfo values ('','','','null','국군광주병원');
+insert into quizinfo values ('','','','null','5·18 구묘지');
+insert into quizinfo values ('','','','null','남동성당');
+insert into quizinfo values ('','','','null','505보안부대 옛터');
+insert into quizinfo values ('','','','null','들불야학 옛터');
+insert into quizinfo values ('','','','null','전일빌딩');
+insert into quizinfo values ('','','','null','고 홍남순 변호사 가옥');
+
 
 create table result(
 	nickname varchar2(100),
