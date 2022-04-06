@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -91,4 +91,29 @@ h2 {
   padding: 0px 20px;
   border: 1px solid lightgray;
   outline: none;
+} */
+
+body{
+    background-color: beige;
+}
+form{
+      /* Just to center the form on the page */
+  margin: 0 auto;
+  margin-top: 10%;
+  width: 500px;
+
+  /* To see the limits of the form */
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+div{
+    margin: 20px;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
 }
