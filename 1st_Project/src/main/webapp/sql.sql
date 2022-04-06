@@ -17,9 +17,10 @@ create table userdata(
    city varchar2(20),
    prevletter varchar2(50),
    nextletter varchar2(50),
+   review varchar2(100),
    constraint age_ck check(age in ('10대','20대','30대','40대','50대','60대이상'))
 );
-
+drop table userdata cascade constraint;
 
 --create table placeinfo(
 --	placeid varchar2(100) primary key,
@@ -204,6 +205,8 @@ create table result(
 	constraint result_quiz_fk foreign key(quiz) references quizinfo(quiz),
 	constraint quiz_set_ck check(quiz_set in('true','false'))
 );
+
+
 
 
 
