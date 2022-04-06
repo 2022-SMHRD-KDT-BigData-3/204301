@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import = "java.util.ArrayList" %>
 <%@ page import="Model.placeDTO"%>
+<%@ page import="Model.placeDAO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +32,9 @@
 </head>
 <body>
 	<% 
-		ArrayList<placeDTO> placeinfo = (ArrayList<placeDTO>)session.getAttribute("placeinfo");
+		placeDAO dao = new placeDAO();
+		ArrayList<placeDTO> placeinfo = dao.placeinfo();
+		//ArrayList<placeDTO> placeinfo = (ArrayList<placeDTO>)session.getAttribute("placeinfo");
 	%>
 
 	<table>

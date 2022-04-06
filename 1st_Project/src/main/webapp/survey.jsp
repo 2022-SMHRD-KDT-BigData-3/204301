@@ -16,7 +16,6 @@
         		<h2> 사전조사 </h2>
 	            <div class="ages">
 	                <h4> 나이 </h4>
-	                <!-- <input type="text" name="" id="" placeholder="Email"> -->
 	                <select name = "age">
 						<option value="10대">10대</option>
 			            <option value="20대">20대</option>
@@ -29,7 +28,6 @@
 	            
 	            <div class="citys">
 	                <h4> 지역 </h4>
-	                <!-- <input type="password" name="" id="" placeholder="Password"> -->
 	                <select name = "city">
 						<option value="서울특별시">서울특별시</option>
 			        	<option value="광주광역시">광주광역시</option>
