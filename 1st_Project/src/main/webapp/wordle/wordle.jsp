@@ -61,7 +61,7 @@ const NUMBER_OF_GUESSES = 6;
 let guessesRemaining = NUMBER_OF_GUESSES;
 let currentGuess = [];
 let nextLetter = 0;
-let WORDS = ['ㄱㅏㄴㄷㅏ'];
+let WORDS = ['ㄱㅏㄴㄷㅏ','ㅅㅏㄴㄷㅏ'];
 let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
 //let rightGuessString= ['ㄱㅏㄴㄷㅏ','ㅅㅜㅁㄷㅏ'];
 
@@ -158,7 +158,7 @@ function checkGuess () {
         let delay = 250 * i
         setTimeout(()=> {
             //flip box
-            animateCSS(box, 'flipInX')
+            //animateCSS(box, 'flipInX')
             //shade box
             box.style.backgroundColor = letterColor
             shadeKeyBoard(letter, letterColor)
@@ -189,7 +189,7 @@ function insertLetter (pressedKey) {
 
     let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining]
     let box = row.children[nextLetter]
-    animateCSS(box, "pulse")
+    //animateCSS(box, "pulse")
     box.textContent = pressedKey
     box.classList.add("filled-box")
     currentGuess.push(pressedKey)
@@ -201,8 +201,7 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
   new Promise((resolve, reject) => {
     const animationName = `${prefix}${animation}`;
     // const node = document.querySelector(element);
-    const node = element
-    node.style.setProperty('--animate-duration', '0.3s');
+    const node = element.node.style.setProperty('--animate-duration', '0.3s');
     
     node.classList.add(`${prefix}animated`, animationName);
 
