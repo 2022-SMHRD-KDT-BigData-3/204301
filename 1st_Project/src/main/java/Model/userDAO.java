@@ -84,12 +84,13 @@ public class userDAO {
 			try {
 				db_conn();
 				
-				String sql = "update userdata set nextletter=? where nickname=?";
+				String sql = "update userdata set nextletter=?, review = ? where nickname=?";
 				
 				psmt = conn.prepareStatement(sql);
 				
 				psmt.setString(1, dto.getNextletter());
-				psmt.setString(2, dto.getNickname());
+				psmt.setString(2, dto.getReview());
+				psmt.setString(3, dto.getNickname());
 			
 				cnt = psmt.executeUpdate();
 			}catch (Exception e) {
