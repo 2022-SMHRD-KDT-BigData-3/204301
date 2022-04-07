@@ -31,7 +31,6 @@
 	<form action="../exitServiceCon">
     <input name="url" type="submit" value="나가기">
 	</form>
-	
 	<script src="tajajsjs.js"></script>
 </body>
 </html>

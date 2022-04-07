@@ -26,12 +26,10 @@ public class placeinfoCon extends HttpServlet {
 		
 		placeDAO dao = new placeDAO();
 		
-		list = dao.placeinfo(); // DB 에서 가져온 데이터값 
+		list = dao.placeinfo(); 
 		
 		
 		if(list != null) {
-			// 제대로 데이터를 가져온 상황 게임창(.jsp)에서 데이터를 사용할 수 있게 해야한다. 
-			System.out.println("데이터 받기 성공!");
 
 			System.out.println("Success Select PlaceInfo..");
 			System.out.println(list.size());
@@ -41,11 +39,7 @@ public class placeinfoCon extends HttpServlet {
 			
 			response.sendRedirect("./map.jsp");
 			
-		} else {
-			// 데이터를 못받아옴 실패함
-			System.out.println("데이터를 못받았습니다. 다시 시도해주세요");
-
-			// 데이터를 못받아옴 실패함 
+		} else { 
 			System.out.println("Fail Select PlaceInfo..");
 			
 			response.sendRedirect("./main.jsp");

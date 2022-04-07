@@ -12,58 +12,13 @@
 <title>Insert title here</title>
 <!-- CSS -->
 <link rel="stylesheet" href="./css/historic.css">
+<link rel="stylesheet" href="./css/common.css">
 <style>
 @font-face{
 	font-family: 'LeeSeoyun';
 	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
-}
-/* COMMON */
-.inner {
-  width: 1100px;
-  margin: 0 auto;
-  position: relative;
-}
-
-a{
-  text-decoration: none;
-  color: #fff;
-  font-weight: 700;
-}
-
-.inner li:hover {
-  transition: .5s;
-  transform: translateY(-10px);
-  cursor: pointer;
-}
-
-/* HEADER */
-header {
-  background-color: #000;
-  border-bottom: 1px solid #c8c8c8;
-  /* position: relative; */
-  width: 100%;
-  top: 0;
-  z-index: 9;
-}
-
-header > .inner { 
-  height: 80px;
-}
-
-header .header-menu {
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-  text-align: center;
-}
-
-header .header-menu .nav-item{
-  padding-top: 30px;
-  margin-right: 50px;
-  display: inline-block;
-  
 }
 
 .list_wrap .item p {

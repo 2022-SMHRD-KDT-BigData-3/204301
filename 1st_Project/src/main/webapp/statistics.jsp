@@ -5,75 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-
+<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+<link rel="stylesheet" href="./css/common.css">
 <style>
-* {
-  margin: 0;
-  padding: 0;
-}
-/* COMMON */
-.inner {
-  width: 1100px;
-  margin: 0 auto;
-  position: relative;
-}
-
-a{
-  text-decoration: none;
-  color: #fff;
-  font-weight: 700;
-}
-
-.inner li:hover {
-  transition: .5s;
-  transform: translateY(-10px);
-  cursor: pointer;
-}
-
-/* HEADER */
-header {
-  background-color: #000;
-  border-bottom: 1px solid #c8c8c8;
-  /* position: relative; */
-  width: 100%;
-  top: 0;
-  z-index: 9;
-}
-
-header > .inner { 
-  height: 80px;
-}
-
-header > .inner .logo {
-	background-image: url("./img/logo.png");
-    border: 0;
-    display: inline-block;
-    font-size: 0.8em;
-    line-height: inherit;
-    padding: 0 1.5em;
-}
-
-header .header-menu {
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-  text-align: center;
-}
-
-header .header-menu .nav-item{
-  padding-top: 30px;
-  margin-right: 50px;
-  display: inline-block;
-}
-
-html, body {
-	height: 100%;
-	margin: 0;
-}
-
 #map { width: 800px; height: 500px; }
 .info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
 .legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
