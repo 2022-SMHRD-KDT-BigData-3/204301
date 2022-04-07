@@ -10,6 +10,8 @@ body{
   margin: auto;
   transition: .3s ease;
   box-shadow: 0 1px 1px rgba(0,0,0,.3);
+	border-top-right-radius: 1em;
+	border-top-left-radius: 1em;
 }
 .entry-title{
 	color : white;
@@ -37,6 +39,8 @@ body {
 	height: 800px;
 	margin: 0px auto;
 	border: 1px solid black;
+	border-bottom-right-radius: 1em;
+	border-bottom-left-radius: 1em;
 }
 
 #tajaContents {
