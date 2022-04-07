@@ -19,6 +19,8 @@ public class quizinfoCon extends HttpServlet {
 		
 		String quiz = request.getParameter("quiz");
 		String placeid = request.getParameter("placeid");
+		System.out.println(quiz);
+		System.out.println(placeid);
 		
 		quizDAO dao = new quizDAO();
 		quizDTO dto = dao.quizinfo(quiz, placeid);
