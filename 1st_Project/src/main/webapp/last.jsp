@@ -60,7 +60,9 @@ form{
 				스마트 인재 개발원 2431
 			</details>
 		</div>
+		<a href="./main.jsp" type="button">처음으로</a>
 		<input name="exit" type="submit" value="처음으로">
+		<input name="x" type="submit" value="오답노트">
   	</form>
 		   
   
