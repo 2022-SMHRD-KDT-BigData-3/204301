@@ -107,7 +107,8 @@ html, body {
 	var map = L.map('map').setView([36.3511658, 127.9481835], 7);
 
 	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-		maxZoom: 18,
+		maxZoom: 10,
+		minZoom: 6,
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
 			'Imagery 짤 <a href="https://www.mapbox.com/">Mapbox</a>',
 		id: 'mapbox/light-v9',
@@ -155,7 +156,7 @@ html, body {
 	info.update = function (props) {
 		this._div.innerHTML = '<h4>지역별 참여수</h4>' +  (props ?
 			'<b>' + props.name + '</b><br />' + props.density + '명'
-			: 'Hover over a state');
+			: '지역에 커서를 옮기세요');
 	};
 
 	info.addTo(map);

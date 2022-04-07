@@ -121,11 +121,11 @@ function shadeKeyBoard(letter, color) {
     for (const elem of document.getElementsByClassName("keyboard-button")) {
         if (elem.textContent === letter) {
             let oldColor = elem.style.backgroundColor
-            if (oldColor === 'green') {
+            if (oldColor === 'greenyellow') {
                 return
             } 
 
-            if (oldColor === 'yellow' && color !== 'green') {
+            if (oldColor === 'yellow' && color !== 'greenyellow') {
                 return
             }
 
@@ -181,7 +181,7 @@ function checkGuess () {
             // letter is in the right position 
             if (currentGuess[i] === rightGuess[i]) {
                 // shade green 
-                letterColor = 'green'
+                letterColor = 'greenyellow'
             } else {
                 // shade box yellow
                 letterColor = 'yellow'
@@ -201,7 +201,7 @@ function checkGuess () {
     }
 
     if (guessString === rightGuessString) {
-        toastr.success("You guessed right! Game over!")
+        alert("You guessed right! Game over!")
         guessesRemaining = 0
         return
     } else {
@@ -210,8 +210,7 @@ function checkGuess () {
         nextLetter = 0;
 
         if (guessesRemaining === 0) {
-            toastr.error("You've run out of guesses! Game over!")
-            toastr.info(`The right word was: "${rightGuessString}"`)
+            alert("You've run out of guesses! Game over!"+"\n"+"The right word was: "+rightGuessString)
         }
     }
 }
