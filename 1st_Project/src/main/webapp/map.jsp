@@ -85,6 +85,9 @@
 		marker.bindPopup("<h1>" + placeid + "</h1><p>" + explanation +"</p> <img src='"+ path +"'/><br><a href='' style='text-decoration:none; font-size:20px;'>진행하러가기</a></br>").openPopup();
 	}
 	
+	function onOver(placeid, explanation, path, quiz){
+		marker.bindPopup("<h1>" + placeid + "</h1><p>" + explanation +"</p> <img src='"+ path +"'/><br><a href='./TestCon?quiz=" + quiz + "'style='text-decoration:none; font-size:20px;'>진행하러가기</a></br>").openPopup();
+	}
 	function onClick(e) {
 		console.log("클릭테스트");
 		location.href = '';
@@ -107,7 +110,12 @@
       var cell_6 = cells[5].firstChild.data;		// 사진 경로
       
       var marker = L.marker([ cell_4, cell_5 ]).addTo(map);
-	  marker.on('mousedown', onOver(cell_1, cell_3, cell_6));
+      if(cell_2 != null){
+    	  marker.on('mousedown', onOver(cell_1, cell_3, cell_6, cell_2));  
+      } else {
+    	  //marker.on('mousedown', onOver(cell_1, cell_3, cell_6));  
+      }
+	  
 	  //marker.on('click', onClick);
     }
     

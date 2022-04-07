@@ -13,6 +13,12 @@
 <!-- CSS -->
 <link rel="stylesheet" href="./css/historic.css">
 <style>
+@font-face{
+	font-family: 'LeeSeoyun';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 /* COMMON */
 .inner {
   width: 1100px;
@@ -58,6 +64,12 @@ header .header-menu .nav-item{
   margin-right: 50px;
   display: inline-block;
   
+}
+
+.list_wrap .item p {
+  font-size: 13px;
+  letter-spacing: -1px;
+  font-family: 'LeeSeoyun';
 }
 </style>	
 </head>

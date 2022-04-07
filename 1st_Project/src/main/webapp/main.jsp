@@ -17,6 +17,7 @@
   height: 900px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 body {
