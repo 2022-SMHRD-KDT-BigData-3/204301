@@ -21,8 +21,8 @@ const TAJAWIDTH = 150;
 const TAJAHEIGHT = 30;
 
 // 그려지는 것 보다 내려오는게 간격이 더 짧게 함( setInterval의 시간 변수)
-const DRAWTIME = 3000;
-const DOWNTIME = 2000;
+const DRAWTIME = 1000;
+const DOWNTIME = 700;
 
 // 생명 변수
 var life = 5;
