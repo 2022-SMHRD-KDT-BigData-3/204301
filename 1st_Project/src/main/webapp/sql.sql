@@ -1,6 +1,5 @@
 select * from tabs;
 select * from userdata;
-
 select * from placeinfo;
 select * from result;
 drop table quizinfo cascade constraint;
@@ -153,16 +152,19 @@ insert into quizinfo values('no.1', '', 'puzzle', 'null', '1');
 --	answer varchar2(100)
 --);
 
-create table quizinfo(
-	quiz varchar2(100) primary key,
-	quiz_ex varchar2(1000) not null,
-	quiz_type varchar2(10),
-	answer varchar2(100),
-	placeid varchar2(100),
-	constraint placeid_fk foreign key(placeid) references placeinfo(placeid)
+create table quizinfo (
+    quiz varchar2(10) primary key, 
+    placeid varchar2(100),
+    quiz_type varchar2(10),
+    quiz_ex varchar2(4000), -- 문제 설명
+    answer varchar2(100), -- 사적지별 정답 
+    quiz_path varchar2(100), -- 게임별 jsp 경로 
+    constraint placeid_fk foreign key(placeid) references placeinfo(placeid)
 );
-select * from QUIZINFO;
-insert into quizinfo values ('Q1','단어넣기','wordle','ㅊㅜㅇㄷㅗㄹ','전남대학교 정문');
+
+select * from quizinfo;
+insert into quizinfo values ('Q1','전남대학교 정문','wordle','Q1 : 다음 지문을 보고 알맞은 단어를 입력해주세요.1980년 5월 17일 자정 불법적인 비상계엄 전국 확대에 따라 전남대에 진주한 계엄군은 도서관 등에서 밤을 새워 학문에 몰두하고 있던 학생들을 무조건 구타하고 불법 구금하면서 항쟁의 불씨는 뿌려졌다. 이어 18일 오전 10시경, 교문앞에 모여든 학생들이 학교출입을 막는 계엄군에게 항의하면서 최초의 충돌이 있었으며, 학생들은 광주역과 금남로로 진출해 항의 시위를 벌렸다.
+계엄군은 항쟁기간 중 시내에서 끌고 온 시민들을 여기 종합운동장과 이학부 건물에 수용, 집단 구타하는 과정에서 사망자가 발생하였고 주검은 학교 안에 매장되었다가 그 후 발굴되었다. 당시 정문 앞에는 용봉천이 흐르고 그 위에 다리가 놓여 있었으나 지금은 복개되었다. 학생과 시민들을 불법 감금했던 이학부 건물도 철거되었으며 교문도 모양이 바뀌었다.','ㅎㅏㄱㅅㅐㅇ,ㅊㅜㅇㄷㅗㄹ','../wordle/wordle.jsp');
 
 insert into quizinfo values ('','','','null','구 광주적자병원');
 insert into quizinfo values ('','','','null','전남대학교 정문');
@@ -211,7 +213,10 @@ create table result(
 	constraint quiz_set_ck check(quiz_set in('true','false'))
 );
 
-
+create table wordle(
+	wordlequiz varchar2(1000),
+	hangule
+);
 
 
 
