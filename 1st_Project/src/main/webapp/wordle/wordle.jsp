@@ -1,6 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="Model.wordDTO"%>
 <%@page import="Model.wordDAO"%>
+<%@page import="Model.quizDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,28 +13,21 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <style>
-	table{ display: none;}
+	#table_body{ display: none;}
 </style>
 </head>
 <body>
 	<% 
 		//ArrayList<wordDTO> word = (ArrayList<wordDTO>)session.getAttribute("word");
-		wordDAO dao = new wordDAO();
-		ArrayList<wordDTO> word = dao.wordquiz();
+		//wordDAO dao = new wordDAO();
+		//ArrayList<wordDTO> word = dao.wordquiz();
+		
+		quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
+		 
+		String answer = quizinfo.getAnswer();
 	%>
 
-	<table>
-		<tr>
-			<th> word </th>
-		</tr>
-		<tbody id = "table_body">
-		<% for (int i = 0; i < word.size(); i++) { %>
-			<tr>
-				<td><%=word.get(i).getWord()%></td>
-			<% } %>
-			</tr>
-		</tbody>
-	</table>
+<div id = "table_body"><%=quizinfo.getAnswer()%></div>
 
 <h1> Wordle Clone </h1>
     
@@ -82,20 +76,26 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script type="text/javascript">
 
-var rows = document.getElementById("table_body").getElementsByTagName("tr");
-console.log(rows.length);	// tbody tr 개수 = 50
+/* var rows = document.getElementById("table_body").getElementsByTagName("tr");
+console.log(rows.length);	// tbody tr 개수 = 50 */
 
-let word1 = "<%=word.get(1).getWord()%>";
+<%-- let word1 = "<%=word.get(1).getWord()%>";
 word2 = [word1];
-console.log(word2);
+console.log(word2); --%>
+
+var rows = document.getElementById("table_body").innerText;
+console.log(rows);
+	
+var words = rows.split(",");
+console.log(words);
 	
 const NUMBER_OF_GUESSES = 6;
 let guessesRemaining = NUMBER_OF_GUESSES;
 let currentGuess = [];
 let nextLetter = 0;
-let WORDS = word2;
+//let WORDS = word2;
+let WORDS= words;
 let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
-//let rightGuessString= ['ㄱㅏㄴㄷㅏ','ㅅㅜㅁㄷㅏ'];
 
 //console.log(word);
 console.log(rightGuessString);
