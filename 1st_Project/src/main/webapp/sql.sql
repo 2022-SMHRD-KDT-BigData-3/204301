@@ -80,66 +80,11 @@ insert into placeinfo values ('고 홍남순 변호사 가옥' ,'null','5․18�
 
 select * from placeinfo;
 update placeinfo set quiz = 'Q1' where placeid='전남대학교 정문';
+
 create table placeex (
 	ex varchar2(1000)
 );
 select * from placeex;
-
-create table wordquiz(
-	word varchar2(50)
-);
-drop table wordquiz;
-select * from wordquiz;
-insert into wordquiz values ('ㅎㅏㄱㅅㅐㅇ');
-insert into wordquiz values ('ㅊㅜㅇㄷㅗㄹ');
-insert into wordquiz values ('ㅇㅗㅏㅇㄹㅐ');
-insert into wordquiz values ('ㅇㅣㄷㅗㅇㄹㅗ');
-insert into wordquiz values ('ㅇㅛㅊㅜㅇㅈㅣ');
-insert into wordquiz values ('ㅊㅜㄹㄱㅜ');
-insert into wordquiz values ('ㅈㅣㅂㅎㅏㅂ');
-insert into wordquiz values ('ㅈㅓㄴㅍㅏ');
-insert into wordquiz values ('ㅎㅐㅇㅈㅣㄴ');
-insert into wordquiz values ('ㅎㅏㅇㅈㅓㄴ');
-insert into wordquiz values ('ㅎㅏㄱㅅㅏㄹ');
-insert into wordquiz values ('ㅎㅐㅇㅈㅓㅇ');
-insert into wordquiz values ('ㅂㅜㄴㅅㅜㄷㅐ');
-insert into wordquiz values ('ㅎㅗㅐㅅㅂㅜㄹ');
-insert into wordquiz values ('ㅅㅣㄱㅖㅌㅏㅂ');
-insert into wordquiz values ('ㄱㅗㅏㅇㅈㅏㅇ');
-insert into wordquiz values ('ㄴㅜㄴㅁㅜㄹ');
-insert into wordquiz values ('ㅊㅜㅁㅗ');
-insert into wordquiz values ('ㄱㅕㄹㅇㅡㅣ');
-insert into wordquiz values ('ㅊㅓㅇㄴㅕㄴ');
-insert into wordquiz values ('ㅇㅗㅐㄱㅗㄱ');
-insert into wordquiz values ('ㄱㅓㅈㅣㅅ');
-insert into wordquiz values ('ㅇㅓㄴㄹㅗㄴ');
-insert into wordquiz values ('ㅎㅓㄴㅎㅕㄹ');
-insert into wordquiz values ('ㅎㅡㅣㅅㅐㅇ');
-insert into wordquiz values ('ㅎㅓㄴㅅㅣㄴ');
-insert into wordquiz values ('ㅁㅜㅈㅏㅂㅣ');
-insert into wordquiz values ('ㅍㅗㄱㄹㅕㄱ');
-insert into wordquiz values ('ㅅㅣㅁㅣㄴㄱㅜㄴ');
-insert into wordquiz values ('ㅁㅣㄴㅣㅂㅓㅅㅡ');
-insert into wordquiz values ('ㅇㅕㄱㅗㅅㅐㅇ');
-insert into wordquiz values ('ㅇㅓㄹㅣㄴㅇㅣ');
-insert into wordquiz values ('ㅇㅗㅇㅣㄴㅅㅏㄱㅕㄱ');
-insert into wordquiz values ('ㅈㅜㅇㅈㅐ');
-insert into wordquiz values ('ㅎㅕㅂㅅㅏㅇ');
-insert into wordquiz values ('ㅈㅜㄱㅇㅡㅁㅇㅡㅣㅎㅐㅇㅈㅣㄴ');
-insert into wordquiz values ('ㅇㅜㄴㅈㅓㄴㄱㅣㅅㅏ');
-insert into wordquiz values ('ㄴㅏㄴㅜㅁ');
-insert into wordquiz values ('ㅅㅣㅈㅏㅇ');
-insert into wordquiz values ('ㅈㅜㅁㅓㄱㅂㅏㅂ');
-insert into wordquiz values ('ㅈㅏㅇㄱㅏㅂㅊㅏ');
-insert into wordquiz values ('ㄱㅛㄷㅗㅅㅗ');
-insert into wordquiz values ('ㅇㅏㄴㅅㅣㄱㅊㅓ');
-insert into wordquiz values ('ㄱㅣㄴㅕㅁㅅㅓㅇㄷㅏㅇ');
-insert into wordquiz values ('ㄷㅡㄹㅂㅜㄹ');
-insert into wordquiz values ('ㅎㅔㄹㄱㅣ');
-insert into wordquiz values ('ㅂㅏㄹㅍㅗ');
-insert into wordquiz values ('ㅊㅗㅇㅌㅏㄴ');
-insert into wordquiz values ('ㅎㅡㄴㅈㅓㄱ');
-insert into wordquiz values ('ㅁㅜㄱㅣㅈㅣㅇㅇㅕㄱ');
 
 
 update placeinfo set path = './518images/구가톨릭센터.jpg' where placeid = '금남로(구 카톨릭센터)';
@@ -221,11 +166,6 @@ create table result(
 	constraint placeid_fk foreign key(placeid) references placeinfo(placeid),
 	constraint result_quiz_fk foreign key(quiz) references quizinfo(quiz),
 	constraint quiz_set_ck check(quiz_set in('true','false'))
-);
-
-create table wordle(
-	wordlequiz varchar2(1000),
-	hangule
 );
 
 
