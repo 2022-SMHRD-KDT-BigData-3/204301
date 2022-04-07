@@ -17,6 +17,7 @@
 </style>
 </head>
 <body>
+
 	<% 
 		//ArrayList<wordDTO> word = (ArrayList<wordDTO>)session.getAttribute("word");
 		wordDAO dao = new wordDAO();
