@@ -22,6 +22,8 @@ public class quizinfoCon extends HttpServlet {
 		
 		quizDAO dao = new quizDAO();
 		quizDTO dto = dao.quizinfo(quiz, placeid);
+		String quiz_path = dto.getQuiz_path();
+		String t = "./wordle/wordle.jsp";
 		
 		if(dto != null) {
 			System.out.println("Success Select QUIZINFO");
@@ -30,8 +32,10 @@ public class quizinfoCon extends HttpServlet {
 			session.setAttribute("quizinfo", dto);
 			
 			response.sendRedirect("./wordle/wordle.jsp");
+			//response.sendRedirect(quiz_path);
 		} else {
 			System.out.println("Fail Select QUIZINFO");
+			response.sendRedirect("./map.jsp");
 		}
 		
 	}
