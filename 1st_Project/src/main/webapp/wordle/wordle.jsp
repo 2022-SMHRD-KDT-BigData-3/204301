@@ -1,6 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="Model.wordDTO"%>
 <%@page import="Model.wordDAO"%>
+<%@page import="Model.quizDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,34 +9,25 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="./style.css">
-
+<link rel="stylesheet" href="style.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <style>
-	table{ display: none;}
+	#table_body{ display: none;}
 </style>
 </head>
 <body>
-
 	<% 
 		//ArrayList<wordDTO> word = (ArrayList<wordDTO>)session.getAttribute("word");
-		wordDAO dao = new wordDAO();
-		ArrayList<wordDTO> word = dao.wordquiz();
+		//wordDAO dao = new wordDAO();
+		//ArrayList<wordDTO> word = dao.wordquiz();
+		
+		quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
+		 
+		String answer = quizinfo.getAnswer();
 	%>
 
-	<table>
-		<tr>
-			<th> word </th>
-		</tr>
-		<tbody id = "table_body">
-		<% for (int i = 0; i < word.size(); i++) { %>
-			<tr>
-				<td><%=word.get(i).getWord()%></td>
-			<% } %>
-			</tr>
-		</tbody>
-	</table>
+<div id = "table_body"><%=quizinfo.getAnswer()%></div>
 
 <h1> Wordle Clone </h1>
     
@@ -84,20 +76,26 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script type="text/javascript">
 
-var rows = document.getElementById("table_body").getElementsByTagName("tr");
-console.log(rows.length);	// tbody tr 개수 = 50
+/* var rows = document.getElementById("table_body").getElementsByTagName("tr");
+console.log(rows.length);	// tbody tr 개수 = 50 */
 
-let word1 = "<%=word.get(1).getWord()%>";
+<%-- let word1 = "<%=word.get(1).getWord()%>";
 word2 = [word1];
-console.log(word2);
+console.log(word2); --%>
+
+var rows = document.getElementById("table_body").innerText;
+console.log(rows);
+	
+var words = rows.split(",");
+console.log(words);
 	
 const NUMBER_OF_GUESSES = 6;
 let guessesRemaining = NUMBER_OF_GUESSES;
 let currentGuess = [];
 let nextLetter = 0;
-let WORDS = word2;
+//let WORDS = word2;
+let WORDS= words;
 let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
-//let rightGuessString= ['ㄱㅏㄴㄷㅏ','ㅅㅜㅁㄷㅏ'];
 
 //console.log(word);
 console.log(rightGuessString);
@@ -123,11 +121,11 @@ function shadeKeyBoard(letter, color) {
     for (const elem of document.getElementsByClassName("keyboard-button")) {
         if (elem.textContent === letter) {
             let oldColor = elem.style.backgroundColor
-            if (oldColor === 'green') {
+            if (oldColor === 'greenyellow') {
                 return
             } 
 
-            if (oldColor === 'yellow' && color !== 'green') {
+            if (oldColor === 'yellow' && color !== 'greenyellow') {
                 return
             }
 
@@ -160,11 +158,13 @@ function checkGuess () {
         return
     }
 
-    if (!WORDS.includes(guessString)) {
+    /* if (!WORDS.includes(guessString)) {
         toastr.error("Word not in list!")
+        guessesRemaining -= 1;
+        currentGuess = [];
+        nextLetter = 0;
         return
-    }
-
+    } */
     
     for (let i = 0; i < rightGuessString.length; i++) {
         let letterColor = ''
@@ -181,7 +181,7 @@ function checkGuess () {
             // letter is in the right position 
             if (currentGuess[i] === rightGuess[i]) {
                 // shade green 
-                letterColor = 'green'
+                letterColor = 'greenyellow'
             } else {
                 // shade box yellow
                 letterColor = 'yellow'
@@ -201,7 +201,7 @@ function checkGuess () {
     }
 
     if (guessString === rightGuessString) {
-        toastr.success("You guessed right! Game over!")
+        alert("You guessed right! Game over!")
         guessesRemaining = 0
         return
     } else {
@@ -210,8 +210,7 @@ function checkGuess () {
         nextLetter = 0;
 
         if (guessesRemaining === 0) {
-            toastr.error("You've run out of guesses! Game over!")
-            toastr.info(`The right word was: "${rightGuessString}"`)
+            alert("You've run out of guesses! Game over!"+"\n"+"The right word was: "+rightGuessString)
         }
     }
 }
