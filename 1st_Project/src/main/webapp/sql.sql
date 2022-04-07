@@ -1,7 +1,6 @@
 select * from tabs;
 select * from userdata;
 
-select * from placeinfo;
 select * from result;
 drop table quizinfo cascade constraint;
 drop table placeinfo;
@@ -75,6 +74,7 @@ insert into placeinfo values ('들불야학 옛터' ,'null','이곳은 ‘광천
 insert into placeinfo values ('전일빌딩' ,'null','5․18당시 계엄군의 헬기발포 총탄흔적 발견 등의 역사적인 장소이다.', 35.148278, 126.918845, './518images/전일빌딩.jpg');
 insert into placeinfo values ('고 홍남순 변호사 가옥' ,'null','5․18당시 민주주의를 쟁취하기 위해 토론과 회의를 진행했던 장소이며 구속자 석방 논의, 관련문건 작성 등을 했던 역사적인 공간이다.', 35.150957, 126.919617, './518images/고홍남순변호사가옥.jpg');
 
+select * from placeinfo;
 update placeinfo set quiz = 'Q1' where placeid='전남대학교 정문';
 create table placeex (
 	ex varchar2(1000)
