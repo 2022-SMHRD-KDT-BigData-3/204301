@@ -1,24 +1,9 @@
-@charset "UTF-8";
-
 * {
   margin: 0;
   padding: 0;
 }
 
-.bg-img{
-  /*background: url("../img/bgimg3.png");*/
-  height: 900px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 body {
-  color: #333;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: 'Nanum Gothic', sans-serif;
   overflow: hidden;
 }
 
@@ -52,9 +37,8 @@ header {
 }
 
 header > .inner { 
-  height: 80px;
+  height: 70px;
 }
-
 
 header .header-menu {
   bottom: 0;
@@ -64,7 +48,7 @@ header .header-menu {
 }
 
 header .header-menu .nav-item{
-  padding-top: 30px;
+  padding-top: 25px;
   margin-right: 50px;
   display: inline-block;
 }
