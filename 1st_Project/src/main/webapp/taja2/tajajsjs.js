@@ -1,3 +1,17 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 내려오게 할 단어의 목록을 배열로 선언하였습니다.
 var taja = ["전남대학교", "광주역 광장", "무등경기장", "금남로", "구 전남도청", "518민주광장",
 	"상무관", "녹두서점 옛터", "전남대학교 병원", "광주기독병원",
@@ -21,8 +35,8 @@ const TAJAWIDTH = 150;
 const TAJAHEIGHT = 30;
 
 // 그려지는 것 보다 내려오는게 간격이 더 짧게 함( setInterval의 시간 변수)
-const DRAWTIME = 1500;
-const DOWNTIME = 1000;
+const DRAWTIME = 1000;
+const DOWNTIME = 500;
 
 // 생명 변수
 var life = 5;
