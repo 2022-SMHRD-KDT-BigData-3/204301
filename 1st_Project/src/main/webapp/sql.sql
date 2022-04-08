@@ -219,5 +219,6 @@ create table result(
 	constraint quiz_set_ck check(quiz_set in('true','false'))
 );
 
+select * from result;
 
 

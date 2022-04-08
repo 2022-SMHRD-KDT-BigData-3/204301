@@ -1,6 +1,5 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="Model.wordDTO"%>
-<%@page import="Model.wordDAO"%>
+<%@page import="Model.userDTO"%>
 <%@page import="Model.quizDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -14,6 +13,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <style>
 	#table_body{ display: none;}
+	#nickname{ display: none;}
+	#placeid{ display: none;}
+	#quiz{ display: none;}
+	
 	body{
   /* background-color: white; */
   /* background: rgba(44, 62, 80,1.0); */
@@ -98,6 +101,7 @@ h3 {
 		//ArrayList<wordDTO> word = (ArrayList<wordDTO>)session.getAttribute("word");
 		//wordDAO dao = new wordDAO();
 		//ArrayList<wordDTO> word = dao.wordquiz();
+		userDTO info = (userDTO)session.getAttribute("info");
 		
 		quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
 		 
@@ -105,6 +109,9 @@ h3 {
 	%>
 
 <div id = "table_body"><%=quizinfo.getAnswer()%></div>
+<div id = "nickname"><%=info.getNickname()%></div>
+<div id = "placeid"><%=quizinfo.getPlaceid()%></div>
+<div id = "quiz"><%=quizinfo.getQuiz()%></div>
 
     <div class="card">
         <h3> <%=quizinfo.getQuiz() %> : 다음 지문을 보고 알맞은 단어를 입력하세요. </h3>
@@ -162,6 +169,9 @@ console.log(rows.length);	// tbody tr 개수 = 50 */
 <%-- let word1 = "<%=word.get(1).getWord()%>";
 word2 = [word1];
 console.log(word2); --%>
+var nickname = document.getElementById("nickname").innerText;
+var placeid = document.getElementById("placeid").innerText;
+var quiz = document.getElementById("quiz").innerText;
 
 var rows = document.getElementById("table_body").innerText;
 console.log(rows);
@@ -176,6 +186,8 @@ let nextLetter = 0;
 //let WORDS = word2;
 let WORDS= words;
 let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
+let result = true;
+let score = 10;
 
 //console.log(word);
 console.log(rightGuessString);
@@ -283,7 +295,8 @@ function checkGuess () {
     if (guessString === rightGuessString) {
         alert("You guessed right! Game over!")
         guessesRemaining = 0
-        return
+        result = true;
+        location.href = "../exitGameCon?nickname="+ nickname +"&placeid="+ placeid +"&quiz="+ quiz +"&result="+result+"&score="+score;
     } else {
         guessesRemaining -= 1;
         currentGuess = [];
@@ -291,6 +304,8 @@ function checkGuess () {
 
         if (guessesRemaining === 0) {
             alert("You've run out of guesses! Game over!"+"\n"+"The right word was: "+rightGuessString)
+            result = false;
+            location.href = "../exitGameCon?result="+result+"&score="+score;
         }
     }
 }
