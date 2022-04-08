@@ -123,10 +123,11 @@ h3 {
    .text{
     text-align: center;
    }
-.modal_btn{
-	
+
+#modal_btn{
+	position: relative;
+	left: 57%;
 }
-	
 </style>
 </head>
 <body>
