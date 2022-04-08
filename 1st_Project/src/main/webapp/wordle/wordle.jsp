@@ -18,10 +18,6 @@
 </head>
 <body>
 	<% 
-		//ArrayList<wordDTO> word = (ArrayList<wordDTO>)session.getAttribute("word");
-		//wordDAO dao = new wordDAO();
-		//ArrayList<wordDTO> word = dao.wordquiz();
-		
 		quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
 		 
 		String answer = quizinfo.getAnswer();
