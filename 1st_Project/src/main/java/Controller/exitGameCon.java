@@ -35,14 +35,14 @@ public class exitGameCon extends HttpServlet {
 		int cnt = dao.insertData(updated_info);
 		
 		if(cnt > 0) {
-			System.out.println("결과 데이터 입력 성공");
+			System.out.println("데이터 삽입 성공");
 			// 로그인 정보가 담긴 session 업데이트, 갱신
 			// -> 같은 session 이름에 다른 값 담아주기(덮어쓰기)
 			//HttpSession session = request.getSession();
 			//session.setAttribute("info", updated_info);
 			
 		} else {
-			System.out.println("회원정보수정 실패");
+			System.out.println("데이터 삽입 실패");
 		}
 		
 		response.sendRedirect("./map.jsp");

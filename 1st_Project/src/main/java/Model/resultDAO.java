@@ -52,9 +52,15 @@ public class resultDAO {
 		
 		try {
 			
-			String sql ="insert ";
+			String sql ="insert into result values(?,?,?,?,null,?)";
 			
 			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, dto.getNickname());
+			psmt.setString(2, dto.getPlaceid());
+			psmt.setString(3, dto.getQuiz());
+			psmt.setString(4, dto.getQuiz_set());
+			psmt.setInt(5, dto.getScore());
 			
 			cnt = psmt.executeUpdate();
 			

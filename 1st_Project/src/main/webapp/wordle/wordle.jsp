@@ -135,16 +135,12 @@ h3 {
 </head>
 <body>
 	<% 
-<<<<<<< HEAD
 		//ArrayList<wordDTO> word = (ArrayList<wordDTO>)session.getAttribute("word");
 		//wordDAO dao = new wordDAO();
 		//ArrayList<wordDTO> word = dao.wordquiz();
 		userDTO info = (userDTO)session.getAttribute("info");
-		
-=======
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/2431.git
 		quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
-		 
+		
 		String answer = quizinfo.getAnswer();
 	%>
 
