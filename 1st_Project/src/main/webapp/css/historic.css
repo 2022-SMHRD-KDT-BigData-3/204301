@@ -42,7 +42,12 @@ main {
   margin-left: 100px;
 }
 
+.image {
+	border-radius: 16px 16px 0 0;
+}
+
 .list_wrap .item {
+  border-radius: 16px;
   display: inline-block;
   width: 30%;
   margin-top: 40px;

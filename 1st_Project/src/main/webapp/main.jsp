@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/main.css">
 
-<title>Insert title here</title>
+<title> 2431 </title>
 
 </head>
 <body>
@@ -53,7 +53,7 @@
         <p> 지도 라이브러리를 이용하여 518 사적지에서 게임을 할 수 있다.</p>
       </div>
       <div class = "more">
-        <button> <a href="./map.jsp">더보기</a> </button>
+        <button> <a href="./survey.jsp">더보기</a> </button>
       </div>
     </div>
 
