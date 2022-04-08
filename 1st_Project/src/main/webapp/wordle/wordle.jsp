@@ -93,16 +93,56 @@ h3 {
   cursor: pointer;
   text-transform: uppercase;
 }
-	
+    .modal_wrap{
+            display : none;
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top : 50%;
+            left : 50%;
+            margin: -250px 0 0 -250px;
+            background-color: white;
+            z-index: 2;
+        }
+        .black_bg{
+            display: none;
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color:#E5DFDF;
+            top:0;
+            left: 0;
+            opacity: 0.7;
+            z-index: 1;
+        }
+        .modal_close{
+        width: 26px;
+        height: 26px;
+        position: absolute;
+        top: -30px;
+        right: 0;
+    }
+   .text{
+    text-align: center;
+   }
+
+#modal_btn{
+	position: relative;
+	left: 57%;
+}
 </style>
 </head>
 <body>
 	<% 
+<<<<<<< HEAD
 		//ArrayList<wordDTO> word = (ArrayList<wordDTO>)session.getAttribute("word");
 		//wordDAO dao = new wordDAO();
 		//ArrayList<wordDTO> word = dao.wordquiz();
 		userDTO info = (userDTO)session.getAttribute("info");
 		
+=======
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/2431.git
 		quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
 		 
 		String answer = quizinfo.getAnswer();
@@ -116,6 +156,21 @@ h3 {
     <div class="card">
         <h3> <%=quizinfo.getQuiz() %> : 다음 지문을 보고 알맞은 단어를 입력하세요. </h3>
         <p class="entry-title"><%=quizinfo.getQuiz_ex()%></p>
+    </div>
+         <img src ="./icon.png" type="button" id="modal_btn">
+    <div class="black_bg"></div>
+    <div class="modal_wrap">
+            <div class="modal_close"><img src="./x.png" ></div>
+            <div>
+                <div class="text"><h2>게임 방법</h2></div> 
+                <div class="text">워들을 맞춰봅시다. 각 기회마다 글자 조각의 색깔이 문제를 맞추는데 도움을 줍니다.</div><br>
+                <div class="text"><img src="./2.PNG"></div>
+                <div class="text">글자'ㅊ','ㅜ'은 올바른 자리에 있습니다.</div>
+                <div class="text"><img src="./2.PNG"></div>
+                <div class="text">글자'ㄹ','ㅇ'은 잘못된 자리에 있습니다.</div>
+                <div class="text"><img src="./2.PNG"></div>
+                <div class="text">글자'ㅣ','ㅂ'은 어느 곳에도 맞지 않습니다.</div>
+            </div>
     </div>
     
     <div id="game-board">
@@ -159,6 +214,23 @@ h3 {
         </div>
     </div>
 
+ <script>
+       window.onload = function() {
+ 
+ function onClick() {
+     document.querySelector('.modal_wrap').style.display ='block';
+     document.querySelector('.black_bg').style.display ='block';
+ }   
+ function offClick() {
+     document.querySelector('.modal_wrap').style.display ='none';
+     document.querySelector('.black_bg').style.display ='none';
+ }
+
+ document.getElementById('modal_btn').addEventListener('click', onClick);
+ document.querySelector('.modal_close').addEventListener('click', offClick);
+
+};
+    </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script type="text/javascript">
