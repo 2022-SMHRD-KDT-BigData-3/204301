@@ -140,6 +140,8 @@ h3 {
 		//ArrayList<wordDTO> word = dao.wordquiz();
 		userDTO info = (userDTO)session.getAttribute("info");
 		
+		quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
+		
 		String answer = quizinfo.getAnswer();
 	%>
 
