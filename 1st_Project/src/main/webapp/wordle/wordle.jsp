@@ -1,6 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="Model.wordDTO"%>
 <%@page import="Model.wordDAO"%>
+<%@page import="Model.quizDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,30 +13,103 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <style>
-	table{ display: none;}
+	#table_body{ display: none;}
+	body{
+  /* background-color: white; */
+  /* background: rgba(44, 62, 80,1.0); */
+  /* display: flex; */
+}
+
+.card:hover {
+  box-shadow: 0 5px 20px rgba(0,0,0,.8);
+  transform: translateY(-10px) scale(1.02);
+  
+}
+.card{
+  width: 800px;
+  padding: 10px;
+  /* background: #1abc9c; */
+  background: #BCFAE4;
+  margin: auto;
+  transition: .3s ease;
+  box-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+a{
+  color: black;
+  text-decoration: none; 
+}
+
+h3 {
+  text-align: center; 
+  /* background-color:#1abc9c;  */
+  display: inline;
+  color: black;
+  position: relative;
+  margin-left: 25%;
+ }
+ #game-board {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+ .letter-box {
+  border: 2px solid gray;
+  border-radius: 3px;
+  margin: 2px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+.filled-box {
+  border: 2px solid black;
+}.letter-row {
+  display: flex;
+}
+#keyboard-cont {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#keyboard-cont div {
+  display: flex;
+}
+.second-row {
+  margin: 0.5rem 0;
+}
+.keyboard-button {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem;
+  margin: 0 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+	
 </style>
 </head>
 <body>
 	<% 
 		//ArrayList<wordDTO> word = (ArrayList<wordDTO>)session.getAttribute("word");
-		wordDAO dao = new wordDAO();
-		ArrayList<wordDTO> word = dao.wordquiz();
+		//wordDAO dao = new wordDAO();
+		//ArrayList<wordDTO> word = dao.wordquiz();
+		
+		quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
+		 
+		String answer = quizinfo.getAnswer();
 	%>
 
-	<table>
-		<tr>
-			<th> word </th>
-		</tr>
-		<tbody id = "table_body">
-		<% for (int i = 0; i < word.size(); i++) { %>
-			<tr>
-				<td><%=word.get(i).getWord()%></td>
-			<% } %>
-			</tr>
-		</tbody>
-	</table>
+<div id = "table_body"><%=quizinfo.getAnswer()%></div>
 
-<h1> Wordle Clone </h1>
+    <div class="card">
+        <h3> <%=quizinfo.getQuiz() %> : 다음 지문을 보고 알맞은 단어를 입력하세요. </h3>
+        <p class="entry-title"><%=quizinfo.getQuiz_ex()%></p>
+    </div>
     
     <div id="game-board">
 
@@ -82,20 +156,26 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script type="text/javascript">
 
-var rows = document.getElementById("table_body").getElementsByTagName("tr");
-console.log(rows.length);	// tbody tr 개수 = 50
+/* var rows = document.getElementById("table_body").getElementsByTagName("tr");
+console.log(rows.length);	// tbody tr 개수 = 50 */
 
-let word1 = "<%=word.get(1).getWord()%>";
+<%-- let word1 = "<%=word.get(1).getWord()%>";
 word2 = [word1];
-console.log(word2);
+console.log(word2); --%>
+
+var rows = document.getElementById("table_body").innerText;
+console.log(rows);
+	
+var words = rows.split(",");
+console.log(words);
 	
 const NUMBER_OF_GUESSES = 6;
 let guessesRemaining = NUMBER_OF_GUESSES;
 let currentGuess = [];
 let nextLetter = 0;
-let WORDS = word2;
+//let WORDS = word2;
+let WORDS= words;
 let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
-//let rightGuessString= ['ㄱㅏㄴㄷㅏ','ㅅㅜㅁㄷㅏ'];
 
 //console.log(word);
 console.log(rightGuessString);
@@ -121,11 +201,11 @@ function shadeKeyBoard(letter, color) {
     for (const elem of document.getElementsByClassName("keyboard-button")) {
         if (elem.textContent === letter) {
             let oldColor = elem.style.backgroundColor
-            if (oldColor === 'green') {
+            if (oldColor === 'greenyellow') {
                 return
             } 
 
-            if (oldColor === 'yellow' && color !== 'green') {
+            if (oldColor === 'yellow' && color !== 'greenyellow') {
                 return
             }
 
@@ -158,11 +238,13 @@ function checkGuess () {
         return
     }
 
-    if (!WORDS.includes(guessString)) {
+    /* if (!WORDS.includes(guessString)) {
         toastr.error("Word not in list!")
+        guessesRemaining -= 1;
+        currentGuess = [];
+        nextLetter = 0;
         return
-    }
-
+    } */
     
     for (let i = 0; i < rightGuessString.length; i++) {
         let letterColor = ''
@@ -179,7 +261,7 @@ function checkGuess () {
             // letter is in the right position 
             if (currentGuess[i] === rightGuess[i]) {
                 // shade green 
-                letterColor = 'green'
+                letterColor = 'greenyellow'
             } else {
                 // shade box yellow
                 letterColor = 'yellow'
@@ -199,7 +281,7 @@ function checkGuess () {
     }
 
     if (guessString === rightGuessString) {
-        toastr.success("You guessed right! Game over!")
+        alert("You guessed right! Game over!")
         guessesRemaining = 0
         return
     } else {
@@ -208,8 +290,7 @@ function checkGuess () {
         nextLetter = 0;
 
         if (guessesRemaining === 0) {
-            toastr.error("You've run out of guesses! Game over!")
-            toastr.info(`The right word was: "${rightGuessString}"`)
+            alert("You've run out of guesses! Game over!"+"\n"+"The right word was: "+rightGuessString)
         }
     }
 }

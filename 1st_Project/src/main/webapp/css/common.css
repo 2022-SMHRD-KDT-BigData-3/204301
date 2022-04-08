@@ -1,5 +1,27 @@
 @charset "UTF-8";
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.bg-img{
+  background: url("../img/bgimg3.png");
+  height: 900px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+body {
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: 'Nanum Gothic', sans-serif;
+  overflow: hidden;
+}
+
 /* COMMON */
 .inner {
   width: 1100px;
@@ -32,6 +54,7 @@ header {
 header > .inner { 
   height: 80px;
 }
+
 
 header .header-menu {
   bottom: 0;
