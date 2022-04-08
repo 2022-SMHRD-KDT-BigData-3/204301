@@ -141,7 +141,7 @@ h3 {
 		userDTO info = (userDTO)session.getAttribute("info");
 		
 		quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
-		 
+		
 		String answer = quizinfo.getAnswer();
 	%>
 
