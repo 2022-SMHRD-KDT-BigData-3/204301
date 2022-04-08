@@ -1,3 +1,6 @@
+<%@page import="Model.wordDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.wordDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,8 +13,10 @@
 
 </head>
 <body>
-
-
+	<% 
+		wordDAO dao = new wordDAO();
+		ArrayList<wordDTO> word = dao.wordquiz();
+	%>
 	<div class="card">
 		<h1 class="entry-title">타자게임 설명을 적을 것!</h1>
 	</div>
