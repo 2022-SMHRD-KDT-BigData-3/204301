@@ -208,6 +208,9 @@ YWCA 회관 내ㆍ외부는 총탄 자국과 핏자국이 있었다. 양서협�
  홍남순은 이후에도 민주화운동의 현장을 지켰다. 그는 5·18민중항쟁의 진상규명과 명예회복을 위해 노력했으며, 인권 변호사로서 큰 족적을 남겼다. 그의 생전 활동과 헌신을 기억하고 기념하기 위해 많은 분들이 2017년 12월 대인 홍남순 변호사 기념사업회를 결성했다. 기념사업회와 시민사회의 노력을 기반으로 광주광역시는 2017년 9월 8일 그의 생전 자택을 사적지 제29호로 지정ㆍ고시했다. 광주광역시는 사적지로 지정한 이유로 시민 다수의 집합적 행동이 이뤄진 곳, 장소성을 갖는 사람들이 다수이며 이를 기억하고 기념하기 위한 집단적 노력이 전개된 곳이라고 밝혔다. 이를 근거로 12월 8일 자택 앞 인도에 표지석을 설치했다.','null','null');
 delete from quizinfo;
 
+update quizinfo set quiz_path = './taja/taja.jsp' where quiz_type = 'taja';
+update quizinfo set quiz_path = './wordle/wordle.jsp' where quiz_type = 'wordle';
+
 create table result(
 	nickname varchar2(100),
 	placeid varchar2(100),
