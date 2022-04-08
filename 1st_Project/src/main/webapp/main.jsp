@@ -33,6 +33,9 @@
 		</div>
 	</header>
 
-	<div class="bg-img"></div>
+	<!-- <div class="bg-img"></div> -->
+	<section class = "main">
+		
+	</section>
 </body>
 </html>
