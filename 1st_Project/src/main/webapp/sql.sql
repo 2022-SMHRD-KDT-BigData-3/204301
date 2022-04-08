@@ -1,10 +1,6 @@
 select * from tabs;
 select * from userdata;
-<<<<<<< HEAD
 select * from placeinfo;
-=======
-
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/2431.git
 select * from result;
 drop table quizinfo cascade constraint;
 drop table placeinfo;
@@ -78,7 +74,6 @@ insert into placeinfo values ('들불야학 옛터' ,'null','이곳은 ‘광천
 insert into placeinfo values ('전일빌딩' ,'null','5․18당시 계엄군의 헬기발포 총탄흔적 발견 등의 역사적인 장소이다.', 35.148278, 126.918845, './518images/전일빌딩.jpg');
 insert into placeinfo values ('고 홍남순 변호사 가옥' ,'null','5․18당시 민주주의를 쟁취하기 위해 토론과 회의를 진행했던 장소이며 구속자 석방 논의, 관련문건 작성 등을 했던 역사적인 공간이다.', 35.150957, 126.919617, './518images/고홍남순변호사가옥.jpg');
 
-select * from placeinfo;
 update placeinfo set quiz = 'Q2' where placeid='광주역 광장';
 update placeinfo set quiz = 'Q3' where placeid='구 시외버스 공용터미널 일대';
 update placeinfo set quiz = 'Q4' where placeid='518 민주 광장';
@@ -96,14 +91,26 @@ update placeinfo set quiz = 'Q15' where placeid='국군광주병원';
 update placeinfo set quiz = 'Q16' where placeid='5·18 구묘지';
 update placeinfo set quiz = 'Q17' where placeid='들불야학 옛터';
 update placeinfo set quiz = 'Q18' where placeid='전일빌딩';
+update placeinfo set quiz = 'Q19' where placeid='광주YMCA';
+update placeinfo set quiz = 'Q20' where placeid='광주YWCA 옛 터';
+update placeinfo set quiz = 'Q21' where placeid='상무대 옛터';
+update placeinfo set quiz = 'Q22' where placeid='505보안부대 옛터';
+update placeinfo set quiz = 'Q23' where placeid='금남로(구 카톨릭센터)';
+update placeinfo set quiz = 'Q24' where placeid='구 전남도청';
+update placeinfo set quiz = 'Q25' where placeid='광주MBC 옛터';
+update placeinfo set quiz = 'Q26' where placeid='녹두서점 옛터';
+update placeinfo set quiz = 'Q27' where placeid='전남대학교 병원';
+update placeinfo set quiz = 'Q28' where placeid='광주기독병원';
+update placeinfo set quiz = 'Q29' where placeid='양동시장';
+update placeinfo set quiz = 'Q30' where placeid='5·18 최초발포지';
+update placeinfo set quiz = 'Q31' where placeid='남동성당';
+update placeinfo set quiz = 'Q32' where placeid='고 홍남순 변호사 가옥';
 
 update placeinfo set path = './518images/구가톨릭센터.jpg' where placeid = '금남로(구 카톨릭센터)';
 update placeinfo set path = './518images/구 시외버스공용터미널 일대.jpg';
 
 delete from USERDATA;
 delete from placeinfo;
-
-insert into quizinfo values('no.1', '', 'puzzle', 'null', '1');
 
 --create table quizinfo(
 --	quiz varchar2(100) primary key,
@@ -123,6 +130,17 @@ create table quizinfo (
 );
 
 select * from quizinfo;
+insert into quizinfo values ('Q23','금남로(구 카톨릭센터)','puzzle','null','null','null');
+insert into quizinfo values ('Q24','구 전남도청','puzzle','null','null','null');
+insert into quizinfo values ('Q25','광주MBC 옛터','puzzle','null','null','null');
+insert into quizinfo values ('Q26','녹두서점 옛터','puzzle','null','null','null');
+insert into quizinfo values ('Q27','전남대학교 병원','puzzle','null','null','null');
+insert into quizinfo values ('Q28','광주기독병원','puzzle','null','null','null');
+insert into quizinfo values ('Q29','양동시장','puzzle','null','null','null');
+insert into quizinfo values ('Q30','5·18 최초발포지','puzzle','null','null','null');
+insert into quizinfo values ('Q31','남동성당','puzzle','null','null','null');
+insert into quizinfo values ('Q32','고 홍남순 변호사 가옥','taja','null','null','null');
+
 insert into quizinfo values ('Q1','전남대학교 정문','wordle','1980년 5월 17일 자정 불법적인 비상계엄 전국 확대에 따라 전남대에 진주한 계엄군은 도서관 등에서 밤을 새워 학문에 몰두하고 있던 학생들을 무조건 구타하고 불법 구금하면서 항쟁의 불씨는 뿌려졌다. 이어 18일 오전 10시경, 교문앞에 모여든 학생들이 학교출입을 막는 계엄군에게 항의하면서 최초의 충돌이 있었으며, 학생들은 광주역과 금남로로 진출해 항의 시위를 벌렸다.
 계엄군은 항쟁기간 중 시내에서 끌고 온 시민들을 여기 종합운동장과 이학부 건물에 수용, 집단 구타하는 과정에서 사망자가 발생하였고 주검은 학교 안에 매장되었다가 그 후 발굴되었다. 당시 정문 앞에는 용봉천이 흐르고 그 위에 다리가 놓여 있었으나 지금은 복개되었다. 학생과 시민들을 불법 감금했던 이학부 건물도 철거되었으며 교문도 모양이 바뀌었다.','ㅎㅏㄱㅅㅐㅇ,ㅊㅜㅇㄷㅗㄹ','../wordle/wordle.jsp');
 insert into quizinfo values ('Q2','광주역 광장','wordle','시위가 더욱 가열된 5월 20일 밤 광주역에 주둔해 있던 계엄군은 무자비한 유혈 진압에 항의하며 나아가는 비무장 시민들을 향해 발포,다수의 사상자를 내었으며, 21일 아침 이곳에서 주검 2구가 발견되었다.
@@ -183,7 +201,9 @@ YWCA 회관 내ㆍ외부는 총탄 자국과 핏자국이 있었다. 양서협�
  5·18민중항쟁이 본격화되자, 505보안부대는 정보 수집을 위해 도심에 요원들을 파견했다. 요원들은 시위와 진압 상황들을 정리하여 수시로 보고했다. 이들이 작성한 보고서는 보안사령부로 전송되었고, 진압작전 수립의 기본 자료로 활용되었다. 5월 19일에는 광주 출신의 보안사령부 홍석률 대령이 내려와 505보안부대원들을 만나고, 정보를 수집했다. 한편 계엄군은 광주 도심에서 사복을 입고 첩보를 수집하는 편의대(便衣隊)를 운용했다.
  505보안부대의 활약은 여기에서 그치지 않았다. 5·18민중항쟁과 그 이후에 연행한 주요 인물들에 대한 조사를 주관했다. 조사 과정은 폭력과 고문 그 자체였다. 또 다른 주요 업무는 5·18민중항쟁 관련 사망자의 사인을 확정하는 것이었다. 시신 검안은 5월 29일까지 130구, 5월 30일 12구 등 총 142명에 대해 이루어졌다. 검안 의사들이 사망진단서를 작성했고, 이를 바탕으로 검찰은 검시보고서를 작성했다. 그런데 정부가 ‘폭도들에게는 보상하지 않는다’는 원칙을 세우면서 재분류가 요구되었다. 핵심은 ‘폭도’와 ‘비폭도’의 분류였다. 또한 505보안부대는 1983년에 추진되었던 5ㆍ18구묘지 이장, 이른바 ‘비둘기 시행계획’을 주관했다.
  505보안부대는 2005년 11월에 이전했다. 광주광역시는 505보안부대 옛터가 지닌 의미와 현장성을 보전하기 위해 2007년 6월 27일 사적지 26호로 지정ㆍ고시했다.','null','null');
- 
+ insert into quizinfo values ('Q32','고 홍남순 변호사 가옥','taja','홍남순은 1912년 6월 7일(음력) 전남 화순군 도곡면에서 출생했다. 1946년 광주지방법원 화순등기소장에 취임했고, 1948년 변호사 시험에 합격하여 활동하다 참전했으며, 1953년부터 광주지방법원과 고등법원에서 판사를 역임했다. 1958년 제4대 국회의원선거에서 광주 을구 선거관리위원장을 맡았으며, 1963년 10월 1일 광주시 궁동 15번지에서 변호사 사무실을 재 개업했다. 홍남순은 1960년대 중반 이후 민주화운동에 참여하고, 인권 변론을 맡아 광주ㆍ전남지역의 이른바 어른으로 큰 획을 그은 삶을 살았다. 그는 2001년 뇌출혈로 쓰러진 뒤 투병하다가 2006년 10월 14일에 사망했다. 
+홍남순은 국립5ㆍ18민주묘지 제5묘역 76번에 안장되었다. 홍남순은 5ㆍ18민중항쟁 국면에서도 시대적 역할을 담당했다. 5월 17일 오후 광주 YWCA에서 개최된 광주지역 인사들의 긴급 모임에 다녀온 그는 18일의 상황을 지켜보았다. 그는 19일 가족의 권유로 검속을 피해 상경했으나, 21일 어렵사리 광주로 돌아왔다. 홍남순은 22일 남동성당에서 개최된 수습위원회 구성논의에 참가했으며, 26일에는 탱크를 앞세운 계엄군의 도심 진입을 막기 위해 수습대책위원 17명과 더불어 죽음의 행진을 벌였다. 홍남순은 계엄당국에 연행ㆍ구속되었고, 상무대 법정에서 재판을 받았다. 그는 조사와 재판에서도 굴함이 없이 당당했으며, 꾸짖었다. 무기징역을 선고받은 홍남순은 1981년 12월 형집행정지로 석방되었다.
+ 홍남순은 이후에도 민주화운동의 현장을 지켰다. 그는 5·18민중항쟁의 진상규명과 명예회복을 위해 노력했으며, 인권 변호사로서 큰 족적을 남겼다. 그의 생전 활동과 헌신을 기억하고 기념하기 위해 많은 분들이 2017년 12월 대인 홍남순 변호사 기념사업회를 결성했다. 기념사업회와 시민사회의 노력을 기반으로 광주광역시는 2017년 9월 8일 그의 생전 자택을 사적지 제29호로 지정ㆍ고시했다. 광주광역시는 사적지로 지정한 이유로 시민 다수의 집합적 행동이 이뤄진 곳, 장소성을 갖는 사람들이 다수이며 이를 기억하고 기념하기 위한 집단적 노력이 전개된 곳이라고 밝혔다. 이를 근거로 12월 8일 자택 앞 인도에 표지석을 설치했다.','null','null');
 delete from quizinfo;
 
 create table result(
