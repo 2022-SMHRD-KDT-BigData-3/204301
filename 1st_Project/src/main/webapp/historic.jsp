@@ -9,22 +9,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title> 2431 </title>
 <!-- CSS -->
 <link rel="stylesheet" href="./css/historic.css">
 <link rel="stylesheet" href="./css/common.css">
 <style>
-@font-face{
-	font-family: 'LeeSeoyun';
-	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .list_wrap .item p {
   font-size: 13px;
   letter-spacing: -1px;
-  font-family: 'LeeSeoyun';
+  font-family: 'GmarketSansMedium';
 }
 </style>	
 </head>

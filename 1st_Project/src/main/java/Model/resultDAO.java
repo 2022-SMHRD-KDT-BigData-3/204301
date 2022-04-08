@@ -52,7 +52,7 @@ public class resultDAO {
 		
 		try {
 			
-			String sql ="insert into result values(?,?,?,?,null,?)";
+			String sql ="insert into result values(?,?,?,?,?,sysdate)";
 			
 			psmt = conn.prepareStatement(sql);
 			

@@ -216,14 +216,15 @@ create table result(
 	placeid varchar2(100),
 	quiz varchar2(100),
 	quiz_set varchar2(10),
-	playtime number(6) default 0,
-	score number(5)default 0,
+	score number(5) default 0,
+	playtime date default sysdate,
 	constraint nick_fk foreign key(nickname) references userdata(nickname),
-	constraint placeid_fk foreign key(placeid) references placeinfo(placeid),
+	constraint result_placeid_fk foreign key(placeid) references placeinfo(placeid),
 	constraint result_quiz_fk foreign key(quiz) references quizinfo(quiz),
 	constraint quiz_set_ck check(quiz_set in('true','false'))
 );
 
 select * from result;
+drop table result cascade constraint;
 
 
