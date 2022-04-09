@@ -1,5 +1,13 @@
+
+<%@page import="Model.cityDTO"%>
+<%@page import="Model.reviewDTO"%>
+<%@page import="Model.statisticsDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ page import="Model.statisticsDAO"%>
+<%@ page import="java.util.HashMap"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,13 +18,118 @@
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 <link rel="stylesheet" href="./css/common.css">
 <style>
-#map { width: 800px; height: 500px; }
-.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
-.legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
+#map { 
+	width: 800px; height: 500px; 
+}
+.info { 
+	padding: 6px 8px; 
+	font: 14px/16px Arial, Helvetica, sans-serif; 
+	background: white; 
+	background: rgba(255,255,255,0.8); 
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px; 
+} 
+.info h4 { 
+	margin: 0 0 5px; 
+	color: #777; 
+}
+.legend { 
+	text-align: left; 
+	line-height: 18px; 
+	color: #555; 
+} 
+.legend i { 
+	width: 18px; 
+	height: 18px; 
+	float: left; 
+	margin-right: 8px; 
+	opacity: 0.7; 
+}
 </style>
 </head>
 <body>
+<%
+	statisticsDAO dao = new statisticsDAO();
 
+	ArrayList<statisticsDTO> age_cnt = new ArrayList<statisticsDTO>();
+	ArrayList<reviewDTO> review_cnt = new ArrayList<reviewDTO>();
+	ArrayList<cityDTO> city_cnt = new ArrayList<cityDTO>();
+	
+	age_cnt = dao.statistics();
+	review_cnt = dao.review();
+	city_cnt = dao.city();
+	
+	System.out.println(age_cnt);
+	System.out.println(review_cnt);
+	System.out.println(city_cnt);
+	
+	for (int i=0 ; i<age_cnt.size(); i++){
+		if(age_cnt.get(i).getAge().equals("10대")){	
+			System.out.println(age_cnt.get(i).getCnt());
+		}else if(age_cnt.get(i).getAge().equals("20대")){
+			System.out.println(age_cnt.get(i).getCnt());
+		}else if(age_cnt.get(i).getAge().equals("30대")){
+			System.out.println(age_cnt.get(i).getCnt());
+		}else if(age_cnt.get(i).getAge().equals("40대")){
+			System.out.println(age_cnt.get(i).getCnt());
+		}else if(age_cnt.get(i).getAge().equals("50대")){
+			System.out.println(age_cnt.get(i).getCnt());
+		}else if(age_cnt.get(i).getAge().equals("60대이상")){
+			System.out.println(age_cnt.get(i).getCnt());
+		}	
+	}
+	for(int i= 0; i<review_cnt.size(); i++){
+		if(review_cnt.get(i).getReview().equals("매우 도움이 됐다.")){
+			System.out.println(review_cnt.get(i).getCnt());	
+		}else if(review_cnt.get(i).getReview().equals("어느정도 도움이 됐다.")){
+			System.out.println(review_cnt.get(i).getCnt());	
+		}else if(review_cnt.get(i).getReview().equals("보통이다.")){
+			System.out.println(review_cnt.get(i).getCnt());	
+		}else if(review_cnt.get(i).getReview().equals("별로 도움이 안됐다.")){
+			System.out.println(review_cnt.get(i).getCnt());	
+		}else if(review_cnt.get(i).getReview().equals("전혀 도움이 안됐다.")){
+			System.out.println(review_cnt.get(i).getCnt());	
+		}
+	}
+	for(int i=0; i<city_cnt.size(); i++){
+		if(city_cnt.get(i).getCity().equals("서울특별시")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("광주광역시")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("인천광역시")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("부산광역시")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("대전광역시")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("울산광역시")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("대구광역시")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("경기도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("충청북도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("충청남도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("전라북도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("전라남도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("경상북도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("경상남도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("강원도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("제주도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}
+	}
+	
+	// dto1.getAge == "10대" , dto1.getCnt()
+	
+%>
 	<header class="header">
 		<div class="inner">
 			<ul class="header-menu">
@@ -35,8 +148,14 @@
 			</ul>
 		</div>
 	</header>
-
-	<div id='map'></div>
+	
+	<section class = "map">
+		<div id='map'></div>
+	</section>
+	
+	<section class = "bar">
+		<div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+	</section>
 	
 	<script type="text/javascript">
 
@@ -190,6 +309,36 @@
 
 	legend.addTo(map);
 
+</script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+  google.charts.load('current', {'packages':['bar']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['나이대', 'Sales', 'Expenses', 'Profit'],
+      ['10대', 1000, 400, 200],
+      ['20대', 1170, 460, 250],
+      ['30대', 660, 1120, 300],
+      ['40대', 1030, 540, 350],
+      ['50대', 12, 12, 12 ],
+      ['60대', 12, 12, 12]
+    ]);
+
+    var options = {
+      chart: {
+        title: '게임 결과 통계',
+        subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+      }
+    };
+
+    var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+    chart.draw(data, google.charts.Bar.convertOptions(options));
+  }
 </script>
 </body>
 </html>
