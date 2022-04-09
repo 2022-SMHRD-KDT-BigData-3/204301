@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Model.cityDTO;
 import Model.quizDAO;
 import Model.quizDTO;
+import Model.reviewDTO;
 import Model.statisticsDAO;
 import Model.statisticsDTO;
 
@@ -23,17 +25,23 @@ public class statisticsCon extends HttpServlet {
 		System.out.println("STATISTICS CONTROLLER");
 		
 		ArrayList<statisticsDTO> age_cnt = new ArrayList<statisticsDTO>();
-		ArrayList<statisticsDTO> review_cnt = new ArrayList<statisticsDTO>();
+		ArrayList<reviewDTO> review_cnt = new ArrayList<reviewDTO>();
+		ArrayList<cityDTO> city_cnt = new ArrayList<cityDTO>(); 
 //		String age = request.getParameter("age");
 //		String review = request.getParameter("review");
 	
 		statisticsDAO dao = new statisticsDAO();
 		
 		age_cnt = dao.statistics();
-		review_cnt = dao.statistics();
+		review_cnt = dao.review();
+		city_cnt = dao.city();
+		
 		System.out.println(age_cnt);
 		System.out.println(review_cnt);
-
+		System.out.println(city_cnt);
+		
+		
+		
 //		String quiz_path = dto.getQuiz_path();
 		//String t = "./wordle/wordle.jsp";
 		

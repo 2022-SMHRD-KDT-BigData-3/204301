@@ -129,5 +129,31 @@ public class statisticsDAO {
 			db_close();
 		}return list2;
 	}
+	
+	public ArrayList<cityDTO> city() {
+		db_conn();
+		String[] city = {"서울특별시","광주광역시","인천광역시","부산광역시","대전광역시","울산광역시","대구광역시","경기도","충청북도","충청남도","전라북도","전라남도","경상북도","경상남도","강원도","제주도"};
+		
+		HashMap<String, Integer> city_cnt = new HashMap<String, Integer>();
+		ArrayList<cityDTO> list3 = new ArrayList<cityDTO>();
+		try {
+			for(int i = 0; i < city.length ; i++) {
+				String sql = "select count(*) from userdata where city=?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, city[i]);
+				rs = psmt.executeQuery();
+				while(rs.next()) {
+					int cnt = rs.getInt(1);
+					city_cnt.put(city[i], cnt);
+					cityDTO dto = new cityDTO(city[i],cnt);
+					list3.add(dto);
+				}
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			db_close();
+		}return list3;
+	}
 }
 

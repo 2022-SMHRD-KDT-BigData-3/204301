@@ -1,3 +1,5 @@
+
+<%@page import="Model.cityDTO"%>
 <%@page import="Model.reviewDTO"%>
 <%@page import="Model.statisticsDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -51,10 +53,15 @@
 
 	ArrayList<statisticsDTO> age_cnt = new ArrayList<statisticsDTO>();
 	ArrayList<reviewDTO> review_cnt = new ArrayList<reviewDTO>();
+	ArrayList<cityDTO> city_cnt = new ArrayList<cityDTO>();
+	
 	age_cnt = dao.statistics();
 	review_cnt = dao.review();
+	city_cnt = dao.city();
+	
 	System.out.println(age_cnt);
 	System.out.println(review_cnt);
+	System.out.println(city_cnt);
 	
 	for (int i=0 ; i<age_cnt.size(); i++){
 		if(age_cnt.get(i).getAge().equals("10대")){	
@@ -76,12 +83,47 @@
 			System.out.println(review_cnt.get(i).getCnt());	
 		}else if(review_cnt.get(i).getReview().equals("어느정도 도움이 됐다.")){
 			System.out.println(review_cnt.get(i).getCnt());	
-		}if(review_cnt.get(i).getReview().equals("보통이다.")){
+		}else if(review_cnt.get(i).getReview().equals("보통이다.")){
 			System.out.println(review_cnt.get(i).getCnt());	
-		}if(review_cnt.get(i).getReview().equals("별로 도움이 안됐다.")){
+		}else if(review_cnt.get(i).getReview().equals("별로 도움이 안됐다.")){
 			System.out.println(review_cnt.get(i).getCnt());	
-		}if(review_cnt.get(i).getReview().equals("전혀 도움이 안됐다.")){
+		}else if(review_cnt.get(i).getReview().equals("전혀 도움이 안됐다.")){
 			System.out.println(review_cnt.get(i).getCnt());	
+		}
+	}
+	for(int i=0; i<city_cnt.size(); i++){
+		if(city_cnt.get(i).getCity().equals("서울특별시")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("광주광역시")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("인천광역시")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("부산광역시")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("대전광역시")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("울산광역시")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("대구광역시")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("경기도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("충청북도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("충청남도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("전라북도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("전라남도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("경상북도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("경상남도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("강원도")){
+			System.out.println(city_cnt.get(i).getCnt());
+		}else if(city_cnt.get(i).getCity().equals("제주도")){
+			System.out.println(city_cnt.get(i).getCnt());
 		}
 	}
 	
