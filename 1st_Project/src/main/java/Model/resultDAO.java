@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class resultDAO {
 	Connection conn = null;
@@ -73,4 +74,64 @@ public class resultDAO {
 		return cnt;
 	}
 	
+	public ArrayList<resultDTO> resultinfo(String outplaceid, String outnickname) {
+		ArrayList<resultDTO> list = new ArrayList<resultDTO>();
+		db_conn();
+		
+		try {
+			
+			String sql = "select * from result where placeid=? and nickname =?";
+			
+			psmt.setString(1, outplaceid);
+			psmt.setString(2, outnickname);
+			
+			psmt = conn.prepareStatement(sql);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				String nickname = rs.getString(1);
+				String placeid = rs.getString(2);
+				String quiz = rs.getString(3);
+				String quiz_set = rs.getString(4);
+				int score = rs.getInt(5);
+				
+				resultDTO dto = new resultDTO(nickname, placeid, quiz, quiz_set, score);
+				
+				list.add(dto);
+			}
+			
+			}catch (Exception e) {
+				e.printStackTrace();	
+			}finally {
+				db_close();
+			}return list;
+	
+	}
+
+	public int updateData(String nickname,int score) {
+		db_conn();
+		
+		try {
+			
+			String sql ="UPDATE result SET score = ? WHERE nickname=?";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setInt(1, score);
+			
+			psmt.setString(2, nickname);
+			
+			
+			cnt = psmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			db_close();
+		}
+		
+	return cnt;
+	}
+
 }
