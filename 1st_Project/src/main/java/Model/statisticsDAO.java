@@ -129,5 +129,10 @@ public class statisticsDAO {
 			db_close();
 		}return list2;
 	}
+	
+	public void city() {
+		db_conn();
+		String[] city = {};
+	}
 }
 
