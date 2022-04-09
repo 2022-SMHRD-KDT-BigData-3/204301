@@ -1,9 +1,16 @@
-// 내려오게 할 단어의 목록을 배열로 선언하였습니다.
-var taja = ["전남대학교", "광주역 광장", "무등경기장", "금남로", "구 전남도청", "518민주광장",
-	"상무관", "녹두서점 옛터", "전남대학교 병원", "광주기독병원",
-	"구 적십자병원", "조선대학교", "배고픈다리 일대", "양동시장", "국군광주병원", "광주교도소", "상무대 옛터",
-	"남동성당", "518구묘지", "전일빌딩"];
+var nickname = document.getElementById("nickname");
+var placeid = document.getElementById("placeid");
+var quiz = document.getElementById("quiz");
+var result = true;
 
+
+// 내려오게 할 단어의 목록을 배열로 선언하였습니다.
+var quiz = document.getElementById("quizex").innerText;
+
+arr = quiz.split(" ");
+console.log(arr);
+
+var taja = arr;
 // 밑에 선언한 tajaContents 안에 글자로 된 Div를 넣어주게 됩니다. 
 var tajaContents = document.getElementById("tajaContents");
 
@@ -98,7 +105,8 @@ function downTaja() {
 						if (life === 0) {
 							alert('5개의 생명을 모두 사용하셨습니다.');
 							alert('총 ' + score + '점을 획득하였습니다.');
-							location.reload();
+							
+							location.href = "../exitGameCon?nickname=" + nickname + "&placeid=" + placeid + "&quiz=" + quiz + "&result=" + result + "&score=" + score;
 						}
 
 						// life가 남은상태로 게임이 끝났을 경우 - 성공
@@ -128,7 +136,7 @@ tajaText.addEventListener("keydown", function(e) {
 			// 타자 친 단어와 화면의 단어가 일치했을 때
 			if (tajaText.value === newObj[i].innerHTML) {
 				tajaContents.removeChild(newObj[i]);
-				score += 100;
+				score += 1;
 				scoreDiv.innerHTML = "SCORE : " + score;
 
 				// 더이상 화면에 뿌려질 단어가 없고
