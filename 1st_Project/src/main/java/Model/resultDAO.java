@@ -108,8 +108,6 @@ public class resultDAO {
 			}return list;
 	
 	}
-<<<<<<< HEAD
-=======
 
 	public int updateData(String nickname,int score) {
 		db_conn();
@@ -136,5 +134,4 @@ public class resultDAO {
 	return cnt;
 	}
 
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/2431.git
 }
