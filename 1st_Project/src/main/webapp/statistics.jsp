@@ -10,9 +10,33 @@
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 <link rel="stylesheet" href="./css/common.css">
 <style>
-#map { width: 800px; height: 500px; }
-.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
-.legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
+#map { 
+	width: 800px; height: 500px; 
+}
+.info { 
+	padding: 6px 8px; 
+	font: 14px/16px Arial, Helvetica, sans-serif; 
+	background: white; 
+	background: rgba(255,255,255,0.8); 
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px; 
+} 
+.info h4 { 
+	margin: 0 0 5px; 
+	color: #777; 
+}
+.legend { 
+	text-align: left; 
+	line-height: 18px; 
+	color: #555; 
+} 
+.legend i { 
+	width: 18px; 
+	height: 18px; 
+	float: left; 
+	margin-right: 8px; 
+	opacity: 0.7; 
+}
 </style>
 </head>
 <body>
@@ -35,8 +59,14 @@
 			</ul>
 		</div>
 	</header>
-
-	<div id='map'></div>
+	
+	<section class = "map">
+		<div id='map'></div>
+	</section>
+	
+	<section class = "bar">
+		<div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+	</section>
 	
 	<script type="text/javascript">
 
@@ -190,6 +220,36 @@
 
 	legend.addTo(map);
 
+</script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+  google.charts.load('current', {'packages':['bar']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['나이대', 'Sales', 'Expenses', 'Profit'],
+      ['10대', 1000, 400, 200],
+      ['20대', 1170, 460, 250],
+      ['30대', 660, 1120, 300],
+      ['40대', 1030, 540, 350],
+      ['50대', 12, 12, 12 ],
+      ['60대', 12, 12, 12]
+    ]);
+
+    var options = {
+      chart: {
+        title: '게임 결과 통계',
+        subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+      }
+    };
+
+    var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+    chart.draw(data, google.charts.Bar.convertOptions(options));
+  }
 </script>
 </body>
 </html>

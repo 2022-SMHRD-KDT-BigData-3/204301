@@ -83,11 +83,6 @@
 
 	L.tileLayer('http://xdworld.vworld.kr:8080/2d/Base/201710/{z}/{x}/{y}.png')
 			.addTo(map);
-
-	/* L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png',{
-		attribution:'<a href="http://content.stamen.com/dotspotting_toner_cartography_available_for_download">Stamen Toner</a>,<a href = "http://www.openstreetmap.org/">OpenStreetMap</a>,<a href = "http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
-	}).addTo(map); */
-
 	
 	function onOver(placeid, explanation, path) {
 		marker.bindPopup("<h1>" + placeid + "</h1><p>" + explanation +"</p> <img src='"+ path +"'/>").openPopup();
