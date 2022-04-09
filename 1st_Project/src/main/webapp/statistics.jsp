@@ -1,5 +1,4 @@
 <%@page import="Model.reviewDTO"%>
-<%@page import="jdk.internal.misc.FileSystemOption"%>
 <%@page import="Model.statisticsDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
