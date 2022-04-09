@@ -33,10 +33,7 @@ public class statisticsCon extends HttpServlet {
 		review_cnt = dao.statistics();
 		System.out.println(age_cnt);
 		System.out.println(review_cnt);
-		
-		
-		
-		
+
 //		String quiz_path = dto.getQuiz_path();
 		//String t = "./wordle/wordle.jsp";
 		

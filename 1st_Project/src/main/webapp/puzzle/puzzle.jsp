@@ -1,12 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <script src="puzzle.js"></script>
-    <title>PUZZLE GAME</title>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="puzzle.js"></script>
 </head>
 <body>
-    <div class="puzzle-container">
+	<div class="puzzle-container">
         <div>
             퍼즐게임
         </div>
