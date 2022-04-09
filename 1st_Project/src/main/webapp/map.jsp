@@ -42,7 +42,7 @@
 		userDTO info = (userDTO)session.getAttribute("info");
 		
 		resultDAO rdao = new resultDAO();
-		ArrayList<resultDTO> resultinfo = rdao.resultinfo(placeinfo.get(1).getPlaceid(), info.getNickname());
+		ArrayList<resultDTO> resultinfo = rdao.resultinfo();
 	%>
 
 	<table>
@@ -63,6 +63,20 @@
 				<td><%=placeinfo.get(i).getLatitude()%></td>
 				<td><%=placeinfo.get(i).getLongitude()%></td>
 				<td><%=placeinfo.get(i).getPath()%></td>
+			</tr>
+		<% } %>
+		</tbody>
+	</table>
+	
+	<table>
+		<tbody id = "result_table_body">
+		<% for (int i = 0; i < resultinfo.size(); i++) { %>
+			<tr>
+				<td><%=resultinfo.get(i).getNickname()%></td>
+				<td><%=resultinfo.get(i).getPlaceid()%></td>
+				<td><%=resultinfo.get(i).getQuiz()%></td>
+				<td><%=resultinfo.get(i).getQuiz_set()%></td>
+				<td><%=resultinfo.get(i).getScore()%></td>
 			</tr>
 		<% } %>
 		</tbody>
@@ -104,6 +118,9 @@
 	var rows = document.getElementById("table_body").getElementsByTagName("tr");
     console.log(rows.length);	// tbody tr 개수 = 32
 	
+    var resultRows = document.getElementById("result_table_body").getElementsByTagName("tr");
+    console.log(resultRows.length);
+    
     var markers= [];
     
     // tr만큼 루프돌면서 컬럼값 접근

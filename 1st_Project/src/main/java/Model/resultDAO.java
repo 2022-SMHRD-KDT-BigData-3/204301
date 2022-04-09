@@ -74,16 +74,13 @@ public class resultDAO {
 		return cnt;
 	}
 	
-	public ArrayList<resultDTO> resultinfo(String outplaceid, String outnickname) {
+	public ArrayList<resultDTO> resultinfo() {
 		ArrayList<resultDTO> list = new ArrayList<resultDTO>();
 		db_conn();
 		
 		try {
 			
-			String sql = "select * from result where placeid=? and nickname =?";
-			
-			psmt.setString(1, outplaceid);
-			psmt.setString(2, outnickname);
+			String sql = "select * from result";
 			
 			psmt = conn.prepareStatement(sql);
 			
