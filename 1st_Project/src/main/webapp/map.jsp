@@ -1,3 +1,6 @@
+<%@page import="Model.userDTO"%>
+<%@page import="Model.resultDTO"%>
+<%@page import="Model.resultDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import = "java.util.ArrayList" %>
@@ -35,6 +38,11 @@
 		placeDAO dao = new placeDAO();
 		ArrayList<placeDTO> placeinfo = dao.placeinfo();
 		//ArrayList<placeDTO> placeinfo = (ArrayList<placeDTO>)session.getAttribute("placeinfo");
+		
+		userDTO info = (userDTO)session.getAttribute("info");
+		
+		resultDAO rdao = new resultDAO();
+		ArrayList<resultDTO> resultinfo = rdao.resultinfo(placeinfo.get(1).getPlaceid(), info.getNickname());
 	%>
 
 	<table>
@@ -82,7 +90,7 @@
 
 	
 	function onOver(placeid, explanation, path) {
-		marker.bindPopup("<h1>" + placeid + "</h1><p>" + explanation +"</p> <img src='"+ path +"'/><br><a href='' style='text-decoration:none; font-size:20px;'>진행하러가기</a></br>").openPopup();
+		marker.bindPopup("<h1>" + placeid + "</h1><p>" + explanation +"</p> <img src='"+ path +"'/>").openPopup();
 	}
 	
 	function onOver(placeid, explanation, path, quiz){
