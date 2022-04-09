@@ -1,9 +1,10 @@
 // 내려오게 할 단어의 목록을 배열로 선언하였습니다.
-var taja = ["전남대학교", "광주역 광장", "무등경기장", "금남로", "구 전남도청", "518민주광장",
-	"상무관", "녹두서점 옛터", "전남대학교 병원", "광주기독병원",
-	"구 적십자병원", "조선대학교", "배고픈다리 일대", "양동시장", "국군광주병원", "광주교도소", "상무대 옛터",
-	"남동성당", "518구묘지", "전일빌딩"];
+var quiz = document.getElementById("quizex").innerText;
 
+arr = quiz.split(" ");
+console.log(arr);
+
+var taja = arr;
 // 밑에 선언한 tajaContents 안에 글자로 된 Div를 넣어주게 됩니다. 
 var tajaContents = document.getElementById("tajaContents");
 
