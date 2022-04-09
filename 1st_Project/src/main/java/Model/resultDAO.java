@@ -108,5 +108,30 @@ public class resultDAO {
 			}return list;
 	
 	}
-	
+
+	public int updateData(String nickname,int score) {
+		db_conn();
+		
+		try {
+			
+			String sql ="UPDATE result SET score = ? WHERE nickname=?";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setInt(1, score);
+			
+			psmt.setString(2, nickname);
+			
+			
+			cnt = psmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			db_close();
+		}
+		
+	return cnt;
+	}
+
 }

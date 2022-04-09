@@ -61,7 +61,9 @@ form{
 			</details>
 		</div>
 		<a href="./main.jsp" type="button">처음으로</a>
-		<input name="exit" type="submit" value="처음으로">
+		<form action="../main.jsp">
+		<input name="url" type="submit" value="나가기">
+	</form>
 		<input name="x" type="submit" value="오답노트">
   	</form>
 		   
