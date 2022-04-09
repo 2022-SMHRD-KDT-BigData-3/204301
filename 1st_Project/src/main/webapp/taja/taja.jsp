@@ -61,7 +61,7 @@
 		<script type="text/javascript">
 	var nickname = document.getElementById("nickname").innerText;
 	var placeid = document.getElementById("placeid").innerText;
-	var quiz = document.getElementById("quiz").innerText;
+	var quiz1 = document.getElementById("quiz").innerText;
 	result = true;
 
 
@@ -167,7 +167,7 @@
 								alert('5개의 생명을 모두 사용하셨습니다.');
 								alert('총 ' + score + '점을 획득하였습니다.');
 								
-								window.location.href = "../exitGameCon?nickname=" + nickname + "&placeid=" + placeid + "&quiz=" + quiz + "&result=" + result + "&score=" + score;
+								location.href = "../exitGameCon?nickname=" + nickname + "&placeid=" + placeid + "&quiz=" + quiz1 + "&result=" + result + "&score=" + score;
 							}
 
 							// life가 남은상태로 게임이 끝났을 경우 - 성공
