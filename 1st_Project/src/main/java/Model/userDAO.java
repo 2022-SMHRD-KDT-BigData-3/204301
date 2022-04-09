@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class userDAO {
 
@@ -99,7 +100,9 @@ public class userDAO {
 				db_close();
 			}return cnt;
 		}
-							
+		
+	
+		
 		public int countCol() {
 			db_conn();
 			

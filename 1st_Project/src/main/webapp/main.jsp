@@ -64,7 +64,9 @@
         <p> 게임을 통해 수집한 데이터를 지도, 막대, 워드클라우드 통계로 볼 수 있다. </p>
       </div>
       <div class = "more">
-        <button> <a href="./statistics.jsp">더보기</a> </button>
+      	<form action = "statisticsCon"> 
+      		<button> <a href="./statistics.jsp">더보기</a> </button>
+      	</form>
       </div>
     </div>
 
