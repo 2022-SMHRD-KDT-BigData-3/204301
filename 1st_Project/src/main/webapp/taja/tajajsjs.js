@@ -1,3 +1,9 @@
+var nickname = document.getElementById("nickname");
+var placeid = document.getElementById("placeid");
+var quiz = document.getElementById("quiz");
+var result = true;
+
+
 // 내려오게 할 단어의 목록을 배열로 선언하였습니다.
 var quiz = document.getElementById("quizex").innerText;
 
@@ -99,7 +105,8 @@ function downTaja() {
 						if (life === 0) {
 							alert('5개의 생명을 모두 사용하셨습니다.');
 							alert('총 ' + score + '점을 획득하였습니다.');
-							location.reload();
+							
+							location.href = "../exitGameCon?nickname=" + nickname + "&placeid=" + placeid + "&quiz=" + quiz + "&result=" + result + "&score=" + score;
 						}
 
 						// life가 남은상태로 게임이 끝났을 경우 - 성공
@@ -129,7 +136,7 @@ tajaText.addEventListener("keydown", function(e) {
 			// 타자 친 단어와 화면의 단어가 일치했을 때
 			if (tajaText.value === newObj[i].innerHTML) {
 				tajaContents.removeChild(newObj[i]);
-				score += 100;
+				score += 1;
 				scoreDiv.innerHTML = "SCORE : " + score;
 
 				// 더이상 화면에 뿌려질 단어가 없고

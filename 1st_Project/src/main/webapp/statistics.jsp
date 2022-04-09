@@ -1,5 +1,11 @@
+<%@page import="Model.reviewDTO"%>
+<%@page import="Model.statisticsDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ page import="Model.statisticsDAO"%>
+<%@ page import="java.util.HashMap"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +46,48 @@
 </style>
 </head>
 <body>
+<%
+	statisticsDAO dao = new statisticsDAO();
 
+	ArrayList<statisticsDTO> age_cnt = new ArrayList<statisticsDTO>();
+	ArrayList<reviewDTO> review_cnt = new ArrayList<reviewDTO>();
+	age_cnt = dao.statistics();
+	review_cnt = dao.review();
+	System.out.println(age_cnt);
+	System.out.println(review_cnt);
+	
+	for (int i=0 ; i<age_cnt.size(); i++){
+		if(age_cnt.get(i).getAge().equals("10대")){	
+			System.out.println(age_cnt.get(i).getCnt());
+		}else if(age_cnt.get(i).getAge().equals("20대")){
+			System.out.println(age_cnt.get(i).getCnt());
+		}else if(age_cnt.get(i).getAge().equals("30대")){
+			System.out.println(age_cnt.get(i).getCnt());
+		}else if(age_cnt.get(i).getAge().equals("40대")){
+			System.out.println(age_cnt.get(i).getCnt());
+		}else if(age_cnt.get(i).getAge().equals("50대")){
+			System.out.println(age_cnt.get(i).getCnt());
+		}else if(age_cnt.get(i).getAge().equals("60대이상")){
+			System.out.println(age_cnt.get(i).getCnt());
+		}	
+	}
+	for(int i= 0; i<review_cnt.size(); i++){
+		if(review_cnt.get(i).getReview().equals("매우 도움이 됐다.")){
+			System.out.println(review_cnt.get(i).getCnt());	
+		}else if(review_cnt.get(i).getReview().equals("어느정도 도움이 됐다.")){
+			System.out.println(review_cnt.get(i).getCnt());	
+		}if(review_cnt.get(i).getReview().equals("보통이다.")){
+			System.out.println(review_cnt.get(i).getCnt());	
+		}if(review_cnt.get(i).getReview().equals("별로 도움이 안됐다.")){
+			System.out.println(review_cnt.get(i).getCnt());	
+		}if(review_cnt.get(i).getReview().equals("전혀 도움이 안됐다.")){
+			System.out.println(review_cnt.get(i).getCnt());	
+		}
+	}
+	
+	// dto1.getAge == "10대" , dto1.getCnt()
+	
+%>
 	<header class="header">
 		<div class="inner">
 			<ul class="header-menu">
