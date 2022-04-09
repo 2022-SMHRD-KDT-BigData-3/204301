@@ -22,7 +22,7 @@
 	display: none;
 }
 
-#quizex {
+#taja{
 	display: none;
 }
 </style>
@@ -33,10 +33,11 @@
 
 	quizDTO quizinfo = (quizDTO) session.getAttribute("quizinfo");
 	%>
+	<div id ="taja"><%=quizinfo.getAnswer()%></div>
 	<div id="nickname"><%=info.getNickname()%></div>
 	<div id="placeid"><%=quizinfo.getPlaceid()%></div>
 	<div id="quiz"><%=quizinfo.getQuiz()%></div>
-	<div id="quizex"><%=quizinfo.getQuiz_ex()%></div>
+	
 
 
 	<div class="card">
@@ -66,9 +67,9 @@
 
 
 	// 내려오게 할 단어의 목록을 배열로 선언하였습니다.
-	var quiz = document.getElementById("quizex").innerText;
+	var quiz = document.getElementById("taja").innerText;
 
-	arr = quiz.split(" ");
+	arr = quiz.split(",");
 	console.log(arr);
 
 	var taja = arr;
@@ -174,7 +175,7 @@
 							if (newObj.length === taja.length) { // 화면에 단어가 다 뿌려진 이후
 								if (!tajaContents.hasChildNodes()) { // 뿌려진 단어가 화면에 존재하지 않을 경우
 									alert('총 ' + score + '점을 획득하였습니다.');
-									location.reload();
+									location.href = "../exitGameCon?nickname=" + nickname + "&placeid=" + placeid + "&quiz=" + quiz1 + "&result=" + result + "&score=" + score;
 								}
 							}
 
@@ -205,7 +206,7 @@
 					if (newObj.length === taja.length) {
 						if (!tajaContents.hasChildNodes()) {
 							alert('총 ' + score + '점을 획득하였습니다.');
-							location.reload();
+							location.href = "../exitGameCon?nickname=" + nickname + "&placeid=" + placeid + "&quiz=" + quiz1 + "&result=" + result + "&score=" + score;
 						}
 
 					}
