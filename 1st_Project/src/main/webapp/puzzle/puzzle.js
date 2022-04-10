@@ -77,7 +77,6 @@ function drop(ev) {
 function updateImageDisplay() {
   const preview = document.querySelector('.preview');
   const input = document.querySelector('input');
-  //const input = document.querySelector('.img');
   const board = document.getElementById('puzzle-board');
 
   while(preview.firstChild) {
