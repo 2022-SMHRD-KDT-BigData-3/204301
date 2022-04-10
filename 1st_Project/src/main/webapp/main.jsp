@@ -1,4 +1,4 @@
-.<%@page import="Model.userDTO"%>
+<%@page import="Model.userDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="./css/main.css">
 
 <title> 2431 </title>
+
 
 </head>
 <body>
@@ -37,12 +38,12 @@
 	</header>
 
 	<section class="main text-center">
-    <div class="main-img"></div>
-    <div class="main-text">
-      <h3> SMHRD Big-Data 1st-Project </h3>
-      <h1> 2431 </h1>
-      <p> </p>
-    </div>
+	    <div class="main-img"></div>
+	    <div class="main-text">
+	      <h3> SMHRD Big-Data 1st-Project </h3>
+	      <h1> 2431 </h1>
+	      <p> </p>
+	    </div>
   </section>
 
   <section class="sub-menu">

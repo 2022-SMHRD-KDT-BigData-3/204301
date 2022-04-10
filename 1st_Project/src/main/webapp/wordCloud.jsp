@@ -11,11 +11,11 @@
 <body>
 
 <div class="chart-area">
-	<div id="container" style="width:500px; height:500px;">
-	</div>
+	<div id="container" style="width:500px; height:500px;"></div>
 </div>
 
-<script> anychart.onDocumentReady(function (){
+<script> 
+anychart.onDocumentReady(function (){
 	var data = [ { "x": "IT",
 		"value": 59,
 		category: "Sino-Tibetan" },
@@ -38,7 +38,8 @@
 	chart.angles([0]);
 	chart.container("container");
 	// chart.getCredits().setEnabled(false);
-	chart.draw(); }); </script>
+	chart.draw(); }); 
+</script>
 
 
 </body>
