@@ -17,6 +17,7 @@
     html,body { width:100%; height:100%; margin:0; padding:0; }
     #mapid { width:100%; height:100%; z-index: 5;}
     table{ display: none;}
+    #userNickname{ display: none;}
     #close{
     		width: 80px;
             text-align:center;
@@ -40,7 +41,7 @@
 		//ArrayList<placeDTO> placeinfo = (ArrayList<placeDTO>)session.getAttribute("placeinfo");
 		
 		userDTO info = (userDTO)session.getAttribute("info");
-		
+	
 		resultDAO rdao = new resultDAO();
 		ArrayList<resultDTO> resultinfo = rdao.resultinfo();
 	%>
@@ -72,15 +73,17 @@
 		<tbody id = "result_table_body">
 		<% for (int i = 0; i < resultinfo.size(); i++) { %>
 			<tr>
-				<td><%=resultinfo.get(i).getNickname()%></td>
+				<td id="resultNickname"><%=resultinfo.get(i).getNickname()%></td>
 				<td><%=resultinfo.get(i).getPlaceid()%></td>
 				<td><%=resultinfo.get(i).getQuiz()%></td>
-				<td><%=resultinfo.get(i).getQuiz_set()%></td>
+				<td id="resultQuizset"><%=resultinfo.get(i).getQuiz_set()%></td>
 				<td><%=resultinfo.get(i).getScore()%></td>
 			</tr>
 		<% } %>
 		</tbody>
 	</table>
+	
+	<div id="userNickname"><%=info.getNickname()%></div>
 	
 	<div id="mapid"></div>
 
@@ -109,12 +112,30 @@
 		console.log("클릭테스트");
 		location.href = '';
 	}
+	
+	var VIcon = L.icon({
+	    iconUrl: "./img/vCheck.png",
+	    iconSize: [16, 16],
+	    iconAnchor: [8, 8],
+	    popupAnchor: [0, 0]
+	});
+	
+	var XIcon = L.icon({
+	    iconUrl: "./img/xCheck.png",
+	    iconSize: [16, 16],
+	    iconAnchor: [8, 8],
+	    popupAnchor: [0, 0]
+	});
     
 	var rows = document.getElementById("table_body").getElementsByTagName("tr");
     console.log(rows.length);	// tbody tr 개수 = 32
 	
     var resultRows = document.getElementById("result_table_body").getElementsByTagName("tr");
     console.log(resultRows.length);
+    
+    var userNickname = document.getElementById("userNickname").innerText;
+    //var resultNickname = document.getElementById("resultNickname").innerText;
+    //var resultQuizset = document.getElementById("resultQuizset").innerText;
     
     var markers= [];
     
@@ -131,7 +152,8 @@
       
       var marker = L.marker([ cell_4, cell_5 ]).addTo(map);
       if(cell_2 != null){
-    	  marker.on('mousedown', onOver(cell_1, cell_3, cell_6, cell_2));  
+		marker.on('mousedown', onOver(cell_1, cell_3, cell_6, cell_2));
+		
       } else {
     	  //marker.on('mousedown', onOver(cell_1, cell_3, cell_6));  
       }
