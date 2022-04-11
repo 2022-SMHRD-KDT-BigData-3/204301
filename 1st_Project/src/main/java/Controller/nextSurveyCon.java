@@ -35,8 +35,8 @@ public class nextSurveyCon extends HttpServlet {
 			System.out.println("UserData Update Success");
 			
 			HttpSession session = request.getSession();
-			session.removeAttribute("info");
-			//session.invalidate();
+			//session.removeAttribute("info");
+			session.invalidate();
 			
 		} else {
 			System.out.println("UserData Update Fail");

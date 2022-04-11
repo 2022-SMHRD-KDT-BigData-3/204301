@@ -36,6 +36,10 @@ public class exitGameCon extends HttpServlet {
 		
 		if(cnt > 0) {
 			System.out.println("데이터 삽입 성공");
+			
+			HttpSession session = request.getSession();
+			session.removeAttribute("quizinfo");
+			
 			// 로그인 정보가 담긴 session 업데이트, 갱신
 			// -> 같은 session 이름에 다른 값 담아주기(덮어쓰기)
 			//HttpSession session = request.getSession();
