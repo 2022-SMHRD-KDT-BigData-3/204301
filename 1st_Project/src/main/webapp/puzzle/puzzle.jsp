@@ -20,69 +20,66 @@
   padding: 0;
 }
 
-.wrap-all {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.preview {
+	float: left;
+	width: 45%;
+	margin-left: 2%;
+	margin-right: 5%;
 }
 
-.play-time { 
-  font-size: 3rem;
-  margin-top: 2rem;
-  color: #3b5998;
+#puzzle-board {
 }
 
-.start-button {
-  background-color: #3b5998;
-  color: #fff;
-  border: none;
-  padding: 1rem 2rem;
-  margin-top: 1rem;
+.title {
+	text-align: center;
+	font-size: 40px;
 }
 
-.game-text {
-  position: absolute;
-  font-size: 45px;
-  color: #67c23a;
-  text-shadow: 1px 1px rgba(0,0,0,0.5);
-  /* display: none; */
+#timer {
+	text-align: center;
+	font-size: 40px;
 }
-
 </style>
 
 </head>
 <body>
 <%
-	//userDTO info = (userDTO)session.getAttribute("info");
+	userDTO info = (userDTO)session.getAttribute("info");
 
-	//quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
+	quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
 %>
 
-<%-- <div id = "nickname"><%=info.getNickname()%></div>
+<div id = "nickname"><%=info.getNickname()%></div>
 <div id = "placeid"><%=quizinfo.getPlaceid()%></div>
-<div id = "quiz"><%=quizinfo.getQuiz()%></div> --%>
+<div id = "quiz"><%=quizinfo.getQuiz()%></div> 
 
 	<div class="puzzle-container">
-        <div>
+        <div class = "title">
             퍼즐게임
         </div>
         <label for="puzzle-input">
             이미지 선택
             <input onchange="updateImageDisplay()" name="puzzle-input" id="puzzle-input" type="file" accept="image/*">
         </label>
-        <div class="preview">
+        <div id = "timer">
+        	0
+        </div>
+        <div class="preview item">
             <p>선택한 이미지로 퍼즐을 만듭니다.</p>
         </div>
-        <table id="puzzle-board">
+        <table id="puzzle-board" class = "item">
 
         </table>
+        
         <div id="puzzle-box">
 
         </div>
     </div>
     
 <script type="text/javascript">
+	/* var nickname = document.getElementById("nickname").innerText;
+	var placeid = document.getElementById("placeid").innerText;
+	var quiz = document.getElementById("quiz").innerText; */
 	const numColsToCut = 5;
 	const numRowsToCut = 5;
 	const imagePieces = [];
@@ -107,7 +104,7 @@
 		});
 	}
 	
-	const maxTime = 180;
+	const maxTime = 300;
 	let nowTime = 0;
 	let timer;
 	function startTimer() {
@@ -121,7 +118,7 @@
 	      location.href = "../exitGameCon?nickname="+ nickname +"&placeid="+ placeid +"&quiz="+ quiz +"&result="+result+"&score="+score;
 	    }
 	    nowTime += 1;
-	    
+	    document.getElementById("timer").innerHTML = (maxTime - nowTime) + "초";
 	  }, 1000);
 	}
 	
@@ -181,7 +178,7 @@
 	           img.onload = function() {
 	             const widthOfOnePiece = this.width/numColsToCut;
 	             const heightOfOnePiece = this.height/numRowsToCut;
-	             para.innerHTML = '${numColsToCut}X${numRowsToCut}로 생성된 퍼즐입니다.';
+	             //para.innerHTML = '${numColsToCut}X${numRowsToCut}로 생성된 퍼즐입니다.';
 	
 	              while(board.firstChild) {
 	                board.removeChild(board.firstChild);
@@ -219,7 +216,8 @@
 	           imageItem.appendChild(img);
 	           imageItem.appendChild(para);
 	           preview.appendChild(imageItem);
-	     }
+	    }
+	    document.getElementsByTagName("label")[0].style.display = "none";
 	}
 </script>
 </body>
