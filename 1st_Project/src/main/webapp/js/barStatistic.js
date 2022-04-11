@@ -11,13 +11,13 @@ var age_cnt = document.getElementById("age_tbody").getElementsByTagName("tr");
 	
 function drawChart() {
   var bardata = google.visualization.arrayToDataTable([
-    ['나이대', '이용자수', '리뷰 현황'],
-    [age_cnt[0].getElementsByTagName("td")[0].firstChild.data, age_cnt[0].getElementsByTagName("td")[1].firstChild.data, 10],
-    [age_cnt[1].getElementsByTagName("td")[0].firstChild.data, age_cnt[1].getElementsByTagName("td")[1].firstChild.data, 10],
-    [age_cnt[2].getElementsByTagName("td")[0].firstChild.data, age_cnt[2].getElementsByTagName("td")[1].firstChild.data, 10],
-    [age_cnt[3].getElementsByTagName("td")[0].firstChild.data, age_cnt[3].getElementsByTagName("td")[1].firstChild.data, 10],
-    [age_cnt[4].getElementsByTagName("td")[0].firstChild.data, age_cnt[4].getElementsByTagName("td")[1].firstChild.data, 12],
-    [age_cnt[5].getElementsByTagName("td")[0].firstChild.data, age_cnt[5].getElementsByTagName("td")[1].firstChild.data, 12]
+    ['나이대', '이용자수'],
+    [age_cnt[0].getElementsByTagName("td")[0].firstChild.data, age_cnt[0].getElementsByTagName("td")[1].firstChild.data],
+    [age_cnt[1].getElementsByTagName("td")[0].firstChild.data, age_cnt[1].getElementsByTagName("td")[1].firstChild.data],
+    [age_cnt[2].getElementsByTagName("td")[0].firstChild.data, age_cnt[2].getElementsByTagName("td")[1].firstChild.data],
+    [age_cnt[3].getElementsByTagName("td")[0].firstChild.data, age_cnt[3].getElementsByTagName("td")[1].firstChild.data],
+    [age_cnt[4].getElementsByTagName("td")[0].firstChild.data, age_cnt[4].getElementsByTagName("td")[1].firstChild.data],
+    [age_cnt[5].getElementsByTagName("td")[0].firstChild.data, age_cnt[5].getElementsByTagName("td")[1].firstChild.data]
   ]);
 
   var options = {

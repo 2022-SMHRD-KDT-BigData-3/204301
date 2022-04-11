@@ -11,6 +11,36 @@
 
 <title> 2431 </title>
 
+<style>
+#slideShow{
+	position: relative;
+	overflow: hidden;
+	width: 98%;
+	height: 500px;
+}
+
+.slides {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 500px
+	translation: 0.5s ease-out;
+}
+
+.slides img {
+	width: 100%
+}
+
+.slides li:first-child {
+	margin-left: 100px;
+}
+
+.slides li:not(:last-child){
+	float: left;
+	margin-right: 100px;
+}
+</style>
 
 </head>
 <body>
@@ -38,13 +68,23 @@
 	</header>
 
 	<section class="main text-center">
-	    <div class="main-img"></div>
+	    <div id="slideShow">
+	        <ul class = "slides">
+	        	<!-- <li><img src = "./mainimg/img1.jpg" alt = ""></li>
+	        	<li><img src = "./mainimg/img2.jpg" alt = ""></li>
+	        	<li><img src = "./mainimg/img3.png" alt = ""></li>
+	        	<li><img src = "./mainimg/img4.png" alt = ""></li>
+	        	<li><img src = "./mainimg/img5.png" alt = ""></li>
+	        	<li><img src = "./mainimg/img6.png" alt = ""></li>
+	        	<li><img src = "./mainimg/img7.jpg" alt = ""></li> -->
+	        </ul>
+   		</div>
 	    <div class="main-text">
 	      <h3> SMHRD Big-Data 1st-Project </h3>
 	      <h1> 2431 </h1>
 	      <p> </p>
 	    </div>
-  </section>
+  	</section>
 
   <section class="sub-menu">
     <div class = "sub-item" id = "game">
@@ -83,5 +123,8 @@
     </div>
   </section>
   
+  <script type = "text/javascript">
+	
+  </script>
 </body>
 </html>

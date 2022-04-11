@@ -12,7 +12,7 @@ var city_cnt = document.getElementById("city_tbody").getElementsByTagName("tr");
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
 			'Imagery 짤 <a href="https://www.mapbox.com/">Mapbox</a>',
 		id: 'mapbox/light-v9',
-		tileSize: 512,
+		tileSize: 480,
 		zoomOffset: -1
 	}).addTo(map);
 
@@ -135,7 +135,7 @@ var city_cnt = document.getElementById("city_tbody").getElementsByTagName("tr");
 	legend.onAdd = function (map) {
 
 		var div = L.DomUtil.create('div', 'info legend'),
-			grades = [0, 10, 20, 30, 50, 80, 90, 100],
+			grades = [1, 10, 20, 30, 50, 80, 90, 100],
 			labels = [],
 			from, to;
 

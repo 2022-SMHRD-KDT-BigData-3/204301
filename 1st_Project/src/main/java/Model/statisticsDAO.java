@@ -159,7 +159,7 @@ public class statisticsDAO {
 		
 		ArrayList<letterDTO> list4 = new ArrayList<letterDTO>();
 		try {
-			String sql = "select prevletter, count(*) cnt from userdata group by prevletter";
+			String sql = "select prevletter, count(*) cnt from userdata where not prevletter is null group by prevletter";
 			
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -187,7 +187,7 @@ public class statisticsDAO {
 		
 		ArrayList<letterDTO> list4 = new ArrayList<letterDTO>();
 		try {
-			String sql = "select nextletter, count(*) cnt from userdata group by nextletter";
+			String sql = "select nextletter, count(*) cnt from userdata where not prevletter is null group by nextletter";
 			
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
