@@ -18,7 +18,7 @@
     
     <% if(info == null) { %>
     	 <div class="wrapper">
-    <div class="inner">
+  			  <div class="inner">
       <div class="image-holder">
           <img src="./img/5.jpg" alt>
       </div>
@@ -71,13 +71,18 @@
   </div>
  
 	<% } else { %>
-		<form action = "nextSurveyCon" method = "post">
+	 <div class="wrapper">
+  			  <div class="inner">
+      <div class="image-holder">
+          <img src="./img/6.jpg" alt>
+      </div>
+		<form action = "nextSurveyCon" method = "post">`
 			<div> 
 		      <h1> 게임 후 조사 </h1>
 		    </div>
 		    <input type = "text" name = "user_id" value = <%= info.getNickname() %> style = "display: none;" >
 	    	<div>
-	      		<h4> 게임 후기 </h4>
+	      		<h4> 게임 후기 * </h4>
 	        	<label><input type="radio" name="review" value=100> 매우 도움이 됐다. </label> <br>
 	        	<label><input type="radio" name="review" value=75> 어느정도 도움이 됐다. </label> <br>
 	        	<label><input type="radio" name="review" value=50> 보통이다. </label> <br>
@@ -85,11 +90,13 @@
 	        	<label><input type="radio" name="review" value=0> 전혀 도움이 안됐다. </label> <br>
 	        </div>
 		    <div class="letter">
-		        <h4> 게임 후 5.18하면 떠오르는 단어 혹은 문장 </h4>
-		     	<input type="text" name="nextletter" id="" placeholder="게임 후 5.18하면 떠오르는 단어 혹은 문장"> 
+		        <h4> 게임 후 5.18하면 떠오르는 단어 혹은 문장 * </h4>
+		     	<input type="text" name="nextletter" id="kk" placeholder="게임 후 5.18하면 떠오르는 단어 혹은 문장"> 
 		    </div>
 	        <div class="submit">
 	        	<input type="submit" value="제출">
+	        </div>
+	        </div>
 	        </div>
 	    </form>
 	<% } %>
