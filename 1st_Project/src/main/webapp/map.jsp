@@ -115,14 +115,14 @@
 	
 	var VIcon = L.icon({
 	    iconUrl: "./img/vCheck.png",
-	    iconSize: [16, 16],
+	    iconSize: [24, 24],
 	    iconAnchor: [8, 8],
 	    popupAnchor: [0, 0]
 	});
 	
 	var XIcon = L.icon({
 	    iconUrl: "./img/xCheck.png",
-	    iconSize: [16, 16],
+	    iconSize: [24, 24],
 	    iconAnchor: [8, 8],
 	    popupAnchor: [0, 0]
 	});
@@ -153,7 +153,7 @@
       var marker = L.marker([ cell_4, cell_5 ]).addTo(map);
       if(cell_2 != null){
 		marker.on('mousedown', onOver(cell_1, cell_3, cell_6, cell_2));
-		
+		//marker.setIcon(VIcon);
       } else {
     	  //marker.on('mousedown', onOver(cell_1, cell_3, cell_6));  
       }
