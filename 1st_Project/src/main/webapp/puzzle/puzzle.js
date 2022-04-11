@@ -71,6 +71,7 @@ function drop(ev) {
   if (completePuzzle(originImagePieces, resultPieces)) {
     window.alert('퍼즐 성공!');
 
+	location.href = "../exitGameCon?nickname="+ nickname +"&placeid="+ placeid +"&quiz="+ quiz +"&result="+result+"&score="+score;
   }
 }
 

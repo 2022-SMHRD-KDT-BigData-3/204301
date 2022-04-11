@@ -4,15 +4,20 @@
 google.charts.load('current', {'packages':['bar']});
 google.charts.setOnLoadCallback(drawChart);
 
+var age_cnt = document.getElementById("age_tbody").getElementsByTagName("tr");
+
+//console.log(age_cnt.length);
+//console.log(age_cnt[0].getElementsByTagName("td")[1].firstChild.data);
+	
 function drawChart() {
   var bardata = google.visualization.arrayToDataTable([
     ['나이대', '이용자수', '리뷰 현황'],
-    ['10대', 1000, 400],
-    ['20대', 1170, 460],
-    ['30대', 660, 1120],
-    ['40대', 1030, 540],
-    ['50대', 12, 12 ],
-    ['60대 이상', 12, 12]
+    [age_cnt[0].getElementsByTagName("td")[0].firstChild.data, age_cnt[0].getElementsByTagName("td")[1].firstChild.data, 10],
+    [age_cnt[1].getElementsByTagName("td")[0].firstChild.data, age_cnt[1].getElementsByTagName("td")[1].firstChild.data, 10],
+    [age_cnt[2].getElementsByTagName("td")[0].firstChild.data, age_cnt[2].getElementsByTagName("td")[1].firstChild.data, 10],
+    [age_cnt[3].getElementsByTagName("td")[0].firstChild.data, age_cnt[3].getElementsByTagName("td")[1].firstChild.data, 10],
+    [age_cnt[4].getElementsByTagName("td")[0].firstChild.data, age_cnt[4].getElementsByTagName("td")[1].firstChild.data, 12],
+    [age_cnt[5].getElementsByTagName("td")[0].firstChild.data, age_cnt[5].getElementsByTagName("td")[1].firstChild.data, 12]
   ]);
 
   var options = {

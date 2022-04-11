@@ -55,10 +55,9 @@ public class statisticsDAO {
 	public ArrayList<statisticsDTO> statistics() {
 		db_conn();
 		
-		String[] ages = {"10대", "20대", "30대", "40대", "50대", "60대이상"}; // db 에서 추출
-		String[] reviews = {"매우 도움이 됐다.", "어느정도 도움이 됐다.", "보통이다.", "별로 도움이 안됐다.", "전혀 도움이 안됐다."};
+		String[] ages = {"10대", "20대", "30대", "40대", "50대", "60대이상"}; 
 		
-		HashMap<String, Integer> age_cnt = new HashMap<String, Integer>(); // age_cnt.get("10대") = 50 // "20대" 9 
+		HashMap<String, Integer> age_cnt = new HashMap<String, Integer>(); 
 		
 		ArrayList<statisticsDTO> list = new ArrayList<statisticsDTO>(); 
 
@@ -80,16 +79,15 @@ public class statisticsDAO {
 					
 					statisticsDTO dto = new statisticsDTO(ages[i], cnt);
 					list.add(dto);
-					// add( dto 6개 ) > [dto1, dto2, dto3, dto4, dto5, dto6] /
 				}	
-				}	
+			}	
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 			db_close();
 		}
 		return list;
-		// dto1.getAge == "10대" , dto1.getCnt()
+
 	}
 	
 	public ArrayList<reviewDTO> review() {
@@ -154,6 +152,62 @@ public class statisticsDAO {
 		}finally {
 			db_close();
 		}return list3;
+	}
+	
+	public ArrayList<letterDTO> prevletter(){
+		db_conn();
+		
+		ArrayList<letterDTO> list4 = new ArrayList<letterDTO>();
+		try {
+			String sql = "select prevletter, count(*) cnt from userdata group by prevletter";
+			
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println(rs.next());
+				String letter = rs.getString("prevletter");
+				int cnt = rs.getInt("cnt");
+				
+				letterDTO dto = new letterDTO(letter, cnt);
+				
+				list4.add(dto);
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			db_close();
+		}
+		return list4;
+	}
+	
+	public ArrayList<letterDTO> nextletter(){
+		db_conn();
+		
+		ArrayList<letterDTO> list4 = new ArrayList<letterDTO>();
+		try {
+			String sql = "select nextletter, count(*) cnt from userdata group by nextletter";
+			
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println(rs.next());
+				String letter = rs.getString("nextletter");
+				int cnt = rs.getInt("cnt");
+				
+				letterDTO dto = new letterDTO(letter, cnt);
+				
+				list4.add(dto);
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			db_close();
+		}
+		return list4;
 	}
 }
 

@@ -1,13 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.userDTO"%>
+<%@page import="Model.quizDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="puzzle.js"></script>
+<link rel="stylesheet" href="./puzzle.css">
+<script type="text/javascript" src="puzzle.js"></script>
+
+<style>
+#nickname{ display: none;}
+#placeid{ display: none;}
+#quiz{ display: none;}
+</style>
+
 </head>
 <body>
+<%
+	userDTO info = (userDTO)session.getAttribute("info");
+
+	quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
+%>
+
+<div id = "nickname"><%=info.getNickname()%></div>
+<div id = "placeid"><%=quizinfo.getPlaceid()%></div>
+<div id = "quiz"><%=quizinfo.getQuiz()%></div>
+
 	<div class="puzzle-container">
         <div>
             퍼즐게임

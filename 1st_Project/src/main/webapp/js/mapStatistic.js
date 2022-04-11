@@ -1,7 +1,7 @@
 
 var map = L.map('map').setView([36.3511658, 127.9481835], 7);
 	
-var city_cnt = document.getElementById("tbody").getElementsByTagName("tr");
+var city_cnt = document.getElementById("city_tbody").getElementsByTagName("tr");
 	
 	console.log(city_cnt.length);
 	console.log(city_cnt[0].getElementsByTagName("td")[1].firstChild.data);

@@ -2,10 +2,14 @@ select * from tabs;
 select * from userdata;
 select * from placeinfo;
 select * from result;
-drop table quizinfo cascade constraint;
 drop table placeinfo;
 select count(*) from userdata;
 
+select review, count(*) cnt from userdata group by review;
+select prevletter, count(*) cnt from userdata group by prevletter;
+select nextletter, count(*) cnt from userdata group by nextletter;
+
+drop table userdata cascade constraint;
 create table userdata(
    nickname varchar2(100) primary key,
    age varchar2(10) not null,
@@ -110,7 +114,7 @@ update placeinfo set quiz = 'Q31' where placeid='남동성당';
 update placeinfo set quiz = 'Q32' where placeid='고 홍남순 변호사 가옥';
 
 
-delete from USERDATA;
+delete table USERDATA;
 delete from placeinfo;
 
 --create table quizinfo(
@@ -142,8 +146,8 @@ insert into quizinfo values ('Q28','광주기독병원','puzzle','null','null','
 insert into quizinfo values ('Q29','양동시장','puzzle','null','null','null');
 insert into quizinfo values ('Q30','5·18 최초발포지','puzzle','null','null','null');
 insert into quizinfo values ('Q31','남동성당','puzzle','null','null','null');
-insert into quizinfo values ('Q32','고 홍남순 변호사 가옥','taja','null','null','null');
 delete from quizinfo where quiz = 'Q32'; 
+
 insert into quizinfo values ('Q1','전남대학교 정문','wordle','1980년 5월 17일 자정 불법적인 비상계엄 전국 확대에 따라 전남대에 진주한 계엄군은 도서관 등에서 밤을 새워 학문에 몰두하고 있던 학생들을 무조건 구타하고 불법 구금하면서 항쟁의 불씨는 뿌려졌다. 이어 18일 오전 10시경, 교문앞에 모여든 학생들이 학교출입을 막는 계엄군에게 항의하면서 최초의 충돌이 있었으며, 학생들은 광주역과 금남로로 진출해 항의 시위를 벌렸다.
 계엄군은 항쟁기간 중 시내에서 끌고 온 시민들을 여기 종합운동장과 이학부 건물에 수용, 집단 구타하는 과정에서 사망자가 발생하였고 주검은 학교 안에 매장되었다가 그 후 발굴되었다. 당시 정문 앞에는 용봉천이 흐르고 그 위에 다리가 놓여 있었으나 지금은 복개되었다. 학생과 시민들을 불법 감금했던 이학부 건물도 철거되었으며 교문도 모양이 바뀌었다.','ㅎㅏㄱㅅㅐㅇ,ㅊㅜㅇㄷㅗㄹ','../wordle/wordle.jsp');
 insert into quizinfo values ('Q2','광주역 광장','wordle','시위가 더욱 가열된 5월 20일 밤 광주역에 주둔해 있던 계엄군은 무자비한 유혈 진압에 항의하며 나아가는 비무장 시민들을 향해 발포,다수의 사상자를 내었으며, 21일 아침 이곳에서 주검 2구가 발견되었다.
@@ -211,6 +215,7 @@ delete from quizinfo;
 
 update quizinfo set quiz_path = './taja/taja.jsp' where quiz_type = 'taja';
 update quizinfo set quiz_path = './wordle/wordle.jsp' where quiz_type = 'wordle';
+update quizinfo set quiz_path = './puzzle/puzzle.jsp' where quiz_type = 'puzzle';
 
 create table result(
 	nickname varchar2(100),
@@ -231,5 +236,4 @@ drop table result cascade constraint;
 create table taja (
 	word varchar2(4000)
 );
-
 
