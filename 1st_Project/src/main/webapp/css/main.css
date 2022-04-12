@@ -102,6 +102,7 @@ button:hover {
 	margin:0;
 	outline:0;
 }
+
 .shell {
 	width:960px;
 	margin:0 auto;
@@ -198,4 +199,4 @@ button:hover {
 	height:30px;
 	line-height:30px;
 	background-position:right top;
-}
+} 
