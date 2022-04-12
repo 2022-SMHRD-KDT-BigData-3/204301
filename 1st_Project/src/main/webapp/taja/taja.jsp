@@ -61,7 +61,9 @@
 			</div>
 		</div>
 	</div>
-		<script type="text/javascript">
+	
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
 	var nickname = document.getElementById("nickname").innerText;
 	var placeid = document.getElementById("placeid").innerText;
 	var quiz1 = document.getElementById("quiz").innerText;

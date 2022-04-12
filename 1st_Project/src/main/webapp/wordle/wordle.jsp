@@ -12,143 +12,170 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <style>
-	#table_body{ display: none;}
-	#nickname{ display: none;}
-	#placeid{ display: none;}
-	#quiz{ display: none;}
-	
-	body{
-  /* background-color: white; */
-  /* background: rgba(44, 62, 80,1.0); */
-  /* display: flex; */
+#table_body {
+	display: none;
 }
-   body{
-            background-image: url("7.jpg");
-            background-repeat: repeat;
-            background-size: cover;
-        }
+
+#nickname {
+	display: none;
+}
+
+#placeid {
+	display: none;
+}
+
+#quiz {
+	display: none;
+}
+
+body {
+	/* background-color: white; */
+	/* background: rgba(44, 62, 80,1.0); */
+	/* display: flex; */
+	
+}
+
+body {
+	background-image: url("7.jpg");
+	background-repeat: repeat;
+	background-size: cover;
+}
 
 .card:hover {
-  box-shadow: 0 5px 20px rgba(0,0,0,.8);
-  transform: translateY(-10px) scale(1.02);
-  
+	box-shadow: 0 5px 20px rgba(0, 0, 0, .8);
+	transform: translateY(-10px) scale(1.02);
 }
-.card{
-  width: 800px;
-  padding: 10px;
-  /* background: #1abc9c; */
-  background: #BCFAE4;
-  margin: auto;
-  transition: .3s ease;
-  box-shadow: 0 1px 1px rgba(0,0,0,.3);
+
+.card {
+	width: 800px;
+	padding: 10px;
+	/* background: #1abc9c; */
+	background: #BCFAE4;
+	margin: auto;
+	margin-top: 70px;
+	transition: .3s ease;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
 }
-a{
-  color: black;
-  text-decoration: none; 
+
+a {
+	color: black;
+	text-decoration: none;
 }
 
 h3 {
-  text-align: center; 
-  /* background-color:#1abc9c;  */
-  display: inline;
-  color: black;
-  position: relative;
-  margin-left: 25%;
- }
- #game-board {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+	text-align: center;
+	/* background-color:#1abc9c;  */
+	display: inline;
+	color: black;
+	position: relative;
+	margin-left: 25%;
 }
- .letter-box {
-  border: 2px solid gray;
-  border-radius: 3px;
-  margin: 2px;
-  font-size: 2.5rem;
-  font-weight: 700;
-  height: 3rem;
-  width: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
+
+#game-board {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
+
+.letter-box {
+	border: 2px solid gray;
+	border-radius: 3px;
+	margin: 2px;
+	font-size: 2.5rem;
+	font-weight: 700;
+	height: 3rem;
+	width: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+}
+
 .filled-box {
-  border: 2px solid black;
-}.letter-row {
-  display: flex;
+	border: 2px solid black;
 }
+
+.letter-row {
+	display: flex;
+}
+
 #keyboard-cont {
-  margin: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	margin: 1rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
+
 #keyboard-cont div {
-  display: flex;
+	display: flex;
 }
+
 .second-row {
-  margin: 0.5rem 0;
+	margin: 0.5rem 0;
 }
+
 .keyboard-button {
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 0.5rem;
-  margin: 0 2px;
-  cursor: pointer;
-  text-transform: uppercase;
+	font-size: 1rem;
+	font-weight: 700;
+	padding: 0.5rem;
+	margin: 0 2px;
+	cursor: pointer;
+	text-transform: uppercase;
 }
-    .modal_wrap{
-            display : none;
-            width: 400px;
-            height: 400px;
-            position: absolute;
-            top : 50%;
-            left : 50%;
-            margin: -250px 0 0 -250px;
-            background-color: white;
-            z-index: 2;
-        }
-        .black_bg{
-            display: none;
-            position: absolute;
-            content: "";
-            width: 100%;
-            height: 100%;
-            background-color:#E5DFDF;
-            top:0;
-            left: 0;
-            opacity: 0.7;
-            z-index: 1;
-        }
-        .modal_close{
-        width: 26px;
-        height: 26px;
-        position: absolute;
-        top: -30px;
-        right: 0;
-    }
-    #modal_btn{
+
+.modal_wrap {
+	display: none;
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -250px 0 0 -250px;
+	background-color: white;
+	z-index: 2;
+}
+
+.black_bg {
+	display: none;
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: #E5DFDF;
+	top: 0;
+	left: 0;
+	opacity: 0.7;
+	z-index: 1;
+}
+
+.modal_close {
+	width: 26px;
+	height: 26px;
+	position: absolute;
+	top: -30px;
+	right: 0;
+}
+
+#modal_btn {
 	position: relative;
 	left: 57%;
 }
-    
-    .text{
-    	text-align: center;
-   }
-   
+
+.text {
+	text-align: center;
+}
 </style>
 </head>
 <body>
-	<% 
-		//ArrayList<wordDTO> word = (ArrayList<wordDTO>)session.getAttribute("word");
-		//wordDAO dao = new wordDAO();
-		//ArrayList<wordDTO> word = dao.wordquiz();
-		userDTO info = (userDTO)session.getAttribute("info");
-		
-		quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
-		
-		String answer = quizinfo.getAnswer();
+	<%
+	//ArrayList<wordDTO> word = (ArrayList<wordDTO>)session.getAttribute("word");
+	//wordDAO dao = new wordDAO();
+	//ArrayList<wordDTO> word = dao.wordquiz();
+	userDTO info = (userDTO) session.getAttribute("info");
+
+	quizDTO quizinfo = (quizDTO) session.getAttribute("quizinfo");
+
+	String answer = quizinfo.getAnswer();
 	%>
 
 <div id = "table_body"><%=quizinfo.getAnswer()%></div>

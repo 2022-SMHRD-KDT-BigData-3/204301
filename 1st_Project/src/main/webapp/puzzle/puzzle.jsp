@@ -62,13 +62,13 @@ p{
 </head>
 <body>
 <%
-	//userDTO info = (userDTO)session.getAttribute("info");
+	userDTO info = (userDTO)session.getAttribute("info");
 
-	//quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
+	quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
 %>
 
-<%-- <div id = "placeid"><%=quizinfo.getPlaceid()%></div>
-<div id = "quiz"><%=quizinfo.getQuiz()%></div> --%> 
+<div id = "placeid"><%=quizinfo.getPlaceid()%></div>
+<div id = "quiz"><%=quizinfo.getQuiz()%></div> 
 
 	<div class="puzzle-container">
         <div class = "text">
@@ -94,7 +94,8 @@ p{
          </div>        	
         	
     </div>
-    
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
 	const numColsToCut = 5;
 	const numRowsToCut = 5;
@@ -128,12 +129,12 @@ p{
 	    if(nowTime === maxTime) {
 	      window.clearInterval(timer);
 	      suffleRendering();
+	      var result = "false";
+	      var score = 0;
 	      Swal.fire({icon: 'error',
 	    		title: '시간 초과!',}).then(function(){
 	    			location.href = "../exitGameCon?nickname="+ nickname +"&placeid="+ placeid +"&quiz="+ quiz +"&result="+result+"&score="+score;
 	    		})
-	      var result = "false";
-	      var score = 0;
 	    }
 	    
 	    nowTime += 1;
