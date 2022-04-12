@@ -1,0 +1,9 @@
+.slider-navigation ul li a {
+	background-image:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='css/images/slider-navigation-normal.png', sizingMethod='image');
+	cursor:pointer;
+}
+.slider-navigation ul li a.active {
+	background-image:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='css/images/slider-navigation-active.png', sizingMethod='image');
+}
