@@ -11,7 +11,7 @@ select prevletter, count(*) cnt from userdata where not prevletter is null group
 
 select count(distinct prevletter) from userdata;
 
-select nextletter, count(*) cnt from userdata group by nextletter;
+select nextletter, count(*) cnt from userdata where not nextletter is null group by nextletter;
 
 drop table userdata cascade constraint;
 
