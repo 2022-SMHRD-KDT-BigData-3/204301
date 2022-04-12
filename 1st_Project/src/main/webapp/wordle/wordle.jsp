@@ -22,6 +22,11 @@
   /* background: rgba(44, 62, 80,1.0); */
   /* display: flex; */
 }
+   body{
+            background-image: url("7.jpg");
+            background-repeat: repeat;
+            background-size: cover;
+        }
 
 .card:hover {
   box-shadow: 0 5px 20px rgba(0,0,0,.8);
