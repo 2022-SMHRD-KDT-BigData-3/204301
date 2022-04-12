@@ -97,11 +97,6 @@ button:hover {
 
 
 
-* {
-	padding:0;
-	margin:0;
-	outline:0;
-}
 .shell {
 	width:960px;
 	margin:0 auto;
