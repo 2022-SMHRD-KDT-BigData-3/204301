@@ -165,7 +165,6 @@ public class statisticsDAO {
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
-				System.out.println(rs.next());
 				String letter = rs.getString("prevletter");
 				int cnt = rs.getInt("cnt");
 				
@@ -193,7 +192,6 @@ public class statisticsDAO {
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
-				System.out.println(rs.next());
 				String letter = rs.getString("nextletter");
 				int cnt = rs.getInt("cnt");
 				
