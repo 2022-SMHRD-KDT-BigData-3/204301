@@ -102,11 +102,7 @@ button:hover {
 	margin:0 auto;
 	position:relative;
 }
-#intro {
-	background:#763232;
-	padding-bottom:17px;
-	border-bottom:1px solid #bb4a4a;
-}
+
 .slider, .slider-holder, .jcarousel-clip {
 	width:549px;
 	height:300px;

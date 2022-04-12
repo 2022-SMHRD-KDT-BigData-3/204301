@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.jcarousel.js"></script>
 <script type="text/javascript" src="js/jquery-func.js"></script>
@@ -15,35 +14,101 @@
 <title>2431</title>
 
 <style>
-#slideShow {
-	position: relative;
-	overflow: hidden;
-	width: 98%;
-	height: 500px;
+.shell {
+	width:960px;
+	margin:0 auto;
+	position:relative;
 }
 
-.slides {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 500px translation: 0.5s ease-out;
+.slider, .slider-holder, .jcarousel-clip {
+	width:549px;
+	height:300px;
+	overflow:hidden;
+	position:relative;
+}
+.slider {
+	float:left;
+}
+.slider-holder ul {
+	position:relative;
+	overflow:hidden;
+}
+.slider-holder ul li {
+	width:800px;
+	height:300px;
+	float:left;
+	display:inline;
+}
+.slider-navigation {
+	position:absolute;
+	bottom:8px;
+	right:14px;
+}
+.slider-navigation ul {
+	list-style:none;
+}
+.slider-navigation ul li {
+	float:left;
+}
+.slider-navigation ul li a {
+	float:left;
+	width:20px;
+	height:25px;
+	font-size:0;
+	line-height:0;
+	text-indent:-4000px;
 }
 
-.slides img {
-	width: 100%
+.intro-info {
+	padding:10px 0 35px 27px;
+	float:left;
+	width:348px;
 }
-
-.slides li:first-child {
-	margin-left: 100px;
+.intro-info h2 {
+	width:267px;
+	height:30px;
+	font-size:28px;
+	color:#fff;
+	padding-bottom:6px;
+	text-shadow:#000 1px 1px 2px;
 }
-
-.slides li:not(:last-child) {
-	float: left;
-	margin-right: 100px;
+.intro-info .entry {
+	height:177px;
+}
+.intro-info p {
+	line-height:18px;
+	padding-bottom:18px;
+	color:black;
+	text-align:justify;
+}
+.intro-info p a {
+	color:#d2f6f3;
+}
+.intro-info .buttons a, .intro-info .buttons a span {
+	float:left;
+	height:34px;
+	line-height:34px;
+	/* background:url(images/intro-button.gif) left top no-repeat; */
+	cursor:pointer;
+}
+.intro-info .buttons a {
+	padding-left:20px;
+	font-size:12px;
+	color:#fefefe;
+	text-decoration:none;
+	text-shadow:1px 1px 1px #010101;
+}
+.intro-info .buttons a span {
+	padding:4px 20px 0 0;
+	height:30px;
+	line-height:30px;
+	background-position:right top;
+}
+slider-holder .img{
+   width:100%;
+   height:100%;
 }
 </style>
-
 </head>
 <body>
 	<% 
@@ -100,7 +165,7 @@
 
 	<section class="sub-menu">
 		<div class="sub-item" id="game">
-			<img src="./img/map-location.png" ` alt="지도아이콘">
+			<img src="./img/map-location.png"  alt="지도아이콘">
 			<div>
 				<h1>GAME</h1>
 				<p>지도 라이브러리를 이용하여 518 사적지에서 게임을 할 수 있다.</p>
