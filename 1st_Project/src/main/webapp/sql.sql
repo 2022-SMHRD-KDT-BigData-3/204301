@@ -237,6 +237,7 @@ create table result(
 );
 
 select * from result;
+select quiz from result where nickname = 'user_64';
 drop table result cascade constraint;
 
 create table taja (

@@ -236,6 +236,7 @@ h3 {
     </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
 
 /* var rows = document.getElementById("table_body").getElementsByTagName("tr");
@@ -368,19 +369,24 @@ function checkGuess () {
     }
 
     if (guessString === rightGuessString) {
-        alert("You guessed right! Game over!")
+    	Swal.fire({icon: 'success',
+    		title: '정답!',}).then(function(){
+    			location.href = "../exitGameCon?nickname="+ nickname +"&placeid="+ placeid +"&quiz="+ quiz +"&result="+result+"&score="+score;
+    		})
         guessesRemaining = 0
         result = true;
-        location.href = "../exitGameCon?nickname="+ nickname +"&placeid="+ placeid +"&quiz="+ quiz +"&result="+result+"&score="+score;
     } else {
         guessesRemaining -= 1;
         currentGuess = [];
         nextLetter = 0;
 
         if (guessesRemaining === 0) {
-            alert("You've run out of guesses! Game over!"+"\n"+"The right word was: "+rightGuessString)
-            result = false;
-            location.href = "../exitGameCon?result="+result+"&score="+score;
+        	Swal.fire({icon: 'error',
+        		title: '오답!',
+        		text: '정답은 '+rightGuessString}).then(function(){
+        			location.href = "../exitGameCon?result="+result+"&score="+score;
+        		})
+            result = false;        
         }
     }
 }
