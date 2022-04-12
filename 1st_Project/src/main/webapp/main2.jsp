@@ -37,19 +37,19 @@ span:nth-child(4n-1) { color:hsl(135, 35%, 55%); text-shadow:1px 1px hsl(135, 35
 span:nth-child(4n-2) { color:hsl(155, 35%, 60%); text-shadow:1px 1px hsl(155, 25%, 50%), 2px 2px hsl(155, 25%, 50%), 3px 3px hsl(155, 25%, 50%), 4px 4px hsl(140, 25%, 50%); }
 span:nth-child(4n-3) { color:hsl(30, 65%, 60%); text-shadow:1px 1px hsl(30, 45%, 50%), 2px 2px hsl(30, 45%, 50%), 3px 3px hsl(30, 45%, 50%), 4px 4px hsl(30, 45%, 50%); }
 
-h1 span:nth-child(2){ animation-delay:.05s; }
-h1 span:nth-child(3){ animation-delay:.1s; }
-h1 span:nth-child(4){ animation-delay:.15s; }
-h1 span:nth-child(5){ animation-delay:.2s; }
-h1 span:nth-child(6){ animation-delay:.25s; }
-h1 span:nth-child(7){ animation-delay:.3s; }
-h1 span:nth-child(8){ animation-delay:.35s; }
-h1 span:nth-child(9){ animation-delay:.4s; }
-h1 span:nth-child(10){ animation-delay:.45s; }
-h1 span:nth-child(11){ animation-delay:.5s; }
-h1 span:nth-child(12){ animation-delay:.55s; }
-h1 span:nth-child(13){ animation-delay:.6s; }
-h1 span:nth-child(14){ animation-delay:.65s; }
+h2 span:nth-child(2){ animation-delay:.05s; }
+h2 span:nth-child(3){ animation-delay:.1s; }
+h2 span:nth-child(4){ animation-delay:.15s; }
+h2 span:nth-child(5){ animation-delay:.2s; }
+h2 span:nth-child(6){ animation-delay:.25s; }
+h2 span:nth-child(7){ animation-delay:.3s; }
+h2 span:nth-child(8){ animation-delay:.35s; }
+h2 span:nth-child(9){ animation-delay:.4s; }
+h2 span:nth-child(10){ animation-delay:.45s; }
+h2 span:nth-child(11){ animation-delay:.5s; }
+h2 span:nth-child(12){ animation-delay:.55s; }
+h2 span:nth-child(13){ animation-delay:.6s; }
+h2 span:nth-child(14){ animation-delay:.65s; }
 </style>
 
 </head>
@@ -75,8 +75,7 @@ h1 span:nth-child(14){ animation-delay:.65s; }
 		
 		 <h2><span>S</span><span>M</span><span>H</span><span>R</span><span>D</span><span> </span><span>B</span><span>i</span><span>g</span><span>-</span><span>D</span><span>a</span><span>t</span><span>a</span></h2>
 		<h2><span>1</span><span>s</span><span>t</span><span>-</span><span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span></h2>
-		<h2><span>2</span><span>4</span><span>3</span><span>1</span></h2>
-	</section>
+		</section>
 
 	<section class="sub-menu">
 		<div class="sub-item" id="game">
