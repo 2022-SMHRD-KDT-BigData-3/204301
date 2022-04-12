@@ -29,21 +29,34 @@ body{
 	width: 45%;
 	float: left;
 	margin-left: 2%;
+	
 }
 
 .text {
 	text-align: center;
 	font-size: 40px;
 }
-
+label{
+	text-align: center;
+	font-size: 20px;
+	cursor: default;
+}
+#puzzle-box{
+	width : 35%;
+	height : 60%;
+	position : absolute;
+	left : 47%;
+}
+p{
+}
 </style>
 
 </head>
 <body>
 <%
-	//userDTO info = (userDTO)session.getAttribute("info");
+	userDTO info = (userDTO)session.getAttribute("info");
 
-	//quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
+	quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
 %>
 
 <%-- <div id = "nickname"><%=info.getNickname()%></div>
@@ -61,15 +74,16 @@ body{
             이미지 선택
             <input onchange="updateImageDisplay()" name="puzzle-input" id="puzzle-input" type="file" accept="image/*">
         </label>
+        
         <div class="preview item">
-            <p>선택한 이미지로 퍼즐을 만듭니다.</p>
+            <p align = "right"></p>
         </div>
         <table id="puzzle-board" class = "item">
-
         </table>
+        <br>
         <div id="puzzle-box">
-
-        </div>
+         </div>        	
+        	
     </div>
     
 <script type="text/javascript">
@@ -221,6 +235,7 @@ body{
 <style>
 input {
   opacity: 0;
+  position : 
 }
 
 table {
@@ -239,6 +254,7 @@ td {
 
 td img {
   display: block;
+
 }
 
 img:hover {
