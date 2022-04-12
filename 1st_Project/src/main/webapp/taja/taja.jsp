@@ -165,17 +165,21 @@
 
 							// 목숨을 모두 잃었을 때 - 실패
 							if (life === 0) {
-								alert('5개의 생명을 모두 사용하셨습니다.');
-								alert('총 ' + score + '점을 획득하였습니다.');
-								
-								location.href = "../exitGameCon?nickname=" + nickname + "&placeid=" + placeid + "&quiz=" + quiz1 + "&result=" + result + "&score=" + score;
+								Swal.fire({icon: 'error',
+						    		title: '5회 기회 모두 사용!',
+						    		text: score+'점을 획득하였습니다!'}).then(function(){
+						    			location.href = "../exitGameCon?nickname=" + nickname + "&placeid=" + placeid + "&quiz=" + quiz1 + "&result=" + result + "&score=" + score;
+						    		})
 							}
 
 							// life가 남은상태로 게임이 끝났을 경우 - 성공
 							if (newObj.length === taja.length) { // 화면에 단어가 다 뿌려진 이후
 								if (!tajaContents.hasChildNodes()) { // 뿌려진 단어가 화면에 존재하지 않을 경우
-									alert('총 ' + score + '점을 획득하였습니다.');
-									location.href = "../exitGameCon?nickname=" + nickname + "&placeid=" + placeid + "&quiz=" + quiz1 + "&result=" + result + "&score=" + score;
+									Swal.fire({icon: 'success',
+							    		title: '성공!',
+							    		text: score+'점을 획득하였습니다!'}).then(function(){
+							    			location.href = "../exitGameCon?nickname=" + nickname + "&placeid=" + placeid + "&quiz=" + quiz1 + "&result=" + result + "&score=" + score;
+							    		});
 								}
 							}
 
