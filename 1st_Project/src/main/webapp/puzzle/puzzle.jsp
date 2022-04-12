@@ -14,6 +14,11 @@
 #nickname{ display: none;}
 #placeid{ display: none;}
 #quiz{ display: none;}
+body{
+    background-image: url("./puzzle4.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+}
 
 * {
   margin: 0;
