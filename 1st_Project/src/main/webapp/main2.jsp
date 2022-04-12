@@ -5,110 +5,53 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="js/jquery.jcarousel.js"></script>
-<script type="text/javascript" src="js/jquery-func.js"></script>
 <link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/main.css">
 
 <title>2431</title>
-
-<style>
-.shell {
-	width:960px;
-	margin:0 auto;
-	position:relative;
+<style type="text/css">
+.main{
+	background:beige;
+}
+h2 {
+ font-size:5em;
+ font:bold 7.5vw/1.6 'Signika', sans-serif;
+ user-select:none;
 }
 
-.slider, .slider-holder, .jcarousel-clip {
-	width:549px;
-	height:300px;
-	overflow:hidden;
-	position:relative;
+h2 span { display:inline-block; animation:float .2s ease-in-out infinite; }
+ @keyframes float {
+  0%,100%{ transform:none; }
+  33%{ transform:translateY(-1px) rotate(-2deg); }
+  66%{ transform:translateY(1px) rotate(2deg); }
 }
-.slider {
-	float:left;
-}
-.slider-holder ul {
-	position:relative;
-	overflow:hidden;
-}
-.slider-holder ul li {
-	width:800px;
-	height:300px;
-	float:left;
-	display:inline;
-}
-.slider-navigation {
-	position:absolute;
-	bottom:8px;
-	right:14px;
-}
-.slider-navigation ul {
-	list-style:none;
-}
-.slider-navigation ul li {
-	float:left;
-}
-.slider-navigation ul li a {
-	float:left;
-	width:20px;
-	height:25px;
-	font-size:0;
-	line-height:0;
-	text-indent:-4000px;
+body:hover span { animation:bounce .6s; }
+@keyframes bounce {
+  0%,100%{ transform:translate(0); }
+  25%{ transform:rotateX(20deg) translateY(2px) rotate(-3deg); }
+  50%{ transform:translateY(-20px) rotate(3deg) scale(1.1);  }
 }
 
-.intro-info {
-	padding:10px 0 35px 27px;
-	float:left;
-	width:348px;
-}
-.intro-info h2 {
-	width:267px;
-	height:30px;
-	font-size:28px;
-	color:#fff;
-	padding-bottom:6px;
-	text-shadow:#000 1px 1px 2px;
-}
-.intro-info .entry {
-	height:177px;
-}
-.intro-info p {
-	line-height:18px;
-	padding-bottom:18px;
-	color:black;
-	text-align:justify;
-}
-.intro-info p a {
-	color:#d2f6f3;
-}
-.intro-info .buttons a, .intro-info .buttons a span {
-	float:left;
-	height:34px;
-	line-height:34px;
-	/* background:url(images/intro-button.gif) left top no-repeat; */
-	cursor:pointer;
-}
-.intro-info .buttons a {
-	padding-left:20px;
-	font-size:12px;
-	color:#fefefe;
-	text-decoration:none;
-	text-shadow:1px 1px 1px #010101;
-}
-.intro-info .buttons a span {
-	padding:4px 20px 0 0;
-	height:30px;
-	line-height:30px;
-	background-position:right top;
-}
-slider-holder .img{
-   width:100%;
-   height:100%;
-}
+span:nth-child(4n) { color:hsl(50, 75%, 55%); text-shadow:1px 1px hsl(50, 75%, 45%), 2px 2px hsl(50, 45%, 45%), 3px 3px hsl(50, 45%, 45%), 4px 4px hsl(50, 75%, 45%); }
+span:nth-child(4n-1) { color:hsl(135, 35%, 55%); text-shadow:1px 1px hsl(135, 35%, 45%), 2px 2px hsl(135, 35%, 45%), 3px 3px hsl(135, 35%, 45%), 4px 4px hsl(135, 35%, 45%); }
+span:nth-child(4n-2) { color:hsl(155, 35%, 60%); text-shadow:1px 1px hsl(155, 25%, 50%), 2px 2px hsl(155, 25%, 50%), 3px 3px hsl(155, 25%, 50%), 4px 4px hsl(140, 25%, 50%); }
+span:nth-child(4n-3) { color:hsl(30, 65%, 60%); text-shadow:1px 1px hsl(30, 45%, 50%), 2px 2px hsl(30, 45%, 50%), 3px 3px hsl(30, 45%, 50%), 4px 4px hsl(30, 45%, 50%); }
+
+h1 span:nth-child(2){ animation-delay:.05s; }
+h1 span:nth-child(3){ animation-delay:.1s; }
+h1 span:nth-child(4){ animation-delay:.15s; }
+h1 span:nth-child(5){ animation-delay:.2s; }
+h1 span:nth-child(6){ animation-delay:.25s; }
+h1 span:nth-child(7){ animation-delay:.3s; }
+h1 span:nth-child(8){ animation-delay:.35s; }
+h1 span:nth-child(9){ animation-delay:.4s; }
+h1 span:nth-child(10){ animation-delay:.45s; }
+h1 span:nth-child(11){ animation-delay:.5s; }
+h1 span:nth-child(12){ animation-delay:.55s; }
+h1 span:nth-child(13){ animation-delay:.6s; }
+h1 span:nth-child(14){ animation-delay:.65s; }
 </style>
+
 </head>
 <body>
 	<% 
@@ -129,38 +72,10 @@ slider-holder .img{
 	</header>
 
 	<section class="main text-center">
-		<div class="main-text">
-			
-				<div class="shell">
-					<div class="slider">
-						<div class="slider-holder">
-							<ul>
-								<li><img src="img/img01.png" ></li>
-								<li><img src="img/img02.jpg" ></li>
-								<li><img src="img/img03.jpg" ></li>
-								<li><img src="img/img04.jpg" ></li>
-								<li><img src="img/img01.jpg" ></li>
-							</ul>
-						</div>
-						<div class="slider-navigation">
-							<ul>
-								<li><a href="#" class="active">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="intro-info">
-						<h2>SMHRD 1st-Project</h2>
-						<p>설명을 적을 것</p>
-						<div class="entry"></div>
-						
-					</div>
-				</div>
-			</div>
 		
+		 <h2><span>S</span><span>M</span><span>H</span><span>R</span><span>D</span><span> </span><span>B</span><span>i</span><span>g</span><span>-</span><span>D</span><span>a</span><span>t</span><span>a</span></h2>
+		<h2><span>1</span><span>s</span><span>t</span><span>-</span><span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span></h2>
+		<h2><span>2</span><span>4</span><span>3</span><span>1</span></h2>
 	</section>
 
 	<section class="sub-menu">
