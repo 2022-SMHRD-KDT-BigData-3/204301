@@ -104,7 +104,7 @@
 		});
 	}
 	
-	const maxTime = 300;
+	const maxTime = 180;
 	let nowTime = 0;
 	let timer;
 	function startTimer() {

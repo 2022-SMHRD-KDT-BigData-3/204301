@@ -23,7 +23,8 @@ function drawChart() {
   var options = {
     chart: {
       title: '게임 결과 통계',
-      subtitle: '',
+	  vAxis: {title: "나이대"},
+	  hAxis: {title: "이용자수"},
     }
   };
 
