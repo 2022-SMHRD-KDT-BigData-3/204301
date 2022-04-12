@@ -77,28 +77,23 @@ public class resultDAO {
 		return cnt;
 	}
 	
-	public ArrayList<resultDTO> resultinfo() {
-		ArrayList<resultDTO> list = new ArrayList<resultDTO>();
+	public ArrayList<String> resultinfo(String nick) {
+		ArrayList<String> list = new ArrayList<String>();
 		db_conn();
 
 		try {
 			
-			String sql = "select * from result";
+			String sql = "select quiz from result where nickname = ?";
 			
 			psmt = conn.prepareStatement(sql);
-
+			psmt.setString(1, nick);
+			
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
-				String nickname = rs.getString(1);
-				String placeid = rs.getString(2);
-				String quiz = rs.getString(3);
-				String quiz_set = rs.getString(4);
-				int score = rs.getInt(5);
+				String quiz = rs.getString(1);
 
-				resultDTO dto = new resultDTO(nickname, placeid, quiz, quiz_set, score);
-
-				list.add(dto);
+				list.add(quiz);
 			}
 
 		} catch (Exception e) {

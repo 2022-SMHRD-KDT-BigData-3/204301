@@ -43,7 +43,8 @@
 		userDTO info = (userDTO)session.getAttribute("info");
 	
 		resultDAO rdao = new resultDAO();
-		ArrayList<resultDTO> resultinfo = rdao.resultinfo();
+		ArrayList<String> resultinfo = rdao.resultinfo(info.getNickname());
+		System.out.println(resultinfo);
 	%>
 
 	<table>
@@ -69,7 +70,7 @@
 		</tbody>
 	</table>
 	
-	<table>
+<%-- 	<table>
 		<tbody id = "result_table_body">
 		<% for (int i = 0; i < resultinfo.size(); i++) { %>
 			<tr>
@@ -81,13 +82,29 @@
 			</tr>
 		<% } %>
 		</tbody>
-	</table>
+	</table> --%>
 	
+	<table>
+		<tbody id = "result-table-body">
+			<% for(int i = 0; i < resultinfo.size(); i++) { %>
+				<tr><td><%=resultinfo.get(i)%></td></tr>
+			<% } %>
+		</tbody>
+	</table>
 	<div id="userNickname"><%=info.getNickname()%></div>
 	
 	<div id="mapid"></div>
 
 <script type="text/javascript">
+	var resultArr = [];
+	var resultrows = document.getElementById("result-table-body").getElementsByTagName("tr");
+	
+	for( var r=0; r<resultrows.length; r++ ){
+	     resultArr.push(resultrows[r].getElementsByTagName("td")[0].firstChild.data);
+	}
+	
+	console.log(resultArr);
+	
 	var lat = 35.154089;
 	var lng = 126.902306;
 	var zoom = 14;
@@ -115,14 +132,14 @@
 	
 	var VIcon = L.icon({
 	    iconUrl: "./img/vCheck.png",
-	    iconSize: [24, 24],
+	    iconSize: [40, 40],
 	    iconAnchor: [8, 8],
 	    popupAnchor: [0, 0]
 	});
 	
 	var XIcon = L.icon({
 	    iconUrl: "./img/xCheck.png",
-	    iconSize: [24, 24],
+	    iconSize: [40, 40],
 	    iconAnchor: [8, 8],
 	    popupAnchor: [0, 0]
 	});
@@ -130,8 +147,8 @@
 	var rows = document.getElementById("table_body").getElementsByTagName("tr");
     console.log(rows.length);	// tbody tr 개수 = 32
 	
-    var resultRows = document.getElementById("result_table_body").getElementsByTagName("tr");
-    console.log(resultRows.length);
+    //var resultRows = document.getElementById("result_table_body").getElementsByTagName("tr");
+    //console.log(resultRows.length);
     
     var userNickname = document.getElementById("userNickname").innerText;
     //var resultNickname = document.getElementById("resultNickname").innerText;
@@ -151,20 +168,23 @@
       var cell_6 = cells[5].firstChild.data;		// 사진 경로
       
       var marker = L.marker([ cell_4, cell_5 ]).addTo(map);
-      if(cell_2 != null){
-		marker.on('mousedown', onOver(cell_1, cell_3, cell_6, cell_2));
-		//marker.setIcon(VIcon);
-      } else {
-    	  //marker.on('mousedown', onOver(cell_1, cell_3, cell_6));  
+      
+      var check = true;
+      for(var i = 0; i < resultArr.length; i++){
+      	if(cell_2 == resultArr[i]) {
+      		marker.setIcon(XIcon);
+      		check = false;
+      		break;
+      	}
       }
-	  
-	  //marker.on('click', onClick);
+      
+      if(check){
+        marker.on('mousedown', onOver(cell_1, cell_3, cell_6, cell_2));
+      	marker.setIcon(VIcon);	
+      }
     }
     
     document.querySelector("#table_body").click();
-    
-    
-    
     
     map.touchZoom.disable();
     map.doubleClickZoom.disable();
