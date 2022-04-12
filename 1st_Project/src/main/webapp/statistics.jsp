@@ -153,7 +153,7 @@ System.out.println(nextletters.size());
 		<div class="inner">
 			<ul class="header-menu">
 				<li class="nav-item">
-					<a href="./main.jsp"> HOME </a>
+					<a href="./main2.jsp"> HOME </a>
 				</li>
 				<li class="nav-item">
 					<a href="./survey.jsp"> GAME </a>

@@ -42,7 +42,7 @@ public class nextSurveyCon extends HttpServlet {
 			System.out.println("UserData Update Fail");
 		}
 		
-		response.sendRedirect("./main.jsp");
+		response.sendRedirect("./main2.jsp");
 	}
 
 }

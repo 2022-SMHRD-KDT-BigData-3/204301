@@ -61,7 +61,7 @@ h2 span:nth-child(14){ animation-delay:.65s; }
 	<header class="header">
 		<div class="inner">
 			<ul class="header-menu">
-				<li class="nav-item"><a href="./main.jsp"> HOME </a></li>
+				<li class="nav-item"><a href="./main2.jsp"> HOME </a></li>
 				<li class="nav-item"><a href="./survey.jsp"> GAME </a></li>
 				<li class="nav-item"><a href="./statistics.jsp"> STATISTICS
 				</a></li>
@@ -73,8 +73,8 @@ h2 span:nth-child(14){ animation-delay:.65s; }
 
 	<section class="main text-center">
 		
-		 <h2><span>S</span><span>M</span><span>H</span><span>R</span><span>D</span><span> </span><span>B</span><span>i</span><span>g</span><span>-</span><span>D</span><span>a</span><span>t</span><span>a</span></h2>
-		<h2><span>1</span><span>s</span><span>t</span><span>-</span><span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span></h2>
+		 <h2><span>지</span><span>도</span><span>로</span> <span>만</span><span>나</span><span></span><span>는</span> <span>역</span><span>사</span></h2>
+		<h2><span>M</span><span>a</span><span>p</span> <span>S</span><span>t</span><span>o</span><span>r</span><span>y</span><span></span><span></span></h2>
 		</section>
 
 	<section class="sub-menu">
