@@ -26,17 +26,25 @@ body{
 }
 
 .preview {
-	width: 45%;
+	width: 33%;
 	float: left;
-	margin-left: 2%;
+	margin-left: 15%;
 	
 }
 
 .text {
 	text-align: center;
 	font-size: 40px;
+	color : #0B2161;
+	margin-top : 40px;
+}
+.text1{
+	text-align: center;
+	font-size: 30px;
+	color : #0B2161;
 }
 label{
+	margin: 0 auto;
 	text-align: center;
 	font-size: 20px;
 	cursor: default;
@@ -59,24 +67,25 @@ p{
 	quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
 %>
 
-<%-- <div id = "nickname"><%=info.getNickname()%></div>
 <div id = "placeid"><%=quizinfo.getPlaceid()%></div>
-<div id = "quiz"><%=quizinfo.getQuiz()%></div> --%>
+<div id = "quiz"><%=quizinfo.getQuiz()%></div> 
 
 	<div class="puzzle-container">
         <div class = "text">
-            퍼즐게임
+            퍼즐 게임
         </div>
-        <div id = "timer" class = "text">
-        	0
+        
+        <div id = "timer" class = "text1">
+        	TIMER
         </div>
+        <br>
         <label for="puzzle-input">
-            이미지 선택
+            <div> 이미지 선택 </div>
             <input onchange="updateImageDisplay()" name="puzzle-input" id="puzzle-input" type="file" accept="image/*">
         </label>
         
         <div class="preview item">
-            <p align = "right"></p>
+          <!--   <p align = "right"></p> -->
         </div>
         <table id="puzzle-board" class = "item">
         </table>
