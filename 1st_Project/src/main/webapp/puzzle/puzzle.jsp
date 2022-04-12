@@ -119,10 +119,12 @@ p{
 	    if(nowTime === maxTime) {
 	      window.clearInterval(timer);
 	      suffleRendering();
-	      window.alert('시간 종료!');
-	      var result = "flase";
+	      Swal.fire({icon: 'error',
+	    		title: '시간 초과!',}).then(function(){
+	    			location.href = "../exitGameCon?nickname="+ nickname +"&placeid="+ placeid +"&quiz="+ quiz +"&result="+result+"&score="+score;
+	    		})
+	      var result = "false";
 	      var score = 0;
-	      location.href = "../exitGameCon?nickname="+ nickname +"&placeid="+ placeid +"&quiz="+ quiz +"&result="+result+"&score="+score;
 	    }
 	    
 	    nowTime += 1;
@@ -164,10 +166,12 @@ p{
 	  const index = ev.target.id.replace('piece_', '');
 	  resultPieces[Number(index)] = data;
 	  if (completePuzzle(originImagePieces, resultPieces)) {
-	    window.alert('퍼즐 성공!');
+		  Swal.fire({icon: 'success',
+	    		title: '퍼즐 성공!',}).then(function(){
+	    			location.href = "../exitGameCon?nickname="+ nickname +"&placeid="+ placeid +"&quiz="+ quiz +"&result="+result+"&score="+score;
+	    		})
 	    var result = "true";
 	    var score = 10;
-	    location.href = "../exitGameCon?nickname="+ nickname +"&placeid="+ placeid +"&quiz="+ quiz +"&result="+result+"&score="+score;
 	  }
 	}
 	
