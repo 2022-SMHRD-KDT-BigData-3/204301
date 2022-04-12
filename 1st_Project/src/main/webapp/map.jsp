@@ -88,8 +88,8 @@
 	<div id="mapid"></div>
 
 <script type="text/javascript">
-	var lat = 35.1595454;
-	var lng = 126.8526012;
+	var lat = 35.154089;
+	var lng = 126.902306;
 	var zoom = 14;
 	var map = L.map('mapid', {
 		center : [ lat, lng ],

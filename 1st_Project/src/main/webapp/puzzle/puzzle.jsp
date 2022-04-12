@@ -25,33 +25,15 @@ body{
   padding: 0;
 }
 
-.wrap-all {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.preview {
+	width: 45%;
+	float: left;
+	margin-left: 2%;
 }
 
-.play-time { 
-  font-size: 3rem;
-  margin-top: 2rem;
-  color: #3b5998;
-}
-
-.start-button {
-  background-color: #3b5998;
-  color: #fff;
-  border: none;
-  padding: 1rem 2rem;
-  margin-top: 1rem;
-}
-
-.game-text {
-  position: absolute;
-  font-size: 45px;
-  color: #67c23a;
-  text-shadow: 1px 1px rgba(0,0,0,0.5);
-  /* display: none; */
+.text {
+	text-align: center;
+	font-size: 40px;
 }
 
 </style>
@@ -59,29 +41,30 @@ body{
 </head>
 <body>
 <%
-	userDTO info = (userDTO)session.getAttribute("info");
+	//userDTO info = (userDTO)session.getAttribute("info");
 
-	quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
+	//quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
 %>
 
-<div id = "nickname"><%=info.getNickname()%></div>
+<%-- <div id = "nickname"><%=info.getNickname()%></div>
 <div id = "placeid"><%=quizinfo.getPlaceid()%></div>
-<div id = "quiz"><%=quizinfo.getQuiz()%></div>
+<div id = "quiz"><%=quizinfo.getQuiz()%></div> --%>
 
 	<div class="puzzle-container">
-	
-	
-        <div>
+        <div class = "text">
             퍼즐게임
+        </div>
+        <div id = "timer" class = "text">
+        	0
         </div>
         <label for="puzzle-input">
             이미지 선택
             <input onchange="updateImageDisplay()" name="puzzle-input" id="puzzle-input" type="file" accept="image/*">
         </label>
-        <div class="preview">
+        <div class="preview item">
             <p>선택한 이미지로 퍼즐을 만듭니다.</p>
         </div>
-        <table id="puzzle-board">
+        <table id="puzzle-board" class = "item">
 
         </table>
         <div id="puzzle-box">
@@ -114,7 +97,7 @@ body{
 		});
 	}
 	
-	const maxTime = 180;
+	const maxTime = 300;
 	let nowTime = 0;
 	let timer;
 	function startTimer() {
@@ -127,7 +110,10 @@ body{
 	      var score = 0;
 	      location.href = "../exitGameCon?nickname="+ nickname +"&placeid="+ placeid +"&quiz="+ quiz +"&result="+result+"&score="+score;
 	    }
+	    
 	    nowTime += 1;
+	    
+	    document.getElementById("timer").innerHTML = (maxTime - nowTime) + "초";
 	    
 	  }, 1000);
 	}
@@ -140,7 +126,7 @@ body{
 	  ev.dataTransfer.setData("text", ev.target.id);
 	}
 	
-	const completePuzzle = (puzzle, result) => puzzle.every((piece, index) =>piece === result[index]);
+	const completePuzzle = (puzzle, result) => puzzle.every((piece, index) => piece === result[index]);
 	
 	function drop(ev) {
 	  ev.preventDefault();
@@ -177,6 +163,7 @@ body{
 	  //const input = document.querySelector('.img');
 	  const board = document.getElementById('puzzle-board');
 	
+	  document.querySelector('label').style.display = "none";
 	  while(preview.firstChild) {
 	    preview.removeChild(preview.firstChild);
 	  }
@@ -188,7 +175,6 @@ body{
 	           img.onload = function() {
 	             const widthOfOnePiece = this.width/numColsToCut;
 	             const heightOfOnePiece = this.height/numRowsToCut;
-	             para.innerHTML = '${numColsToCut}X${numRowsToCut}로 생성된 퍼즐입니다.';
 	
 	              while(board.firstChild) {
 	                board.removeChild(board.firstChild);
