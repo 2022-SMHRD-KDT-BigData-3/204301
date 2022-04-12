@@ -70,11 +70,11 @@
 					<div class="slider">
 						<div class="slider-holder">
 							<ul>
-								<li><img src="index/img01.png" alt="" /></li>
-								<li><img src="index/img02.jpg" alt="" /></li>
-								<li><img src="index/img03.jpg" alt="" /></li>
-								<li><img src="index/img04.jpg" alt="" /></li>
-								<li><img src="index/img01.jpg" alt="" /></li>
+								<li><img src="img/img01.png" alt="" /></li>
+								<li><img src="img/img02.jpg" alt="" /></li>
+								<li><img src="img/img03.jpg" alt="" /></li>
+								<li><img src="img/img04.jpg" alt="" /></li>
+								<li><img src="img/img01.jpg" alt="" /></li>
 							</ul>
 						</div>
 						<div class="slider-navigation">
