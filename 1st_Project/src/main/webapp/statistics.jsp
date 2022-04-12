@@ -21,6 +21,13 @@
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
 <style>
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .info {
 	padding: 6px 8px;
 	font: 14px/16px Arial, Helvetica, sans-serif;
@@ -49,21 +56,10 @@
 	opacity: 0.7;
 }
 
-.city_cnt {
-	display: none;
-}
-
-.age_cnt {
-	display: none;
-}
-
-.prev_cnt {
-	display: none;
-}
-
-.next_cnt {
-	display: none;
-}
+.city_cnt { display: none; }
+.age_cnt { display: none; }
+.prev_cnt { display: none; }
+.next_cnt {	display: none; }
 
 #map {
 	height: 800px;
@@ -93,6 +89,7 @@
 	float: left;
 	margin-left: 2%;
 	margin-top: 2%;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
 .bar-section {
@@ -101,6 +98,7 @@
 	float: right;
 	margin-right: 2%;
 	margin-top: 2%;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
 .word-section {
@@ -115,20 +113,20 @@
 	height: 400px;
 	float: left;
 	margin-right: 2%;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
 .nextletter {
 	width: 45%;
 	height: 400px;
 	float: right;
-}
-
-section {
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
 .title {
 	text-align: center;
+	font-size: 20px;
+	font-family: 'GmarketSansMedium';
 }
 </style>
 
@@ -245,41 +243,27 @@ System.out.println(nextletters.size());
 	</table>
 	
 	<section class = "map-section">
-        <div class = "title"> 지역별 이용자 수 </div>
+        <strong class = "title"> 지역별 이용자 수 </strong>
         <div id='map'></div>
 	</section>
 	
 	<section class = "bar-section">
-        <div class = "title"> 나이대별 이용자 수 </div>
+        <strong class = "title"> 나이대별 이용자 수 </strong>
         <div id="columnchart_material"></div>
 	</section>
 	
 	<section class = "word-section">
         <section class = "prevletter">
-            <div class = "title"> 게임 전 단어 </div>
+            <strong class = "title"> 게임 전 단어 </strong>
             <div id="prevletter"></div>
         </section>
 
         <section class = "nextletter"> 
-            <div class = "title"> 게임 후 단어</div>
+            <strong class ="title"> 게임 후 단어</strong>
             <div id="nextletter"></div>
         </section>
 	</section>
-	
-	
-	<!-- <section class = "map-section">
-		<div id='map'></div>
-	</section>
-	
-	<section class = "bar-section">
-		<div id="columnchart_material"></div>
-	</section>
-	
-	<div class="word-section">
-		<div id="prevletter"></div>
-		<div id="nextletter"></div>
-	</div> -->
-	
+
 <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
 <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

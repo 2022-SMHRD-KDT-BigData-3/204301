@@ -62,13 +62,13 @@ p{
 </head>
 <body>
 <%
-	userDTO info = (userDTO)session.getAttribute("info");
+	//userDTO info = (userDTO)session.getAttribute("info");
 
-	quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
+	//quizDTO quizinfo = (quizDTO)session.getAttribute("quizinfo");
 %>
 
-<div id = "placeid"><%=quizinfo.getPlaceid()%></div>
-<div id = "quiz"><%=quizinfo.getQuiz()%></div> 
+<%-- <div id = "placeid"><%=quizinfo.getPlaceid()%></div>
+<div id = "quiz"><%=quizinfo.getQuiz()%></div> --%> 
 
 	<div class="puzzle-container">
         <div class = "text">
