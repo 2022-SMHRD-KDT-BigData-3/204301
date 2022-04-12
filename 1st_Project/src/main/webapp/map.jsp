@@ -131,14 +131,14 @@
 	}
 	
 	var VIcon = L.icon({
-	    iconUrl: "./img/vCheck.png",
+	    iconUrl: "./img/11.png",
 	    iconSize: [40, 40],
 	    iconAnchor: [8, 8],
 	    popupAnchor: [0, 0]
 	});
 	
 	var XIcon = L.icon({
-	    iconUrl: "./img/xCheck.png",
+	    iconUrl: "./img/22.png",
 	    iconSize: [40, 40],
 	    iconAnchor: [8, 8],
 	    popupAnchor: [0, 0]

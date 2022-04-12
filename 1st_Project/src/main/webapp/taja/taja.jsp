@@ -41,7 +41,9 @@
 
 
 	<div class="card">
-		<h1 class="entry-title">이곳은 타자게임입니다. 단어를 정확하게 입력후 Enter를 누르세요. 시작하시려면 시작하기버튼을 눌러주세요.</h1>
+		<h1 class="entry-title"> [ 타자 게임 ] <br>
+		단어를 정확하게 입력후 Enter를 누르세요. 
+		<br>시작하기버튼을 눌러주세요.</h1>
 	</div>
 	<div id="contents">
 
